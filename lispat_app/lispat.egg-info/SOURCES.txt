@@ -1,0 +1,5 @@
+lispat.egg-info/PKG-INFO
+lispat.egg-info/SOURCES.txt
+lispat.egg-info/dependency_links.txt
+lispat.egg-info/entry_points.txt
+lispat.egg-info/top_level.txt

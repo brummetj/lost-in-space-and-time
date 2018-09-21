@@ -1,0 +1,3 @@
+[console_scripts]
+lispat = lispat.__main__:main
+

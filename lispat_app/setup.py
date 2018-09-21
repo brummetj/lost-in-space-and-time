@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(
-    name='snek',
+    name='lispat',
     entry_points={
         'console_scripts': [
-            'lispat = lispat:main',
+            'lispat = lispat.__main__:main',
         ],
     }
 )
