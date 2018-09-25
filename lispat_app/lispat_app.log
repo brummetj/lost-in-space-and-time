@@ -1,2 +1,0 @@
-manager.py:14 — CommandManager - __init__() — ERROR — Directory does not exist
-manager.py:11 — CommandManager - __init__() — INFO — CommandManager created with path=/etc
