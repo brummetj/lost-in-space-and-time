@@ -1,0 +1,8 @@
+2018-09-24 23:40:33,687 — CommandManager — DEBUG — Command Manager Created
+2018-09-24 23:40:51,759 — CommandManager — INFO — Command Manager Created
+manager.py:8 —             __init__() — INFO — Command Manager Created
+manager.py:8 — CommandManager -             __init__() — INFO — Command Manager Created
+manager.py:8 — CommandManager - __init__() — INFO — Command Manager Created
+manager.py:7 — CommandManager - __init__() — INFO — CommandManager created with path, /etc
+manager.py:7 — CommandManager - __init__() — INFO — CommandManager created with path=/etc
+manager.py:11 — CommandManager - __init__() — INFO — CommandManager created with path=/etc

@@ -1,0 +1,16 @@
+2018-09-24 23:21:54,852 - examples.fmt.base - INFO - yee
+2018-09-24 23:22:03,702 - examples.fmt.base - INFO - yee
+2018-09-24 23:22:14,442 - examples.fmt.base - INFO - yee
+2018-09-24 23:22:14,443 - examples.fmt.base - INFO - Command Manager Created with path
+2018-09-24 23:22:42,752 - examples.fmt.base - INFO - yee
+2018-09-24 23:22:57,711 - examples.fmt.base - INFO - yee
+2018-09-24 23:22:57,711 - examples.fmt.base - INFO - Command Manager Created with path
+2018-09-24 23:27:01,353 - examples.fmt.base - DEBUG - debug message
+2018-09-24 23:27:01,353 - examples.fmt.base - INFO - info message
+2018-09-24 23:27:01,353 - examples.fmt.base - WARNING - warn message
+2018-09-24 23:27:01,353 - examples.fmt.base - ERROR - error message
+2018-09-24 23:27:01,353 - examples.fmt.base - CRITICAL - critical message
+2018-09-24 23:27:01,354 - examples.fmt.base - INFO - yee
+2018-09-24 23:27:01,354 - examples.fmt.base - INFO - yee
+2018-09-24 23:27:01,354 - examples.fmt.base - INFO - Command Manager Created with path
+2018-09-24 23:27:01,354 - examples.fmt.base - INFO - Command Manager Created with path
