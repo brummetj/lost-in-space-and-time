@@ -1,6 +1,6 @@
 import os
 from ..utils.logger import Logger
-from factory.argument_factory import ArgumentFactory
+from .argument_factory import ArgumentFactory
 
 class DocumentFactory:
     """
@@ -9,17 +9,35 @@ class DocumentFactory:
     into their own function that handles those certain file types
     """
     filetype = ['.doc','docx','.pdf','.txt']
+
     def __init__(self, path):
+            logger = Logger("DocumentFactory")
+            logger.getLogger().info("DocumentFactory Created")
             self.path = path
-            self.txt = []
+            self.docs = []
             self.docx = []
             self.pdf = []
-            self.doc = []
             try:
                 for file in os.listdir(path):
-                    if file.endswith(".txt"):
-                        logger.getLogger().info("File - {} in {}".format(file, path))
+                    if file.endswith(".doc"):
+                        logger.getLogger().debug("File - {} in {}".format(file, path))
+                        self.docs.append((file, path))
 
-                    elif file.endswith()
+                    elif file.endswith(".pdf"):
+                        logger.getLogger().debug("File - {} in {}".format(file, path))
+                        self.pdf.append((file, path))
+
+                    elif file.endswith(".docx"):
+                        logger.getLogger().debug("File - {} in {}".format(file, path))
+                        self.docx.append((file, path))
+
+                    else:
+                        logger.getLogger().error("No elgible files in {}".format(path))
+                try:
+                    logger.getLogger().debug("Attemping to turn files into texts")
+                    self.word_data = word_documents(self.docx)
+                    self.pdf_data = pdf_documents(self.pdf)
+                except:
+                    logger.getLogger().error("Error occured turning documents into .txt files")
             except:
-                print("Error has occured")
+                logger.getLogger().error("Error Occured")

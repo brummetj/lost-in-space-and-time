@@ -1,6 +1,6 @@
 import os
 from ..utils.logger import Logger
-
+from ..factory.document_factory import DocumentFactory
 class CommandManager:
 
     """
@@ -10,13 +10,20 @@ class CommandManager:
     """
     def __init__(self, path):
         try:
-            logging = Logger("CommandManager")
-            if os.path.isdir(path):
-                logging.getLogger().info("CommandManager created with path={}".format(path))
+            logger = Logger("CommandManager - init")
+            full_path = os.path.abspath(path)
+            if os.path.isdir(full_path):
+                logger.getLogger().info("CommandManager created with path={}".format(path))
                 self.path = path
             else:
-                logging.getLogger().error("Directory does not exist")
+                logger.getLogger().error("Directory does not exist")
         except:
-            print("Error occured")
+            logger.getLogger().error("Error Occured")
     def run(self):
-        print("nothing yet")
+        # Initialize with our docs.
+        logger = Logger("CommandManager - init")
+        try:
+            DocumentFactory(self.path)
+            logger.getLogger().info("Documents converted")
+        except:
+            logger.getLogger().error("Error Occured")
