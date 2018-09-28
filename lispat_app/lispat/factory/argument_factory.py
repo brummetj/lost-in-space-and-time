@@ -14,13 +14,24 @@ class ArgumentFactory:
     '''
     This class handles the arguments and converts them to txt files.
     '''
+    def __init__(self):
+        logger = Logger("ArgumentFactory - init")
+        logger.getLogger().info("ArgumentFactory Created")
+
+        path = os.path.abspath('./lispat/assets')
+        self.dirName = path + "/textFiles"
+
+        if not os.path.exists(self.dirName):
+            os.mkdir(self.dirName)
+            logger.getLogger().info("Text Files Directory created with path={}"
+                                    .format(self.dirName))
 
     '''
     Function using PyPDF2 and textract library to extract text from pdfs and
     store them into an array of text files
     '''
     def pypdf_handler(self, data):
-        logger = Logger("ArgumentFactory")
+        logger = Logger("ArgumentFactory - init")
         logger.getLogger().info("ArgumentFactory - PDF to Text")
         self.txt = []
         try:
@@ -42,9 +53,12 @@ class ArgumentFactory:
                 if text != "":
                     text = text
                 else:
-                    text = textract.process(pdf_file, method='tesseract', language='eng')
+                    text = textract.process(pdf_file, method='tesseract',
+                                            language='eng')
 
-                textFilename = file + ".txt"
+                file = os.path.splitext(file)[0]
+                textFilename = self.dirName + "/" + file + ".txt"
+
                 textFile = open(textFilename, "w")
                 textFile.write(text)
                 self.txt.append((textFilename, path))
@@ -84,14 +98,14 @@ class ArgumentFactory:
                         logger.getLogger().debug("Iterating through pages")
                         interpreter.process_page(page)
 
-
                 logger.getLogger().info("PDF file {} processed".format(infile))
 
                 infile.close()
                 text = output.getvalue()
                 textFilename = file + ".txt"
                 textFile = open(textFilename, "w")
-                logger.getLogger().debug("File - {} opened for writing".format(textFilename))
+                logger.getLogger().debug("File - {} opened for writing"
+                                         .format(textFilename))
                 textFile.write(text)
                 logger.getLogger().debug("File - {} in {}".format(file, path))
                 self.txt.append((textFilename, path))
