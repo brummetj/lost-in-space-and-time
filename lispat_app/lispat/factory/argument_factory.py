@@ -8,12 +8,7 @@ from pdfminer.pdfpage import PDFPage
 import PyPDF2
 import textract
 
-
 class ArgumentFactory:
-
-    '''
-    This class handles the arguments and converts them to txt files.
-    '''
 
     '''
     Function using PyPDF2 and textract library to extract text from pdfs and

@@ -3,7 +3,7 @@ import sys
 from logging.handlers import TimedRotatingFileHandler
 class Logger:
    def __init__(self, logger_name):
-      self.FORMATTER = logging.Formatter("%(filename)s:%(lineno)s — %(name)s - %(funcName)s() — %(levelname)s — %(message)s")
+      self.FORMATTER = logging.Formatter("%(filename)s:%(lineno)s — %(name)s - %(threadName)s - %(funcName)s() — %(levelname)s — %(message)s")
       self.LOG_FILE = "lispat_app.log"
       self.logger = logging.getLogger(logger_name)
       self.logger.setLevel(logging.DEBUG) # better to have too much log than not enough
