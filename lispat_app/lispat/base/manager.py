@@ -13,8 +13,8 @@ class CommandManager:
             logger = Logger("CommandManager - init")
             full_path = os.path.abspath(path)
             if os.path.isdir(full_path):
-                logger.getLogger().info("CommandManager created with path={}".format(path))
-                self.path = path
+                logger.getLogger().info("CommandManager created with path={}".format(full_path))
+                self.path = full_path
             else:
                 logger.getLogger().error("Directory does not exist")
         except:

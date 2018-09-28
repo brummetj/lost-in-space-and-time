@@ -17,6 +17,7 @@ class DocumentFactory:
             self.docs = []
             self.docx = []
             self.pdf = []
+            ArgFactory = ArgumentFactory()
             try:
                 for file in os.listdir(path):
                     if file.endswith(".doc"):
@@ -34,9 +35,9 @@ class DocumentFactory:
                     else:
                         logger.getLogger().error("No elgible files in {}".format(path))
                 try:
-                    logger.getLogger().debug("Attemping to turn files into texts")
-                    self.word_data = word_documents(self.docx)
-                    self.pdf_data = pdf_documents(self.pdf)
+                    logger.getLogger().debug("Attempting to turn files into texts")
+                    # self.word_data = word_documents(self.docx)
+                    self.pdf_data = ArgFactory.pypdf_handler(self.pdf)
                 except:
                     logger.getLogger().error("Error occured turning documents into .txt files")
             except:
