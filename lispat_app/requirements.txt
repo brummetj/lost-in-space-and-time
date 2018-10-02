@@ -1,1 +1,7 @@
+docx2txt
+nltk
+pdfminer.six
 pygogo
+PyPDF2
+python-docx
+textract
