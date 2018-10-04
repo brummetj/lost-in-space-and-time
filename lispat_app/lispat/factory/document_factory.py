@@ -42,8 +42,9 @@ class DocumentFactory:
                 try:
                     logger.getLogger().debug("Trying to turn files into txt")
                     # self.word_data = doc_handler(self.docx)
-                    # self.pdf_data = ArgFactory.pypdf_handler(self.pdf)
+                    #self.pdf_data = ArgFactory.pypdf_handler(self.pdf)
                     self.pdf_data = ArgFactory.pdfminer_handler(self.pdf)
+                    #self.pdf_data = ArgFactory.tabula_handler(self.pdf)
                 except:
                     logger.getLogger().error("Error occured turning documents"
                                              " into .txt files")
