@@ -1,11 +1,10 @@
 import os
 import csv
-import time
 import docx
-import PyPDF2
 import docx2txt
 from io import StringIO
-from ..utils.logger import Logger
+#from ..utils.logger import Logger
+from lispat.utils.logger import Logger
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from pdfminer.converter import TextConverter
@@ -22,7 +21,6 @@ class ArgumentFactory:
         logger.getLogger().info("ArgumentFactory Created")
 
         path = os.path.abspath('./lispat/assets')
-        self.pyPDFdir = path + "/PyPDF_Data"
         self.pdfminerDir = path + "/pdfminer_Data"
         self.doc2txtDir = path + "/docx2txt_Data"
         self.docxDir = path + "/docx_Data"
@@ -165,16 +163,3 @@ class ArgumentFactory:
                 outputFile.close()
         except:
             logger.getLogger().error("Error Occured")
-
-        '''
-        try:
-            for (file, path) in data:
-                pdf = os.path.join(path, file)
-
-                file = os.path.splitext(file)[0]
-                csvFilename = self.csvDir + "/" + file + ".csv"
-
-                tabula.convert_into(pdf, csvFilename, output_format='csv')
-        except:
-            logger.getLogger().error("Error Occured")
-        '''

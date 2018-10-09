@@ -1,0 +1,1134 @@
+manager.py:19 — CommandManager - init - MainThread - __init__() — ERROR — Directory does not exist
+manager.py:29 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:29 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - OreillyGraphDatabases.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attemping to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - OreillyGraphDatabases.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attemping to turn files into texts
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - OreillyGraphDatabases.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:40 — DocumentFactory - MainThread - __init__() — DEBUG — Attemping to turn files into texts
+document_factory.py:44 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/.
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /.
+document_factory.py:40 — DocumentFactory - MainThread - __init__() — DEBUG — Attemping to turn files into texts
+document_factory.py:44 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:40 — DocumentFactory - MainThread - __init__() — DEBUG — Attemping to turn files into texts
+document_factory.py:44 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:40 — DocumentFactory - MainThread - __init__() — DEBUG — Attemping to turn files into texts
+document_factory.py:44 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:43 — DocumentFactory - MainThread - __init__() — DEBUG — Attemping to turn files into texts
+document_factory.py:47 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:43 — DocumentFactory - MainThread - __init__() — DEBUG — Attemping to turn files into texts
+document_factory.py:47 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attemping to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:43 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:35 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:27 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:37 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:18 — ArgumentFactory - MainThread - pdf_documents() — INFO — TESTING
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:16 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:16 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:16 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:17 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:17 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:17 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:27 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Declared Variables
+argument_factory.py:31 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: ./lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:51 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=./lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in ./lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in ./lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:17 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:27 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Declared Variables
+argument_factory.py:31 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: ./lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:51 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:62 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:82 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:80 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:84 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:63 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:84 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:63 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:85 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:63 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:84 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:63 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:85 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:63 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:87 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:63 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:85 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:63 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:88 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:63 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:89 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:63 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:87 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:46 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:60 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:63 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:85 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:47 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:61 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:64 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:86 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:51 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:65 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:68 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:94 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:51 — ArgumentFactory - MainThread - pdf_documents() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:65 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File: /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf
+argument_factory.py:68 — ArgumentFactory - MainThread - pdf_documents() — DEBUG — Opening File Successful
+argument_factory.py:94 — ArgumentFactory - MainThread - pdf_documents() — ERROR — Error Occured
+document_factory.py:42 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documents into .txt files
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:19 — ArgumentFactory - MainThread - pypdf_handler() — INFO — ArgumentFactory - PDF to Text
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - OreillyGraphDatabases.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:36 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:28 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:38 — DocumentFactory - MainThread - __init__() — DEBUG — Attempting to turn files into texts
+argument_factory.py:24 — ArgumentFactory - MainThread - pypdf_handler() — INFO — ArgumentFactory - PDF to Text
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:27 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:16 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+manager.py:30 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:30 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:15 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+argument_factory.py:29 — ArgumentFactory - init - MainThread - __init__() — INFO — Text Files Directory created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/assetstextFiles
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - OreillyGraphDatabases.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:43 — DocumentFactory - MainThread - __init__() — DEBUG — Trying to turn files into txt
+document_factory.py:47 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documentsinto .txt files
+manager.py:31 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:31 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:33 — CommandManager - init - MainThread - run() — ERROR — Error Occured
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+argument_factory.py:29 — ArgumentFactory - init - MainThread - __init__() — INFO — Text Files Directory created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/textFiles
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - OreillyGraphDatabases.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:43 — DocumentFactory - MainThread - __init__() — DEBUG — Trying to turn files into txt
+document_factory.py:47 — DocumentFactory - MainThread - __init__() — ERROR — Error occured turning documentsinto .txt files
+manager.py:31 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:31 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+argument_factory.py:27 — ArgumentFactory - init - MainThread - __init__() — INFO — Text Files Directory created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/textFiles
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - OreillyGraphDatabases.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:43 — DocumentFactory - MainThread - __init__() — DEBUG — Trying to turn files into txt
+argument_factory.py:37 — ArgumentFactory - init - MainThread - pypdf_handler() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:37 — ArgumentFactory - init - MainThread - pypdf_handler() — INFO — ArgumentFactory - PDF to Text
+manager.py:31 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:31 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:19 — CommandManager - init - MainThread - __init__() — INFO — CommandManager created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:16 — DocumentFactory - MainThread - __init__() — INFO — DocumentFactory Created
+argument_factory.py:19 — ArgumentFactory - init - MainThread - __init__() — INFO — ArgumentFactory Created
+argument_factory.py:27 — ArgumentFactory - init - MainThread - __init__() — INFO — Text Files Directory created with path=/Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets/textFiles
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - FDA Content of Premarket Submissions for Management of Cybersecurity in Medical Devices (2014).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - OreillyGraphDatabases.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - TIR57 - 2016 Principles for Medical Device Security - Risk Management.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - K061248 - Example Regulatory Filing (510k).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - BSI 14971 Application of risk management to medical devices (2012).pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:41 — DocumentFactory - MainThread - __init__() — ERROR — No elgible files in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - IEC 62304 - 2006 Medical Device Software - Software Life Cycle Processes.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:31 — DocumentFactory - MainThread - __init__() — DEBUG — File - Postmarket_Management_of_Cybersecurity_in_Medical_Devices_Guidance_for_Industry_and_Food_and_Drug_Administration_Staff.pdf in /Users/user/Documents/School/2018-2019/Fall/SeniorDesign/Development/lost-in-space-and-time/lispat_app/lispat/assets
+document_factory.py:43 — DocumentFactory - MainThread - __init__() — DEBUG — Trying to turn files into txt
+argument_factory.py:37 — ArgumentFactory - init - MainThread - pypdf_handler() — INFO — ArgumentFactory - PDF to Text
+argument_factory.py:37 — ArgumentFactory - init - MainThread - pypdf_handler() — INFO — ArgumentFactory - PDF to Text
+manager.py:31 — CommandManager - init - MainThread - run() — INFO — Documents converted
+manager.py:31 — CommandManager - init - MainThread - run() — INFO — Documents converted

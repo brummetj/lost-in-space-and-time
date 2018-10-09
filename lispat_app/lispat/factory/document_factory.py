@@ -1,6 +1,8 @@
 import os
-from ..utils.logger import Logger
-from .argument_factory import ArgumentFactory
+#from ..utils.logger import Logger
+#from .argument_factory import ArgumentFactory
+from lispat.utils.logger import Logger
+from lispat.factory.argument_factory import ArgumentFactory
 
 
 class DocumentFactory:
@@ -16,7 +18,6 @@ class DocumentFactory:
             logger.getLogger().info("DocumentFactory Created")
             self.path = path
             self.docs = []
-            self.docx = []
             self.pdf = []
             ArgFactory = ArgumentFactory()
             try:
@@ -26,25 +27,24 @@ class DocumentFactory:
                                                  .format(file, path))
                         self.docs.append((file, path))
 
+                    elif file.endswith(".docx"):
+                        logger.getLogger().debug("File - {} in {}"
+                                                 .format(file, path))
+                        self.docs.append((file, path))
+
                     elif file.endswith(".pdf"):
                         logger.getLogger().debug("File - {} in {}"
                                                  .format(file, path))
                         self.pdf.append((file, path))
-
-                    elif file.endswith(".docx"):
-                        logger.getLogger().debug("File - {} in {}"
-                                                 .format(file, path))
-                        self.docx.append((file, path))
 
                     else:
                         logger.getLogger().error("No elgible files in {}"
                                                  .format(path))
                 try:
                     logger.getLogger().debug("Trying to turn files into txt")
-                    # self.word_data = doc_handler(self.docx)
-                    #self.pdf_data = ArgFactory.pypdf_handler(self.pdf)
+                    self.word_data = ArgFactory.docx_handler(self.docs)
                     self.pdf_data = ArgFactory.pdfminer_handler(self.pdf)
-                    #self.pdf_data = ArgFactory.tabula_handler(self.pdf)
+                    self.csv_data = ArgFactory.csv_handler()
                 except:
                     logger.getLogger().error("Error occured turning documents"
                                              " into .txt files")

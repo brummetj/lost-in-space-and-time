@@ -11,7 +11,7 @@ Options:
 
 """
 import docopt
-from .base.manager import CommandManager
+from lispat.base.manager import CommandManager
 
 def main():
   # logging = Logger("Main")
