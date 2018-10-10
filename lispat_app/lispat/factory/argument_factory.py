@@ -3,7 +3,6 @@ import csv
 import docx
 import docx2txt
 from io import StringIO
-#from ..utils.logger import Logger
 from lispat.utils.logger import Logger
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
