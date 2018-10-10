@@ -1,6 +1,4 @@
 import os
-#from ..utils.logger import Logger
-#from ..factory.document_factory import DocumentFactory
 from lispat.utils.logger import Logger
 from lispat.factory.document_factory import DocumentFactory
 
