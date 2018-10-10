@@ -6,4 +6,5 @@ lispat_app/build
 lispat_app/lispat/__pycache__
 */__pycache__/
 *.pyc
-
+*.log
+*.idea
