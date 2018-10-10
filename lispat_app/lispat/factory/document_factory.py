@@ -5,6 +5,7 @@ from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
 
 
+
 class DocumentFactory:
     """
     This class should break up the dir path by file types
