@@ -6,3 +6,4 @@ lispat_app/build
 lispat_app/__pycache__
 *.pyc
 .idea/
+.DS_Store
