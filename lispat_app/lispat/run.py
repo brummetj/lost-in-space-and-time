@@ -13,6 +13,7 @@ Options:
 import docopt
 from lispat.base.manager import CommandManager
 
+
 def main():
   # logging = Logger("Main")
   args = docopt.docopt(__doc__)
