@@ -5,4 +5,4 @@ lispat_app/dist
 lispat_app/build
 lispat_app/__pycache__
 *.pyc
-.idea
+.idea/
