@@ -7,3 +7,10 @@ lispat_app/lispat/__pycache__
 */__pycache__
 *.pyc
 *.log
+lispat.egg-info/
+dist/
+build/
+__pycache__/
+*.pyc
+*.log
+*.idea

@@ -11,35 +11,48 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 
 
 class ArgumentFactory:
-
     '''
     This class handles the arguments and converts them to txt files.
     '''
+
     def __init__(self):
+
         logger = Logger("ArgumentFactory - init")
         logger.getLogger().info("ArgumentFactory Created")
 
-        path = os.path.abspath('./lispat/assets')
-        self.pdfminerDir = path + "/pdfminer_Data"
-        self.doc2txtDir = path + "/docx2txt_Data"
-        self.docxDir = path + "/docx_Data"
-        self.csvDir = path + "/csv_Data"
+        directory_storage = "/usr/local/var/lispat/"
+        self.pdfminer_dir = directory_storage + "/pdfminer_Data"
+        self.doc2txt_dir = directory_storage + "/docx2txt_Data"
+        self.docx_dir = directory_storage + "/docx_Data"
+        self.csv_dir = directory_storage + "/csv_Data"
+
+        if not os.path.exists(directory_storage):
+            os.makedirs(directory_storage)
+
+        # just a simple check to see if we have these dirs in the storage path already
+        if len(os.listdir(directory_storage)) == 0:
+            os.makedirs(self.pdfminer_dir)
+            os.makedirs(self.doc2txt_dir)
+            os.makedirs(self.docx_dir)
+            os.makedirs(self.csv_dir)
 
     '''
     Function using pdfminer to extract text from pdfs and
     store them into an array of text files
     '''
+
     def pdfminer_handler(self, data):
         logger = Logger("ArgumentFactory")
         logger.getLogger().info("ArgumentFactory - PDFMiner")
 
-        self.txt = []
-        pagenums = set()
+        page_nums = set()
         output = StringIO()
-        laparams = LAParams()
+        la_params = LAParams()
         manager = PDFResourceManager()
-        converter = TextConverter(manager, output, laparams)
+        converter = TextConverter(manager, output, la_params)
         interpreter = PDFPageInterpreter(manager, converter)
+
+        self.txt = []
 
         try:
             for (file, path) in data:
@@ -50,25 +63,29 @@ class ArgumentFactory:
                     with open(pdf, 'rb') as infile:
                         logger.getLogger().debug("Opening File Successful")
 
-                        for page in PDFPage.get_pages(infile, pagenums):
-                                interpreter.process_page(page)
+                        for page in PDFPage.get_pages(infile, page_nums):
+                            interpreter.process_page(page)
 
                         text = output.getvalue()
                         file = os.path.splitext(file)[0]
-                        textFilename = self.pdfminerDir + "/" + file + ".txt"
-                        textFile = open(textFilename, "w")
+
+                        text_filename = self.pdfminer_dir + "/" + file + ".txt"
+                        text_file = open(text_filename, "w")
+
                         logger.getLogger().debug("File - {} opened for writing"
-                                                 .format(textFilename))
-                        textFile.write(text)
+                                                 .format(text_filename))
+
+                        text_file.write(text)
                         logger.getLogger().debug("File - {} in {}"
                                                  .format(file, path))
-                        self.txt.append((textFilename, self.pdfminerDir))
+
+                        self.txt.append((text_filename, self.pdfminer_dir))
                         infile.close()
 
                     converter.close()
-                    output.close
-                    textFile.close()
-                except:
+                    output.close()
+                    text_file.close()
+                except :
                     logger.getLogger().error("File Failed to Open")
         except:
             logger.getLogger().error("Error Occured")
@@ -79,6 +96,7 @@ class ArgumentFactory:
     Function using docx library to extract text from word docs and
     store them into an array of text files
     '''
+
     def docx_handler(self, data):
         logger = Logger("ArgumentFactory")
         logger.getLogger().info("ArgumentFactory - docx")
@@ -93,11 +111,11 @@ class ArgumentFactory:
                     doc_text.append(para.text)
 
                 file = os.path.splitext(file)[0]
-                textFilename = self.docxDir + "/" + file + ".txt"
+                text_filename = self.docx_dir + "/" + file + ".txt"
 
-                textFile = open(textFilename, "w")
-                textFile.write(doc_text)
-                self.txt.append((textFilename, path))
+                text_file = open(text_filename, "w")
+                text_file.write(doc_text)
+                self.txt.append((text_filename, path))
         except:
             logger.getLogger().error("Error Occured")
 
@@ -107,6 +125,7 @@ class ArgumentFactory:
     Function using docx library to extract text from word docs and
     store them into an array of text files
     '''
+
     def docx2txt_handler(self, data):
         logger = Logger("ArgumentFactory")
         logger.getLogger().info("ArgumentFactory - docx2txt")
@@ -119,11 +138,11 @@ class ArgumentFactory:
                 doc_text = docx2txt.process(doc_file)
 
                 file = os.path.splitext(file)[0]
-                textFilename = self.doc2txtDir + "/" + file + ".txt"
+                text_filename = self.doc2txt_dir + "/" + file + ".txt"
 
-                textFile = open(textFilename, "w")
-                textFile.write(doc_text)
-                self.txt.append((textFilename, path))
+                text_file = open(text_filename, "w")
+                text_file.write(doc_text)
+                self.txt.append((text_filename, path))
         except:
             logger.getLogger().error("Error Occured")
 
@@ -133,18 +152,19 @@ class ArgumentFactory:
     Function using tabula library to extract text from word docs and
     store them into an array of csv files
     '''
+
     def csv_handler(self):
         logger = Logger("ArgumentFactory")
         logger.getLogger().info("ArgumentFactory - csv_handler")
 
         try:
-            for file in os.listdir(self.pdfminerDir):
+            for file in os.listdir(self.pdfminer_dir):
 
-                textFile = self.pdfminerDir + "/" + file
+                textFile = self.pdfminer_dir + "/" + file
                 print(textFile)
 
                 file = os.path.splitext(file)[0]
-                csvFilename = self.csvDir + "/" + file + ".csv"
+                csvFilename = self.csv_dir + "/" + file + ".csv"
 
                 with open(textFile, 'r', newline='') as inputFile:
                     print("Text file opened")

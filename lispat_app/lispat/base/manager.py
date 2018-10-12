@@ -2,6 +2,7 @@ import os
 from lispat.utils.logger import Logger
 from lispat.factory.document_factory import DocumentFactory
 
+
 class CommandManager:
 
     """
