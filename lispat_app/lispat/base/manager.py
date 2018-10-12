@@ -1,14 +1,10 @@
 import os
-<<<<<<< HEAD
+
 #from ..utils.logger import Logger
 #from ..factory.document_factory import DocumentFactory
 from lispat.utils.logger import Logger
 from lispat.factory.document_factory import DocumentFactory
-=======
-from ..utils.logger import Logger
-from ..factory.document_factory import DocumentFactory
 
->>>>>>> d25477b05a0d6e4876f097c427def8ec1d5fc0b5
 
 class CommandManager:
 
