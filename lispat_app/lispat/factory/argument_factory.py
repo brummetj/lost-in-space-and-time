@@ -11,6 +11,8 @@ from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 
 
+logger = Logger("ArgumentFactory")
+
 class ArgumentFactory:
     '''
     This class handles the arguments and converts them to txt files.
@@ -18,14 +20,13 @@ class ArgumentFactory:
 
     def __init__(self):
 
-        logger = Logger("ArgumentFactory - init")
-        logger.getLogger().info("ArgumentFactory Created")
+        logger.getLogger().info("Argument factory init")
 
         directory_storage = "/usr/local/var/lispat/"
-        self.pdfminer_dir = directory_storage + "/pdfminer_Data"
-        self.doc2txt_dir = directory_storage + "/docx2txt_Data"
-        self.docx_dir = directory_storage + "/docx_Data"
-        self.csv_dir = directory_storage + "/csv_Data"
+        self.pdfminer_dir = directory_storage + "pdf_data/"
+        self.doc2txt_dir = directory_storage + "doc_data/"
+        self.docx_dir = directory_storage + "docx_data/"
+        self.csv_dir = directory_storage + "csv_data/"
 
         if not os.path.exists(directory_storage):
             os.makedirs(directory_storage)
@@ -37,14 +38,15 @@ class ArgumentFactory:
             os.makedirs(self.docx_dir)
             os.makedirs(self.csv_dir)
 
+        self.txt = []
     '''
     Function using pdfminer to extract text from pdfs and
     store them into an array of text files
     '''
 
     def pdfminer_handler(self, data):
-        logger = Logger("ArgumentFactory")
-        logger.getLogger().info("ArgumentFactory - PDFMiner")
+
+        logger.getLogger().info("running PDFMiner")
 
         page_nums = set()
         output = StringIO()
@@ -53,11 +55,15 @@ class ArgumentFactory:
         converter = TextConverter(manager, output, la_params)
         interpreter = PDFPageInterpreter(manager, converter)
 
-        self.txt = []
-
         try:
             for (file, path) in data:
                 pdf = os.path.join(path, file)
+                pdf_saved = self.pdfminer_dir + file
+
+                pdf_saved = os.path.splitext(pdf_saved)[0] + '.txt'
+                if os.path.exists(pdf_saved):
+                    logger.getLogger().debug("Already Exits: " + file)
+                    continue
 
                 logger.getLogger().debug("Opening File: {}".format(pdf))
                 try:
@@ -73,7 +79,7 @@ class ArgumentFactory:
                         text_filename = self.pdfminer_dir + "/" + file + ".txt"
                         text_file = open(text_filename, "w")
 
-                        logger.getLogger().debug("File - {} opened for writing"
+                        logger.getLogger().debug("File opened for writing - {}"
                                                  .format(text_filename))
 
                         text_file.write(text)
@@ -84,12 +90,12 @@ class ArgumentFactory:
                         infile.close()
 
                     converter.close()
-                    output.close()
+                    # output.close
                     text_file.close()
-                except :
-                    logger.getLogger().error("File Failed to Open")
-        except:
-            logger.getLogger().error("Error Occured")
+                except ImportError as error:
+                    logger.getLogger().error(error)
+        except RuntimeError as error:
+            logger.getLogger().error(error)
 
         return self.txt
 
@@ -99,10 +105,9 @@ class ArgumentFactory:
     '''
 
     def docx_handler(self, data):
-        logger = Logger("ArgumentFactory")
-        logger.getLogger().info("ArgumentFactory - docx")
+
+        logger.getLogger().info("running docx")
         doc_text = []
-        self.txt = []
         try:
             for (file, path) in data:
                 doc_file = os.path.join(path, file)
@@ -117,8 +122,8 @@ class ArgumentFactory:
                 text_file = open(text_filename, "w")
                 text_file.write(doc_text)
                 self.txt.append((text_filename, path))
-        except:
-            logger.getLogger().error("Error Occured")
+        except RuntimeError as error:
+            logger.getLogger().error(error)
 
         return self.txt
 
@@ -128,8 +133,7 @@ class ArgumentFactory:
     '''
 
     def docx2txt_handler(self, data):
-        logger = Logger("ArgumentFactory")
-        logger.getLogger().info("ArgumentFactory - docx2txt")
+        logger.getLogger().info("running docx2txt")
 
         self.txt = []
         try:
@@ -144,8 +148,8 @@ class ArgumentFactory:
                 text_file = open(text_filename, "w")
                 text_file.write(doc_text)
                 self.txt.append((text_filename, path))
-        except:
-            logger.getLogger().error("Error Occured")
+        except RuntimeError as error:
+            logger.getLogger().error(error)
 
         return self.txt
 
@@ -155,31 +159,32 @@ class ArgumentFactory:
     '''
 
     def csv_handler(self):
-        logger = Logger("ArgumentFactory")
-        logger.getLogger().info("ArgumentFactory - csv_handler")
+        logger.getLogger().info("csv_handler")
 
         try:
             for file in os.listdir(self.pdfminer_dir):
 
-                textFile = self.pdfminer_dir + "/" + file
-                print(textFile)
+                text_file = self.pdfminer_dir + "/" + file
+                print(text_file)
 
                 file = os.path.splitext(file)[0]
-                csvFilename = self.csv_dir + "/" + file + ".csv"
+                csv_filename = self.csv_dir + "/" + file + ".csv"
 
-                with open(textFile, 'r', newline='') as inputFile:
-                    print("Text file opened")
+                with open(text_file, 'r', newline='') as inputFile:
+                    logger.getLogger().debug("Text file opened: " + text_file)
+
                     reader = csv.reader(inputFile, delimiter=" ")
-                    print("reader created")
-                    with open(csvFilename, 'w', newline='') as outputFile:
-                        print("csv file opened")
+                    logger.getLogger().debug("render created")
+
+                    with open(csv_filename, 'w', newline='') as outputFile:
+                        logger.getLogger().debug("csv file opened")
+
                         writer = csv.writer(outputFile)
-                        print("writer created")
+                        logger.getLogger().debug("writer created")
                         for row in reader:
-                            print("inside for loop")
                             writer.writerow(row)
 
                 inputFile.close()
                 outputFile.close()
-        except:
-            logger.getLogger().error("Error Occured")
+        except RuntimeError as error:
+            logger.getLogger().error(error)

@@ -1,9 +1,8 @@
 venv/
 *.swp
-lispat.egg-info/
-dist/
-build/
-__pycache__/
+lispat_app/lispat.egg-info
+lispat_app/dist
+lispat_app/build
+lispat_app/__pycache__
 *.pyc
-*.log
-*.idea
+.idea
