@@ -42,23 +42,6 @@ class ArgumentFactory:
             os.makedirs(self.csv_dir)
 
         self.txt = []
-    '''
-    Function using PyPDF2 to decrypt a secured pdf file
-    '''
-    def decrypt_pdf(input_path, output_path, password):
-        logger = Logger("ArgumentFactory")
-        logger.getLogger().info("ArgumentFactory - PyPDF2")
-        with open(input_path, 'rb') as input_file, \
-             open(output_path, 'wb') as output_file:
-                reader = PdfFileReader(input_file)
-                reader.decrypt(password)
-
-                writer = PdfFileWriter()
-
-                for i in range(reader.getNumPages()):
-                    writer.addPage(reader.getPage(i))
-
-                    writer.write(output_file)
 
     '''
     Function using pdfminer to extract text from pdfs and
