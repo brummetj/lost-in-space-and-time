@@ -3,7 +3,6 @@ from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
 
 
-
 class DocumentFactory:
     """
     This class should break up the dir path by file types
@@ -21,17 +20,17 @@ class DocumentFactory:
             try:
                 for file in os.listdir(path):
                     if file.endswith(".doc"):
-                        logger.getLogger().debug("File - {} in {}"
-                                                 .format(file, path))
+                        logger.getLogger().debug("File - {}"
+                                                 .format(file))
                         self.docs.append((file, path))
 
                     elif file.endswith(".docx"):
-                        logger.getLogger().debug("File - {} in {}"
-                                                 .format(file, path))
+                        logger.getLogger().debug("File - {}"
+                                                 .format(file))
                         self.docs.append((file, path))
 
                     elif file.endswith(".pdf"):
-                        logger.getLogger().debug("File - {} in {}"
+                        logger.getLogger().debug("File - {}"
                                                  .format(file, path))
                         self.pdf.append((file, path))
 

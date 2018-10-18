@@ -3,6 +3,7 @@ import csv
 import docx
 import docx2txt
 from io import StringIO
+from PyPDF2 import PdfFileReader, PdfFileWriter
 from lispat.utils.logger import Logger
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
@@ -20,6 +21,8 @@ class ArgumentFactory:
         logger = Logger("ArgumentFactory - init")
         logger.getLogger().info("ArgumentFactory Created")
 
+        self.txt = []
+
         directory_storage = "/usr/local/var/lispat/"
         self.pdfminer_dir = directory_storage + "/pdfminer_Data"
         self.doc2txt_dir = directory_storage + "/docx2txt_Data"
@@ -29,12 +32,30 @@ class ArgumentFactory:
         if not os.path.exists(directory_storage):
             os.makedirs(directory_storage)
 
-        # just a simple check to see if we have these dirs in the storage path already
+        # Simple check to see if we have these dirs in the storage path already
         if len(os.listdir(directory_storage)) == 0:
             os.makedirs(self.pdfminer_dir)
             os.makedirs(self.doc2txt_dir)
             os.makedirs(self.docx_dir)
             os.makedirs(self.csv_dir)
+
+    '''
+    Function using PyPDF2 to decrypt a secured pdf file
+    '''
+    def decrypt_pdf(input_path, output_path, password):
+        logger = Logger("ArgumentFactory")
+        logger.getLogger().info("ArgumentFactory - PyPDF2")
+        with open(input_path, 'rb') as input_file, \
+             open(output_path, 'wb') as output_file:
+                reader = PdfFileReader(input_file)
+                reader.decrypt(password)
+
+                writer = PdfFileWriter()
+
+                for i in range(reader.getNumPages()):
+                    writer.addPage(reader.getPage(i))
+
+                    writer.write(output_file)
 
     '''
     Function using pdfminer to extract text from pdfs and
@@ -52,13 +73,12 @@ class ArgumentFactory:
         converter = TextConverter(manager, output, la_params)
         interpreter = PDFPageInterpreter(manager, converter)
 
-        self.txt = []
-
         try:
             for (file, path) in data:
                 pdf = os.path.join(path, file)
 
                 logger.getLogger().debug("Opening File: {}".format(pdf))
+                
                 try:
                     with open(pdf, 'rb') as infile:
                         logger.getLogger().debug("Opening File Successful")
@@ -77,18 +97,20 @@ class ArgumentFactory:
 
                         text_file.write(text)
                         logger.getLogger().debug("File - {} in {}"
-                                                 .format(file, path))
+                                                 .format(file))
 
                         self.txt.append((text_filename, self.pdfminer_dir))
                         infile.close()
 
-                    converter.close()
-                    output.close()
-                    text_file.close()
-                except :
+                except FileNotFoundError:
                     logger.getLogger().error("File Failed to Open")
-        except:
+
+        except RuntimeError:
             logger.getLogger().error("Error Occured")
+
+        converter.close()
+        output.close()
+        text_file.close()
 
         return self.txt
 
@@ -101,7 +123,7 @@ class ArgumentFactory:
         logger = Logger("ArgumentFactory")
         logger.getLogger().info("ArgumentFactory - docx")
         doc_text = []
-        self.txt = []
+
         try:
             for (file, path) in data:
                 doc_file = os.path.join(path, file)
@@ -116,7 +138,7 @@ class ArgumentFactory:
                 text_file = open(text_filename, "w")
                 text_file.write(doc_text)
                 self.txt.append((text_filename, path))
-        except:
+        except RuntimeError:
             logger.getLogger().error("Error Occured")
 
         return self.txt
@@ -130,7 +152,6 @@ class ArgumentFactory:
         logger = Logger("ArgumentFactory")
         logger.getLogger().info("ArgumentFactory - docx2txt")
 
-        self.txt = []
         try:
             for (file, path) in data:
                 doc_file = os.path.join(path, file)
@@ -143,7 +164,7 @@ class ArgumentFactory:
                 text_file = open(text_filename, "w")
                 text_file.write(doc_text)
                 self.txt.append((text_filename, path))
-        except:
+        except RuntimeError:
             logger.getLogger().error("Error Occured")
 
         return self.txt
@@ -180,5 +201,5 @@ class ArgumentFactory:
 
                 inputFile.close()
                 outputFile.close()
-        except:
+        except RuntimeError:
             logger.getLogger().error("Error Occured")
