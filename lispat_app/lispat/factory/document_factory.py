@@ -2,6 +2,8 @@ import os
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
 
+logger = Logger("DocumentFactory")
+
 
 class DocumentFactory:
     """
@@ -11,39 +13,38 @@ class DocumentFactory:
     """
 
     def __init__(self, path):
-            logger = Logger("DocumentFactory")
-            logger.getLogger().info("DocumentFactory Created")
-            self.path = path
-            self.docs = []
-            self.pdf = []
+
+        logger.getLogger().info("DocumentFactory Created")
+
+        self.path = path
+        self.docs = []
+        self.pdf = []
+        try:
+            for file in os.listdir(path):
+                if file.endswith(".doc"):
+                    logger.getLogger().debug("File Found - {} in {}"
+                                             .format(file, path))
+                    self.docs.append((file, path))
+
+                if file.endswith(".docx"):
+                    logger.getLogger().debug("File Found - {} in {}"
+                                             .format(file, path))
+                    self.docs.append((file, path))
+
+                if file.endswith(".pdf"):
+                    logger.getLogger().debug("File Found - {} in {}"
+                                             .format(file, path))
+                    self.pdf.append((file, path))
+
+        except FileNotFoundError as error:
+            logger.getLogger().error(error)
+
+    def convert_file(self):
+        try:
             args_ = ArgumentFactory()
-            try:
-                for file in os.listdir(path):
-                    if file.endswith(".doc"):
-                        logger.getLogger().debug("File - {}"
-                                                 .format(file))
-                        self.docs.append((file, path))
-
-                    elif file.endswith(".docx"):
-                        logger.getLogger().debug("File - {}"
-                                                 .format(file))
-                        self.docs.append((file, path))
-
-                    elif file.endswith(".pdf"):
-                        logger.getLogger().debug("File - {}"
-                                                 .format(file, path))
-                        self.pdf.append((file, path))
-
-                    else:
-                        logger.getLogger().error("No elgible files in {}"
-                                                 .format(path))
-                try:
-                    logger.getLogger().debug("Trying to turn files into txt")
-                    self.word_data = args_.docx_handler(self.docs)
-                    self.pdf_data = args_.pdfminer_handler(self.pdf)
-                    self.csv_data = args_.csv_handler()
-                except:
-                    logger.getLogger().error("Error occured turning documents"
-                                             " into .txt files")
-            except:
-                logger.getLogger().error("Error Occured")
+            word_data_txt = args_.docx_handler(self.docs)
+            pdf_data_txt = args_.pdfminer_handler(self.pdf)
+            return word_data_txt, pdf_data_txt
+        except RuntimeError as error:
+            logger.getLogger().error(error)
+            exit(1)
