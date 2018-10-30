@@ -26,7 +26,8 @@ install_requires = [
     'textract',
     'docopt',
     'pocketsphinx==0.1.3',
-    'nltk'
+    'nltk',
+    'gensim'
     ]
 
 setup(
