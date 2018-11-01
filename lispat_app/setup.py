@@ -7,7 +7,7 @@ except ImportError:
     import os
     import re
 
-    def find_packages(path =''):
+    def find_packages(path=''):
         ret = []
 
         for root, dirs, files, in os.walk(path):
