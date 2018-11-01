@@ -13,5 +13,12 @@ build/
 __pycache__/
 =======
 lispat_app/__pycache__
+<<<<<<< HEAD
+=======
+>>>>>>> 56529b742cb7892f6ba8510b479c88ef1fbbf6e6
+*.pyc
+.pyc
+.log
+>>>>>>> 5c8ae1de1f08be9826005d6177a6299ef5eddb1e
 .idea/
 .DS_Store

@@ -1,7 +1,6 @@
 import os
 import csv
 import docx
-import docx2txt
 from io import StringIO
 from lispat.utils.logger import Logger
 from pdfminer.layout import LAParams
@@ -39,14 +38,11 @@ class ArgumentFactory:
             os.makedirs(self.docx_dir)
             os.makedirs(self.csv_dir)
 
-        self.txt = []
-
-
     '''
     Function using pdfminer to extract text from pdfs and
     store them into an array of text files
     '''
-    def pdfminer_handler(self, file, path, pdf_output):
+    def pdfminer_handler(self, file, path, queue):
 
         logger.getLogger().info("running PDFMiner")
 
@@ -66,7 +62,7 @@ class ArgumentFactory:
             if os.path.exists(pdf_saved):
                 logger.getLogger().debug("Already Exits: " + file)
                 self.txt.append((pdf_saved, self.pdfminer_dir))
-                pdf_output.put(self.txt)
+                queue.put(self.txt)
                 return None
 
             logger.getLogger().debug("Opening File: {}".format(pdf))
@@ -95,27 +91,37 @@ class ArgumentFactory:
                     converter.close()
                     output.close
                     text_file.close()
+                    queue.put(self.txt)
             except ImportError as error:
                 logger.getLogger().error(error)
         except RuntimeError as error:
             logger.getLogger().error(error)
 
-        pdf_output.put(self.txt)
-
     '''
     Function using docx library to extract text from word docs and
     store them into an array of text files
     '''
-
-    def docx_handler(self, file, path, doc_output):
+    def docx_handler(self, file, path, queue):
         logger.getLogger().info("running docx")
         doc_text = []
         try:
+
             doc_file = os.path.join(path, file)
+            doc_saved = self.docx_dir + file
+            doc_saved = os.path.splitext(doc_saved)[0] + '.txt'
+
+            if os.path.exists(doc_saved):
+                logger.getLogger().debug("Already Exits: " + file)
+                self.txt.append((doc_saved, self.docx_dir))
+                queue.put(self.txt)
+                return None
+
             doc = docx.Document(doc_file)
 
             for para in doc.paragraphs:
                 doc_text.append(para.text)
+
+            doc_text = '\n'.join(doc_text)
 
             file = os.path.splitext(file)[0]
             text_filename = self.docx_dir + "/" + file + ".txt"
@@ -123,39 +129,14 @@ class ArgumentFactory:
             text_file = open(text_filename, "w")
             text_file.write(doc_text)
             self.txt.append((text_filename, path))
+            queue.put(self.txt)
         except RuntimeError as error:
             logger.getLogger().error(error)
 
-        doc_output.put(doc_text)
-
-    '''
-    Function using docx library to extract text from word docs and
-    store them into an array of text files
-    '''
-    def docx2txt_handler(self, file, path, doc_output):
-        logger.getLogger().info("running docx2txt")
-        doc_text = []
-        try:
-            doc_file = os.path.join(path, file)
-
-            doc_text = docx2txt.process(doc_file)
-
-            file = os.path.splitext(file)[0]
-            text_filename = self.doc2txt_dir + "/" + file + ".txt"
-
-            text_file = open(text_filename, "w")
-            text_file.write(doc_text)
-            self.txt.append((text_filename, path))
-        except RuntimeError as error:
-            logger.getLogger().error(error)
-
-        doc_output.put(doc_text)
-        
     '''
     Function using tabula library to extract text from word docs and
     store them into an array of csv files
     '''
-
     def csv_handler(self):
         logger.getLogger().info("csv_handler")
 
@@ -163,7 +144,6 @@ class ArgumentFactory:
             for file in os.listdir(self.pdfminer_dir):
 
                 text_file = self.pdfminer_dir + "/" + file
-                print(text_file)
 
                 file = os.path.splitext(file)[0]
                 csv_filename = self.csv_dir + "/" + file + ".csv"
@@ -171,7 +151,7 @@ class ArgumentFactory:
                 with open(text_file, 'r', newline='') as inputFile:
                     logger.getLogger().debug("Text file opened: " + text_file)
 
-                    reader = csv.reader(inputFile, delimiter=" ")
+                    reader = csv.reader(inputFile, delimiter=".")
                     logger.getLogger().debug("render created")
 
                     with open(csv_filename, 'w', newline='') as outputFile:
