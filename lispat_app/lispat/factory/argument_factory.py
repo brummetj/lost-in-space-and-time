@@ -1,7 +1,6 @@
 import os
 import csv
 import docx
-import docx2txt
 from io import StringIO
 from lispat.utils.logger import Logger
 from pdfminer.layout import LAParams
@@ -10,155 +9,162 @@ from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 
 
-class ArgumentFactory:
+logger = Logger("ArgumentFactory")
 
+
+class ArgumentFactory:
     '''
     This class handles the arguments and converts them to txt files.
     '''
-    def __init__(self):
-        logger = Logger("ArgumentFactory - init")
-        logger.getLogger().info("ArgumentFactory Created")
 
-        path = os.path.abspath('./lispat/assets')
-        self.pdfminerDir = path + "/pdfminer_Data"
-        self.doc2txtDir = path + "/docx2txt_Data"
-        self.docxDir = path + "/docx_Data"
-        self.csvDir = path + "/csv_Data"
+    def __init__(self):
+
+        logger.getLogger().info("Argument factory init")
+
+        self.txt = []
+
+        directory_storage = "/usr/local/var/lispat/"
+        self.pdfminer_dir = directory_storage + "pdf_data/"
+        self.doc2txt_dir = directory_storage + "doc_data/"
+        self.docx_dir = directory_storage + "docx_data/"
+        self.csv_dir = directory_storage + "csv_data/"
+
+        if not os.path.exists(directory_storage):
+            os.makedirs(directory_storage)
+
+        # Simple check to see if we have these dirs in the storage path already
+        if len(os.listdir(directory_storage)) == 0:
+            os.makedirs(self.pdfminer_dir)
+            os.makedirs(self.doc2txt_dir)
+            os.makedirs(self.docx_dir)
+            os.makedirs(self.csv_dir)
 
     '''
     Function using pdfminer to extract text from pdfs and
     store them into an array of text files
     '''
-    def pdfminer_handler(self, data):
-        logger = Logger("ArgumentFactory")
-        logger.getLogger().info("ArgumentFactory - PDFMiner")
+    def pdfminer_handler(self, file, path, queue):
 
-        self.txt = []
-        pagenums = set()
+        logger.getLogger().info("running PDFMiner")
+
+        page_nums = set()
         output = StringIO()
-        laparams = LAParams()
+        la_params = LAParams()
         manager = PDFResourceManager()
-        converter = TextConverter(manager, output, laparams)
+        converter = TextConverter(manager, output, la_params)
         interpreter = PDFPageInterpreter(manager, converter)
 
         try:
-            for (file, path) in data:
-                pdf = os.path.join(path, file)
+            pdf = os.path.join(path, file)
+            pdf_saved = self.pdfminer_dir + file
 
-                logger.getLogger().debug("Opening File: {}".format(pdf))
-                try:
-                    with open(pdf, 'rb') as infile:
-                        logger.getLogger().debug("Opening File Successful")
+            pdf_saved = os.path.splitext(pdf_saved)[0] + '.txt'
 
-                        for page in PDFPage.get_pages(infile, pagenums):
-                                interpreter.process_page(page)
+            if os.path.exists(pdf_saved):
+                logger.getLogger().debug("Already Exits: " + file)
+                self.txt.append((pdf_saved, self.pdfminer_dir))
+                queue.put(self.txt)
+                return None
 
-                        text = output.getvalue()
-                        file = os.path.splitext(file)[0]
-                        textFilename = self.pdfminerDir + "/" + file + ".txt"
-                        textFile = open(textFilename, "w")
-                        logger.getLogger().debug("File - {} opened for writing"
-                                                 .format(textFilename))
-                        textFile.write(text)
-                        logger.getLogger().debug("File - {} in {}"
-                                                 .format(file, path))
-                        self.txt.append((textFilename, self.pdfminerDir))
-                        infile.close()
+            logger.getLogger().debug("Opening File: {}".format(pdf))
+
+            try:
+                with open(pdf, 'rb') as infile:
+                    logger.getLogger().debug("Opening File Successful")
+
+                    for page in PDFPage.get_pages(infile, page_nums):
+                        interpreter.process_page(page)
+
+                    text = output.getvalue()
+                    file = os.path.splitext(file)[0]
+
+                    text_filename = self.pdfminer_dir + file + ".txt"
+                    text_file = open(text_filename, "w")
+
+                    logger.getLogger().debug("File opened for writing - {}"
+                                             .format(text_filename))
+
+                    text_file.write(text)
+
+                    self.txt.append((text_filename, self.pdfminer_dir))
+                    infile.close()
 
                     converter.close()
                     output.close
-                    textFile.close()
-                except:
-                    logger.getLogger().error("File Failed to Open")
-        except:
-            logger.getLogger().error("Error Occured")
-
-        return self.txt
+                    text_file.close()
+                    queue.put(self.txt)
+            except ImportError as error:
+                logger.getLogger().error(error)
+        except RuntimeError as error:
+            logger.getLogger().error(error)
 
     '''
     Function using docx library to extract text from word docs and
     store them into an array of text files
     '''
-    def docx_handler(self, data):
-        logger = Logger("ArgumentFactory")
-        logger.getLogger().info("ArgumentFactory - docx")
+    def docx_handler(self, file, path, queue):
+        logger.getLogger().info("running docx")
         doc_text = []
-        self.txt = []
         try:
-            for (file, path) in data:
-                doc_file = os.path.join(path, file)
-                doc = docx.Document(doc_file)
 
-                for para in doc.paragraphs:
-                    doc_text.append(para.text)
+            doc_file = os.path.join(path, file)
+            doc_saved = self.docx_dir + file
+            doc_saved = os.path.splitext(doc_saved)[0] + '.txt'
 
-                file = os.path.splitext(file)[0]
-                textFilename = self.docxDir + "/" + file + ".txt"
+            if os.path.exists(doc_saved):
+                logger.getLogger().debug("Already Exits: " + file)
+                self.txt.append((doc_saved, self.docx_dir))
+                queue.put(self.txt)
+                return None
 
-                textFile = open(textFilename, "w")
-                textFile.write(doc_text)
-                self.txt.append((textFilename, path))
-        except:
-            logger.getLogger().error("Error Occured")
+            doc = docx.Document(doc_file)
 
-        return self.txt
+            for para in doc.paragraphs:
+                doc_text.append(para.text)
 
-    '''
-    Function using docx library to extract text from word docs and
-    store them into an array of text files
-    '''
-    def docx2txt_handler(self, data):
-        logger = Logger("ArgumentFactory")
-        logger.getLogger().info("ArgumentFactory - docx2txt")
+            doc_text = '\n'.join(doc_text)
 
-        self.txt = []
-        try:
-            for (file, path) in data:
-                doc_file = os.path.join(path, file)
+            file = os.path.splitext(file)[0]
+            text_filename = self.docx_dir + "/" + file + ".txt"
 
-                doc_text = docx2txt.process(doc_file)
-
-                file = os.path.splitext(file)[0]
-                textFilename = self.doc2txtDir + "/" + file + ".txt"
-
-                textFile = open(textFilename, "w")
-                textFile.write(doc_text)
-                self.txt.append((textFilename, path))
-        except:
-            logger.getLogger().error("Error Occured")
-
-        return self.txt
+            text_file = open(text_filename, "w")
+            text_file.write(doc_text)
+            self.txt.append((text_filename, path))
+            queue.put(self.txt)
+        except RuntimeError as error:
+            logger.getLogger().error(error)
 
     '''
     Function using tabula library to extract text from word docs and
     store them into an array of csv files
     '''
     def csv_handler(self):
-        logger = Logger("ArgumentFactory")
-        logger.getLogger().info("ArgumentFactory - csv_handler")
+        logger.getLogger().info("csv_handler")
 
         try:
-            for file in os.listdir(self.pdfminerDir):
+            for file in os.listdir(self.pdfminer_dir):
 
-                textFile = self.pdfminerDir + "/" + file
-                print(textFile)
+                text_file = self.pdfminer_dir + "/" + file
+                print(text_file)
 
                 file = os.path.splitext(file)[0]
-                csvFilename = self.csvDir + "/" + file + ".csv"
+                csv_filename = self.csv_dir + "/" + file + ".csv"
 
-                with open(textFile, 'r', newline='') as inputFile:
-                    print("Text file opened")
-                    reader = csv.reader(inputFile, delimiter=" ")
-                    print("reader created")
-                    with open(csvFilename, 'w', newline='') as outputFile:
-                        print("csv file opened")
+                with open(text_file, 'r', newline='') as inputFile:
+                    logger.getLogger().debug("Text file opened: " + text_file)
+
+                    reader = csv.reader(inputFile, delimiter=".")
+                    logger.getLogger().debug("render created")
+
+                    with open(csv_filename, 'w', newline='') as outputFile:
+                        logger.getLogger().debug("csv file opened")
+
                         writer = csv.writer(outputFile)
-                        print("writer created")
+                        logger.getLogger().debug("writer created")
                         for row in reader:
-                            print("inside for loop")
                             writer.writerow(row)
 
                 inputFile.close()
                 outputFile.close()
-        except:
-            logger.getLogger().error("Error Occured")
+        except RuntimeError as error:
+            logger.getLogger().error(error)

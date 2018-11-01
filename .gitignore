@@ -3,8 +3,9 @@ venv/
 lispat_app/lispat.egg-info
 lispat_app/dist
 lispat_app/build
-lispat_app/lispat/__pycache__
-*/__pycache__/
+lispat_app/__pycache__
 *.pyc
-*.log
-*.idea
+.pyc
+.log
+.idea/
+.DS_Store
