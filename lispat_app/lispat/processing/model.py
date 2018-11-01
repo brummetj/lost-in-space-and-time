@@ -2,6 +2,7 @@ import gensim
 from lispat.utils.logger import Logger
 logger = Logger("Modeling")
 
+
 class GensimModel:
     def __init__(self):
         self.train = None

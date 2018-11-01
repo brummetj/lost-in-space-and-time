@@ -7,7 +7,7 @@ except ImportError:
     import os
     import re
 
-    def find_packages(path =''):
+    def find_packages(path=''):
         ret = []
 
         for root, dirs, files, in os.walk(path):
@@ -18,14 +18,10 @@ except ImportError:
 install_requires = [
     'chardet==2.3.0',
     'docx2txt==0.6',
-    'nltk',
     'pdfminer.six',
     'pygogo',
-    'PyPDF2',
     'python-docx',
-    'textract',
     'docopt',
-    'pocketsphinx==0.1.3',
     'nltk',
     'gensim'
     ]
@@ -33,7 +29,7 @@ install_requires = [
 setup(
     name='lispat',
     install_requires=install_requires,
-    author='Joshua Brummet, Zeke, Eric',
+    author='Joshua Brummet, Zeke Moreland, Eric Holguin',
     entry_points={
         'console_scripts': [
             'lispat = lispat.run:main',

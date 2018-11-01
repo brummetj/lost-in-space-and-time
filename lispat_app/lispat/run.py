@@ -28,5 +28,6 @@ def main():
         if args['--nn']:
             manager.train('nn')
 
+
 if __name__ == '__main__':
     main()

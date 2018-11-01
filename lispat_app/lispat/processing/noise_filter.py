@@ -8,6 +8,9 @@ import string
 import operator
 import re
 
+nltk.download('punkt')
+nltk.download('stopwords')
+
 logger = Logger("Noise Filter")
 
 
@@ -106,14 +109,14 @@ class NoiseFilter:
 
             for file in os.listdir(self.pdf_path):
                 __file = open(self.pdf_path + file, 'rb')
-                for i,line in enumerate(__file):
+                for i, line in enumerate(__file):
                     if i % 10000 == 0:
                         logger.getLogger().info("read {0} reviews".format(i))
-                        # do some pre-processing and return list of words for each review
-                        # text
+                        # do some pre-processing and return list of words for
+                        # each review text
                     yield gensim.utils.simple_preprocess(line)
 
-            logger.getLogger().info("reading txt data ... this may take a while")
+            logger.getLogger().info("reading txt data...this may take a while")
 
         except ValueError as error:
             logger.getLogger().error("Noise filter", error)

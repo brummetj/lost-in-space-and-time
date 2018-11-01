@@ -54,14 +54,16 @@ class CommandManager:
             logger.getLogger().info("Applying a reduce to the files")
             noise_filter.reduce()
 
-            # a dict of most commonly used words, figured it could be smart to have this as a global value in this class
+            # a dict of most commonly used words, figured it could be smart
+            # to have this as a global value in this class
             self.keys = noise_filter.get_word_count()
 
             if model is 'nn':
                 logger.getLogger().info("Using gensim pre-processing")
                 documents = noise_filter.gensim()
                 print(documents)
-                logger.getLogger().info("Training Data with gensim, may take some time.... ")
+                logger.getLogger().info("Training Data with gensim,"
+                                        "may take some time.... ")
                 # nn_model = GensimModel()
                 # nn_model.train(noise_filter.get_word_array())
                 # logger.getLogger().info("Training finished")

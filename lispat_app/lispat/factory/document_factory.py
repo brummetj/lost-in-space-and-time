@@ -1,4 +1,5 @@
 import os
+import multiprocessing as mp
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
 
@@ -18,7 +19,7 @@ class DocumentFactory:
 
         self.path = path
         self.docs = []
-        self.pdf = []
+        self.pdfs = []
         try:
             for file in os.listdir(path):
                 if file.endswith(".doc"):
@@ -34,7 +35,7 @@ class DocumentFactory:
                 if file.endswith(".pdf"):
                     logger.getLogger().debug("File Found - {} in {}"
                                              .format(file, path))
-                    self.pdf.append((file, path))
+                    self.pdfs.append((file, path))
 
         except FileNotFoundError as error:
             logger.getLogger().error(error)
@@ -42,9 +43,39 @@ class DocumentFactory:
     def convert_file(self):
         try:
             args_ = ArgumentFactory()
-            word_data_txt = args_.docx_handler(self.docs)
-            pdf_data_txt = args_.pdfminer_handler(self.pdf)
-            return word_data_txt, pdf_data_txt
+
+            doc_queue = mp.Queue()
+            pdf_queue = mp.Queue()
+
+            doc_jobs = []
+            pdf_jobs = []
+
+            doc_data_txt = []
+            pdf_data_txt = []
+
+            if self.docs:
+                for(file, path) in self.docs:
+                    doc_procs = mp.Process(target=args_.docx_handler, args=
+                                           (file, path, doc_queue))
+                    doc_procs.start()
+                    doc_jobs.append(doc_procs)
+
+                for doc_proc in doc_jobs:
+                    doc_data_txt.append(doc_queue.get())
+                    doc_proc.join()
+
+            if self.pdfs:
+                for (file, path) in self.pdfs:
+                    procs = mp.Process(target=args_.pdfminer_handler, args=
+                                       (file, path, pdf_queue))
+                    procs.start()
+                    pdf_jobs.append(procs)
+
+                for proc in pdf_jobs:
+                    pdf_data_txt.append(pdf_queue.get())
+                    proc.join()
+
+            return doc_data_txt, pdf_data_txt
         except RuntimeError as error:
             logger.getLogger().error(error)
             exit(1)
