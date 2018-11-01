@@ -145,7 +145,6 @@ class ArgumentFactory:
             for file in os.listdir(self.pdfminer_dir):
 
                 text_file = self.pdfminer_dir + "/" + file
-                print(text_file)
 
                 file = os.path.splitext(file)[0]
                 csv_filename = self.csv_dir + "/" + file + ".csv"
