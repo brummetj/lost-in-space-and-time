@@ -16,7 +16,8 @@ class NoiseFilter:
 
     def word_filter(self):
 
-        # Static path to which all doc .txt files will be stored. Could be changed in the future
+        # Static path to which all doc .txt files will be stored.
+        # Could be changed in the future
         txt_data = ''
         try:
             for file in os.listdir(self.pdf_path):
@@ -46,8 +47,3 @@ class NoiseFilter:
             logger.getLogger().debug(words[:100])
         except RuntimeError as error:
             logger.getLogger().error("Noise filter", error)
-
-
-
-
-

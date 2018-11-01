@@ -11,6 +11,7 @@ Options:
 
 """
 import docopt
+import time
 from lispat.base.manager import CommandManager
 
 
