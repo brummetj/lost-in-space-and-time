@@ -1,8 +1,4 @@
 import os
-<<<<<<< HEAD
-import time
-=======
->>>>>>> fbdafcbfd8f5a4ed1cffb9ae8dc14ac49626e515
 import multiprocessing as mp
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
@@ -49,41 +45,6 @@ class DocumentFactory:
         try:
             args_ = ArgumentFactory()
 
-<<<<<<< HEAD
-            #word_data_txt = args_.docx_handler(self.docs)
-
-            doc_output = mp.Queue()
-            doc_jobs = []
-            for(file, path) in self.docs:
-                doc_procs = mp.Process(target=args_.docx_handler, args=(file,
-                                       path, doc_output))
-                doc_jobs.append(doc_procs)
-                doc_procs.start()
-
-            for doc_proc in doc_procs:
-                doc_proc.join()
-
-            word_data_txt = [doc_output.get() for doc_proc in doc_procs]
-
-            pdf_output = mp.Queue()
-            pdf_jobs = []
-
-            for (file, path) in self.pdf:
-                procs = mp.Process(target=args_.pdfminer_handler, args=(file,
-                                   path, pdf_output))
-                pdf_jobs.append(procs)
-                procs.start()
-
-            for proc in procs:
-                proc.join()
-
-            logger.getLogger().debug("DONE WITH PROCESSES")
-
-            pdf_data_txt = [pdf_output.get() for proc in procs]
-
-            return word_data_txt, pdf_data_txt
-
-=======
             doc_queue = mp.Queue()
             pdf_queue = mp.Queue()
 
@@ -95,8 +56,8 @@ class DocumentFactory:
 
             if self.docs:
                 for(file, path) in self.docs:
-                    doc_procs = mp.Process(target=args_.docx_handler, args=
-                                           (file, path, doc_queue))
+                    doc_procs = mp.Process(target=args_.docx_handler, args=(
+                                           file, path, doc_queue))
                     doc_procs.start()
                     doc_jobs.append(doc_procs)
 
@@ -106,8 +67,8 @@ class DocumentFactory:
 
             if self.pdfs:
                 for (file, path) in self.pdfs:
-                    procs = mp.Process(target=args_.pdfminer_handler, args=
-                                       (file, path, pdf_queue))
+                    procs = mp.Process(target=args_.pdfminer_handler, args=(
+                                       file, path, pdf_queue))
                     procs.start()
                     pdf_jobs.append(procs)
 
@@ -116,7 +77,7 @@ class DocumentFactory:
                     proc.join()
 
             return doc_data_txt, pdf_data_txt
->>>>>>> fbdafcbfd8f5a4ed1cffb9ae8dc14ac49626e515
+
         except RuntimeError as error:
             logger.getLogger().error(error)
             exit(1)
