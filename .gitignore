@@ -11,7 +11,11 @@ lispat.egg-info/
 dist/
 build/
 __pycache__/
+<<<<<<< HEAD
 =======
 lispat_app/__pycache__
+=======
+*.pyc
+>>>>>>> fbdafcbfd8f5a4ed1cffb9ae8dc14ac49626e515
 .idea/
 .DS_Store
