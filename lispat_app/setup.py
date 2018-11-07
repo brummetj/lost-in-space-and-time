@@ -16,22 +16,15 @@ except ImportError:
         return ret
 
 install_requires = [
-    'chardet==2.3.0',
-<<<<<<< HEAD
+    'chardet==3.0.4',
     'nltk',
-=======
     'docx2txt==0.6',
->>>>>>> 87680793a859a1002905c6f8b9191546601d0fe6
     'pdfminer.six',
     'pygogo',
     'python-docx',
     'docopt',
-<<<<<<< HEAD
-=======
-    'nltk',
     'gensim'
->>>>>>> 87680793a859a1002905c6f8b9191546601d0fe6
-    ]
+]
 
 setup(
     name='lispat',
