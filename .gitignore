@@ -1,12 +1,5 @@
 venv/
 *.swp
-<<<<<<< HEAD
-lispat_app/lispat.egg-info
-lispat_app/dist
-lispat_app/build
-lispat_app/lispat/__pycache__
-=======
->>>>>>> develop
 */__pycache__
 *.pyc
 *.log
@@ -14,17 +7,9 @@ lispat.egg-info/
 dist/
 build/
 __pycache__/
-<<<<<<< HEAD
-=======
 lispat_app/__pycache__
-<<<<<<< HEAD
-=======
->>>>>>> 56529b742cb7892f6ba8510b479c88ef1fbbf6e6
-=======
->>>>>>> develop
 *.pyc
 .pyc
-.log
->>>>>>> 5c8ae1de1f08be9826005d6177a6299ef5eddb1e
+.log1
 .idea/
 .DS_Store
