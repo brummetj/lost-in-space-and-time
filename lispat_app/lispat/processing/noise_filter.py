@@ -8,8 +8,8 @@ import string
 import operator
 import re
 
-nltk.download('punkt')
-nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
 logger = Logger("Noise Filter")
 

@@ -1,4 +1,6 @@
 import os
+import sys
+import traceback
 import multiprocessing as mp
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
@@ -36,10 +38,12 @@ class DocumentFactory:
                     logger.getLogger().debug("File Found - {} in {}"
                                              .format(file, path))
                     self.pdfs.append((file, path))
+                else:
+                    raise FileNotFoundError
 
         except FileNotFoundError as error:
-            logger.getLogger().error(error)
-
+            logger.getLogger().error("No required file types Found - Exiting")
+        
     def convert_file(self):
         try:
             args_ = ArgumentFactory()
