@@ -1,13 +1,7 @@
 import os
-<<<<<<< HEAD
-<<<<<<< HEAD
-import time
-=======
->>>>>>> 5c8ae1de1f08be9826005d6177a6299ef5eddb1e
 =======
 import sys
 import traceback
->>>>>>> develop
 import multiprocessing as mp
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
@@ -51,46 +45,11 @@ class DocumentFactory:
 
         except FileNotFoundError as error:
             logger.getLogger().error("No required file types Found - Exiting")
-        
+
     def convert_file(self):
         try:
             args_ = ArgumentFactory()
 
-<<<<<<< HEAD
-            #word_data_txt = args_.docx_handler(self.docs)
-
-            doc_output = mp.Queue()
-            doc_jobs = []
-            for(file, path) in self.docs:
-                doc_procs = mp.Process(target=args_.docx_handler, args=(file,
-                                       path, doc_output))
-                doc_jobs.append(doc_procs)
-                doc_procs.start()
-
-            for doc_proc in doc_procs:
-                doc_proc.join()
-
-            word_data_txt = [doc_output.get() for doc_proc in doc_procs]
-
-            pdf_output = mp.Queue()
-            pdf_jobs = []
-
-            for (file, path) in self.pdf:
-                procs = mp.Process(target=args_.pdfminer_handler, args=(file,
-                                   path, pdf_output))
-                pdf_jobs.append(procs)
-                procs.start()
-
-            for proc in procs:
-                proc.join()
-
-            logger.getLogger().debug("DONE WITH PROCESSES")
-
-            pdf_data_txt = [pdf_output.get() for proc in procs]
-
-            return word_data_txt, pdf_data_txt
-
-=======
             doc_queue = mp.Queue()
             pdf_queue = mp.Queue()
 
@@ -123,7 +82,6 @@ class DocumentFactory:
                     proc.join()
 
             return doc_data_txt, pdf_data_txt
->>>>>>> 5c8ae1de1f08be9826005d6177a6299ef5eddb1e
         except RuntimeError as error:
             logger.getLogger().error(error)
             exit(1)
