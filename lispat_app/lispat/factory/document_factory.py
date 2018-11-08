@@ -1,8 +1,13 @@
 import os
 <<<<<<< HEAD
+<<<<<<< HEAD
 import time
 =======
 >>>>>>> 5c8ae1de1f08be9826005d6177a6299ef5eddb1e
+=======
+import sys
+import traceback
+>>>>>>> develop
 import multiprocessing as mp
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
@@ -41,10 +46,12 @@ class DocumentFactory:
                     logger.getLogger().debug("File Found - {} in {}"
                                              .format(file, path))
                     self.pdfs.append((file, path))
+                else:
+                    raise FileNotFoundError
 
         except FileNotFoundError as error:
-            logger.getLogger().error(error)
-
+            logger.getLogger().error("No required file types Found - Exiting")
+        
     def convert_file(self):
         try:
             args_ = ArgumentFactory()
