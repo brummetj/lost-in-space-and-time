@@ -98,6 +98,7 @@ class NoiseFilter:
             keys = sorted(word_count.items(), key=operator.itemgetter(1), reverse=True)
             for i in keys[:20]:
                 print(i)
+                print(i)
             self.word_count = keys
 
         except ValueError as error:
