@@ -96,6 +96,7 @@ class NoiseFilter:
             logger.getLogger().debug("Word Count")
             keys = sorted(word_count.items(), key=operator.itemgetter(1), reverse=True)
             for i in keys[:20]:
+                print(printing)
                 print(i)
             self.word_count = keys
         except ValueError as error:
