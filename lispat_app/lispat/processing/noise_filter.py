@@ -98,6 +98,8 @@ class NoiseFilter:
             for i in keys[:20]:
                 print(i)
             self.word_count = keys
+            for i in self.word_count[:20]:
+                print(i)
         except ValueError as error:
             logger.getLogger().error("Noise filter", error)
 
