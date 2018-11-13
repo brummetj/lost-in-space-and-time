@@ -30,5 +30,6 @@ def main():
             manager.train('nn')
 
 
+
 if __name__ == '__main__':
     main()

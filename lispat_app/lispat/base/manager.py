@@ -53,6 +53,7 @@ class CommandManager:
 
             logger.getLogger().info("Applying a reduce to the files")
             noise_filter.reduce()
+            noise_filter.findConcordance()
 
             # a dict of most commonly used words, figured it could be smart
             # to have this as a global value in this class
