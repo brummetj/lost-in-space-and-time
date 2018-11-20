@@ -29,7 +29,7 @@ class SentenceFilter:
                 doc = nlp(txt_data)
                 for sent in doc.sents:
                     print(sent.text)
-                    input("Press enter to continue")
+                input("Press enter to continue")
         except RuntimeError as error:
             logger.getLogger().error("Sentence filter - ", error)
         doc = nlp(txt_data)
