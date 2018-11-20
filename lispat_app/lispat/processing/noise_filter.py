@@ -25,11 +25,13 @@ class NoiseFilter:
         """
         self.word_array = None
         self.word_count = None
+        self.max_word_count = 25
         self.txt_data = None
         self.word = word
         self.pdf = pdf
         self.pdf_path = "/usr/local/var/lispat/pdf_data/"
         self.gensim_docs = None
+        self.keywords = None
 
     def mapper(self):
 
@@ -84,6 +86,7 @@ class NoiseFilter:
         :return: a word count on most commonly used words in the data set
         """
         logger.getLogger().info("Reducing")
+        keywordList = []
         try:
             if len(self.word_array) == 0:
                 raise ValueError("No words to reduce", self.word_array)
@@ -96,13 +99,16 @@ class NoiseFilter:
 
             logger.getLogger().debug("Word Count")
             keys = sorted(word_count.items(), key=operator.itemgetter(1), reverse=True)
-            for i in keys[:20]:
+            for i in keys[:self.max_word_count]:
                 print(i)
-                print(i)
+                keywordList.append(i[0])
             self.word_count = keys
+            self.keywords = keywordList
 
         except ValueError as error:
             logger.getLogger().error("Noise filter", error)
+        for i in self.keywords[:self.max_word_count]:
+            print(i)
 
     def gensim(self):
 
@@ -124,37 +130,34 @@ class NoiseFilter:
         except ValueError as error:
             logger.getLogger().error("Noise filter", error)
 
-    def findConcordance(self):
-    #    for i in self.word_count[:20]:
-    #        print(self.word_count)
-        phrases = []
-        txt_data = ''
-        keywords = []
-        logger.getLogger().info("Matching words in phrases")
-        for word in self.word_count[:20]:
-            print(word)
-            print("TUUUUUUUURAYYYYYING!!!!!!!!!!")
-            try:
-                j = 0
-                i = 1
-                logger.getLogger().info("Beginning to phrase parse")
-                for file in os.listdir(self.pdf_path):
-                    __file = open(self.pdf_path + file, 'rt')
-                    __text = __file.read()
-                    txt_data += __text
-                    self.txt_data = txt_data
-                    tokens = word_tokenize(txt_data)
-                    print("about to convert to Text")
-                    text = nltk.Text(tokens)
-                    text.concordance(word[j], width=80, lines=10)
-                    print("iteration", i)
-                    i += 1
-                    j += 1
-            except RuntimeError as error:
-                logger.getLogger().error("No Text - ", error)
+    # def findConcordance(self):
+    #     phrases = []
+    #     txt_data = ''
+    #     keywords = []
+    #     logger.getLogger().info("Matching words in phrases")
+    #     for i in self.word_count[:20]:
+    #         print(i)
+            # print("TUUUUUUUURAYYYYYING!!!!!!!!!!")
+            # try:
+            #     logger.getLogger().info("Beginning to phrase parse")
+            #     for file in os.listdir(self.pdf_path):
+            #         __file = open(self.pdf_path + file, 'rt')
+            #         __text = __file.read()
+            #         txt_data += __text
+            #         self.txt_data = txt_data
+            #         tokens = word_tokenize(txt_data)
+            #         print("about to convert to Text")
+            #         text = nltk.Text(tokens)
+            #         text.concordance(word[j], width=80, lines=10)
+            #         print("iteration", i)
+            #         i += 1
+            #         j += 1
+            # except RuntimeError as error:
+            #     logger.getLogger().error("No Text - ", error)
 
 
-
+    def get_keywords(self):
+        return self.keywords
 
     def get_word_count(self):
         return self.word_count

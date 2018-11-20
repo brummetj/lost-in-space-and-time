@@ -1,7 +1,9 @@
 import os
+import spacy
 from lispat.utils.logger import Logger
 from lispat.factory.document_factory import DocumentFactory
 from lispat.processing.noise_filter import NoiseFilter
+from lispat.processing.sentence_filter import SentenceFilter
 from lispat.processing.model import GensimModel
 logger = Logger("CommandManager")
 
@@ -15,6 +17,7 @@ class CommandManager:
 
     def __init__(self):
         self.keys = None
+        self.keys_no_count = None
         self.path = None
 
     def create_path(self, path):
@@ -53,11 +56,13 @@ class CommandManager:
 
             logger.getLogger().info("Applying a reduce to the files")
             noise_filter.reduce()
-            noise_filter.findConcordance()
 
             # a dict of most commonly used words, figured it could be smart
             # to have this as a global value in this class
             self.keys = noise_filter.get_word_count()
+            self.keys_no_count = noise_filter.get_keywords()
+            sentence_filter = SentenceFilter(self.keys_no_count)
+            sentence_filter.filter_sentences(self.keys_no_count)
 
             if model is 'nn':
                 logger.getLogger().info("Using gensim pre-processing")

@@ -28,7 +28,7 @@ def main():
 
         if args['--nn']:
             manager.train('nn')
-
+            manager.sentence_filter(noise_filter.get_keywords)
 
 
 if __name__ == '__main__':
