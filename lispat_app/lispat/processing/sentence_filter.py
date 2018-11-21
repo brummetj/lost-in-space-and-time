@@ -10,15 +10,16 @@ nlp = spacy.load('en_core_web_sm')
 
 class SentenceFilter:
 
-    def __init__(self, keywordList):
+    def __init__(self):
 
         self.txt_data = None
         #self.pdf = pdf
         self.pdf_path = "/usr/local/var/lispat/pdf_data/"
-        self.keywords = keywordList
+        self.keywords = None
 
-    def filter_sentences(self, keywords):
+    def filter_sentences(self):
         txt_data = ''
+        #self.keywords = noise_filter.getkeywords()
         try:
             for file in os.listdir(self.pdf_path):
                 __file = open(self.pdf_path + file, 'rt')

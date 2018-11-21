@@ -61,8 +61,8 @@ class CommandManager:
             # to have this as a global value in this class
             self.keys = noise_filter.get_word_count()
             self.keys_no_count = noise_filter.get_keywords()
-            sentence_filter = SentenceFilter(self.keys_no_count)
-            sentence_filter.filter_sentences(self.keys_no_count)
+            sentence_filter = SentenceFilter()
+            sentence_filter.filter_sentences()
 
             if model is 'nn':
                 logger.getLogger().info("Using gensim pre-processing")

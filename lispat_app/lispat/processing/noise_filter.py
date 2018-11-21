@@ -130,30 +130,6 @@ class NoiseFilter:
         except ValueError as error:
             logger.getLogger().error("Noise filter", error)
 
-    # def findConcordance(self):
-    #     phrases = []
-    #     txt_data = ''
-    #     keywords = []
-    #     logger.getLogger().info("Matching words in phrases")
-    #     for i in self.word_count[:20]:
-    #         print(i)
-            # print("TUUUUUUUURAYYYYYING!!!!!!!!!!")
-            # try:
-            #     logger.getLogger().info("Beginning to phrase parse")
-            #     for file in os.listdir(self.pdf_path):
-            #         __file = open(self.pdf_path + file, 'rt')
-            #         __text = __file.read()
-            #         txt_data += __text
-            #         self.txt_data = txt_data
-            #         tokens = word_tokenize(txt_data)
-            #         print("about to convert to Text")
-            #         text = nltk.Text(tokens)
-            #         text.concordance(word[j], width=80, lines=10)
-            #         print("iteration", i)
-            #         i += 1
-            #         j += 1
-            # except RuntimeError as error:
-            #     logger.getLogger().error("No Text - ", error)
 
 
     def get_keywords(self):
