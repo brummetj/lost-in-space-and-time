@@ -23,15 +23,6 @@ import spacy
 
 logger = Logger("Main")
 
-#
-# def space():
-#     nlp = spacy.load('en')
-#     doc = nlp("The big grey dog ate all of the chocolate, but fortunately he wasn't sick!")
-#     doc.text.split()
-#     print(doc)
-#     d = [token.orth_ for token in doc if not token.is_punct | token.is_space]
-#     print(d)
-
 
 def main():
 
@@ -53,6 +44,7 @@ def main():
     except KeyboardInterrupt:
         logger.getLogger().error("Keyboard interrupt. Exiting")
         sys.exit(1)
+
 
 if __name__ == '__main__':
     main()

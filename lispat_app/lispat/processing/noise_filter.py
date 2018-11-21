@@ -13,6 +13,7 @@ nltk.download('stopwords')
 
 logger = Logger("Noise Filter")
 
+
 class Noise:
 
     def __init__(self, word, pdf, submission):
@@ -123,7 +124,6 @@ class Noise:
 
         except ValueError as error:
             logger.getLogger().error("Noise filter", error)
-
 
     def get_word_count(self):
         return self.word_count
