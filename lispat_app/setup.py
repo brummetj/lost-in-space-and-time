@@ -20,9 +20,11 @@ install_requires = [
     'nltk',
     'pdfminer.six',
     'pygogo',
+    'matplotlib==2.1.0'
     'python-docx',
     'docopt',
     'gensim',
+    'cld2-cffi'
     'spacy'
 ]
 
