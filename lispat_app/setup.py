@@ -21,9 +21,12 @@ install_requires = [
     'docx2txt==0.6',
     'pdfminer.six',
     'pygogo',
+    'matplotlib==2.1.0'
     'python-docx',
     'docopt',
-    'gensim'
+    'gensim',
+    'cld2-cffi'
+    'spacy'
 ]
 
 setup(
