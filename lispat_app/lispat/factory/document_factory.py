@@ -4,7 +4,7 @@ import traceback
 import multiprocessing as mp
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
-
+from pathlib import Path
 logger = Logger("DocumentFactory")
 
 
@@ -15,35 +15,56 @@ class DocumentFactory:
     into their own function that handles those certain file types
     """
 
-    def __init__(self, path):
+    def __init__(self, path, submitted):
 
         logger.getLogger().info("DocumentFactory Created")
 
         self.path = path
         self.docs = []
         self.pdfs = []
+        self.submitted = False
+
+        print(self.path)
         try:
-            for file in os.listdir(path):
-                if file.endswith(".doc"):
-                    logger.getLogger().debug("File Found - {} in {}"
-                                             .format(file, path))
-                    self.docs.append((file, path))
+            if submitted is True:
+                self.submitted = True
+                logger.getLogger().debug("Submission is True")
 
-                if file.endswith(".docx"):
+            file = Path(path)
+            if file.is_file():
+                if file.suffix == ".doc":
                     logger.getLogger().debug("File Found - {} in {}"
                                              .format(file, path))
-                    self.docs.append((file, path))
+                    self.docs.append((str(file.absolute()), path))
 
-                if file.endswith(".pdf"):
+                if file.suffix == '.pdf':
                     logger.getLogger().debug("File Found - {} in {}"
                                              .format(file, path))
-                    self.pdfs.append((file, path))
-                else:
-                    raise FileNotFoundError
+                    self.pdfs.append((str(file.absolute()), path))
+
+            elif file.is_dir():
+                for file in os.listdir(path):
+                    if file.endswith(".doc"):
+                        logger.getLogger().debug("File Found - {} in {}"
+                                                 .format(file, path))
+                        self.docs.append((file, path))
+
+                    if file.endswith(".docx"):
+                        logger.getLogger().debug("File Found - {} in {}"
+                                                 .format(file, path))
+                        self.docs.append((file, path))
+
+                    if file.endswith(".pdf"):
+                        logger.getLogger().debug("File Found - {} in {}"
+                                                 .format(file, path))
+                        self.pdfs.append((file, path))
+                    else:
+                        raise FileNotFoundError
 
         except FileNotFoundError as error:
             logger.getLogger().error("No required file types Found - Exiting")
-        
+            sys.exit(1)
+
     def convert_file(self):
         try:
             args_ = ArgumentFactory()
@@ -60,7 +81,7 @@ class DocumentFactory:
             if self.docs:
                 for(file, path) in self.docs:
                     doc_procs = mp.Process(target=args_.docx_handler, args=
-                                           (file, path, doc_queue))
+                                           (file, path, doc_queue, self.submitted))
                     doc_procs.start()
                     doc_jobs.append(doc_procs)
 
@@ -71,7 +92,7 @@ class DocumentFactory:
             if self.pdfs:
                 for (file, path) in self.pdfs:
                     procs = mp.Process(target=args_.pdfminer_handler, args=
-                                       (file, path, pdf_queue))
+                                       (file, path, pdf_queue, self.submitted))
                     procs.start()
                     pdf_jobs.append(procs)
 
@@ -83,3 +104,5 @@ class DocumentFactory:
         except RuntimeError as error:
             logger.getLogger().error(error)
             exit(1)
+
+

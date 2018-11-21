@@ -1,6 +1,7 @@
 import os
 import csv
 import docx
+import sys
 from io import StringIO
 from lispat.utils.logger import Logger
 from pdfminer.layout import LAParams
@@ -28,24 +29,30 @@ class ArgumentFactory:
         self.doc2txt_dir = directory_storage + "doc_data/"
         self.docx_dir = directory_storage + "docx_data/"
         self.csv_dir = directory_storage + "csv_data/"
+        self.submitted_dir = directory_storage + "submission/"
 
         if not os.path.exists(directory_storage):
             os.makedirs(directory_storage)
 
-        # Simple check to see if we have these dirs in the storage path already
+        # Simple check to see if we have these dirs in the storage path already best for first time users
+        # need a better way to make the local storage system
         if len(os.listdir(directory_storage)) == 0:
             os.makedirs(self.pdfminer_dir)
             os.makedirs(self.doc2txt_dir)
             os.makedirs(self.docx_dir)
             os.makedirs(self.csv_dir)
+            os.makedirs(self.submitted_dir)
+
+        if not os.path.exists(self.submitted_dir):
+            os.makedirs(self.submitted_dir)
 
     '''
     Function using pdfminer to extract text from pdfs and
     store them into an array of text files
     '''
-    def pdfminer_handler(self, file, path, queue):
+    def pdfminer_handler(self, file, path, queue, submitted):
 
-        logger.getLogger().info("running PDFMiner")
+        logger.getLogger().info("Running PDFMiner")
 
         page_nums = set()
         output = StringIO()
@@ -76,17 +83,15 @@ class ArgumentFactory:
                         interpreter.process_page(page)
 
                     text = output.getvalue()
-                    file = os.path.splitext(file)[0]
+                    head, tail = os.path.split(path)
+                    file = os.path.splitext(tail)[0]
 
-                    text_filename = self.pdfminer_dir + file + ".txt"
-                    text_file = open(text_filename, "w")
-
-                    logger.getLogger().debug("File opened for writing - {}"
-                                             .format(text_filename))
+                    logger.getLogger().debug("Writing " + file)
+                    # open file is a static function.
+                    text_file = self.open_file(submitted, file, self.pdfminer_dir)
 
                     text_file.write(text)
 
-                    self.txt.append((text_filename, self.pdfminer_dir))
                     infile.close()
 
                     converter.close()
@@ -95,14 +100,16 @@ class ArgumentFactory:
                     queue.put(self.txt)
             except ImportError as error:
                 logger.getLogger().error(error)
+                sys.exit(1)
         except RuntimeError as error:
             logger.getLogger().error(error)
+            sys.exit(1)
 
     '''
     Function using docx library to extract text from word docs and
     store them into an array of text files
     '''
-    def docx_handler(self, file, path, queue):
+    def docx_handler(self, file, path, queue, submitted):
         logger.getLogger().info("running docx")
         doc_text = []
         try:
@@ -125,14 +132,13 @@ class ArgumentFactory:
             doc_text = '\n'.join(doc_text)
 
             file = os.path.splitext(file)[0]
-            text_filename = self.docx_dir + "/" + file + ".txt"
-
-            text_file = open(text_filename, "w")
+            text_file = self.open_file(submitted, file, self.docx_dir)
             text_file.write(doc_text)
-            self.txt.append((text_filename, path))
+
             queue.put(self.txt)
         except RuntimeError as error:
             logger.getLogger().error(error)
+            sys.exit(1)
 
     '''
     Function using tabula library to extract text from word docs and
@@ -167,3 +173,17 @@ class ArgumentFactory:
                 outputFile.close()
         except RuntimeError as error:
             logger.getLogger().error(error)
+            sys.exit(1)
+
+
+    def open_file(self, submitted, file, dir):
+        if submitted is True:
+            txt_filename = self.submitted_dir + file + ".txt"
+        else:
+            txt_filename = dir + file + ".txt"
+
+        logger.getLogger().debug("File opened for writing - {}"
+                                 .format(txt_filename))
+        self.txt.append((txt_filename, dir))
+        return open(txt_filename, "w")
+
