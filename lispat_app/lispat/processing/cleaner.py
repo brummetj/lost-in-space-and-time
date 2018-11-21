@@ -8,4 +8,8 @@ file.close()
 
 # split into words by white space
 words = text.split()
+
+
+# convert to lower case
+words = [word.lower() for word in words]
 print(words[:1000])

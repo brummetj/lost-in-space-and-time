@@ -18,6 +18,7 @@ Options:
 """
 import sys
 import docopt
+import time
 from lispat.base.manager import CommandManager
 from lispat.utils.logger import Logger
 

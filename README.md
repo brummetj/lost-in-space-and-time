@@ -1,5 +1,5 @@
 # lost-in-space-and-time
-Senior Design with non relational graph database. 
+Senior Design with non relational graph database.
 
 
 ## Requirements
@@ -15,4 +15,11 @@ Senior Design with non relational graph database.
  >>> nltk.download()
 ```
 
-nlkt downloader will show up. Download all. 
+nlkt downloader will show up. Download all.
+
+## PDF DECRYPTION
+
+Due to some pdfs having restrictions to the content "qpdf" was used in order
+to remove these restrictions allowings us to handle every document.
+
+Link: https://github.com/qpdf/qpdf

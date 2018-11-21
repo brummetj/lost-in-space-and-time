@@ -10,6 +10,7 @@ import multiprocessing as mp
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
 
+
 logger = Logger("DocumentFactory")
 
 
@@ -77,8 +78,8 @@ class DocumentFactory:
 
             if self.docs:
                 for(file, path) in self.docs:
-                    doc_procs = mp.Process(target=args_.docx_handler, args=
-                                           (file, path, doc_queue))
+                    doc_procs = mp.Process(target=args_.docx_handler, args=(
+                                           file, path, doc_queue))
                     doc_procs.start()
                     doc_jobs.append(doc_procs)
 
@@ -97,7 +98,7 @@ class DocumentFactory:
                     pdf_data_txt.append(pdf_queue.get())
                     proc.join()
 
-                return doc_data_txt, pdf_data_txt
+            return doc_data_txt, pdf_data_txt
         except RuntimeError as error:
             logger.getLogger().error(error)
             exit(1)

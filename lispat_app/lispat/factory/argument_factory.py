@@ -22,7 +22,6 @@ class ArgumentFactory:
         logger.getLogger().info("Argument factory init")
 
         self.txt = []
-
         directory_storage = "/usr/local/var/lispat/"
         self.pdfminer_dir = directory_storage + "pdf_data/"
         self.doc2txt_dir = directory_storage + "doc_data/"
