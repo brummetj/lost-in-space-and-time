@@ -19,6 +19,7 @@ class CommandManager:
 
     def __init__(self):
         self.keys = None
+        self.keys_no_count = None
         self.path = None
         self.db = None
         self.noise_filter = None

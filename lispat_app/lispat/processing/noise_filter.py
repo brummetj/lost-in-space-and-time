@@ -4,6 +4,8 @@ from lispat.utils.logger import Logger
 from lispat.factory.filtered_factory import FilteredFactory
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from nltk.collocations import BigramAssocMeasures, BigramCollocationFinder
+import string
 import operator
 import spacy
 import string
@@ -28,11 +30,16 @@ class Noise:
         self.word = word
         self.pdf = pdf
         self.nlp = spacy.load('en')
+        self.max_word_count = 25
+        self.gensim_docs = None
+        self.keywords = None
 
         if submission == 'compare':
             self.pdf_path = "/usr/local/var/lispat/submission/"
         else:
             self.pdf_path = "/usr/local/var/lispat/pdf_data/"
+
+
 
         logger.getLogger().debug("Running a noise filter on directory: " + self.pdf_path)
         self.filtered_words = FilteredFactory()
@@ -106,6 +113,7 @@ class Noise:
         :return: a word count on most commonly used words in the data set
         """
         logger.getLogger().info("Reducing")
+        keywordList = []
         try:
             if len(self.word_array) == 0:
                 raise ValueError("No words to reduce", self.word_array)
@@ -118,12 +126,41 @@ class Noise:
 
             logger.getLogger().debug("Word Count")
             keys = sorted(word_count.items(), key=operator.itemgetter(1), reverse=True)
-            for i in keys[:20]:
+            for i in keys[:self.max_word_count]:
                 print(i)
+                keywordList.append(i[0])
             self.word_count = keys
+            self.keywords = keywordList
 
         except ValueError as error:
             logger.getLogger().error("Noise filter", error)
+        for i in self.keywords[:self.max_word_count]:
+            print(i)
+
+    def gensim(self):
+
+        try:
+            if self.txt_data is None:
+                raise ValueError("No text data to preprocess", self.txt_data)
+
+            for file in os.listdir(self.pdf_path):
+                __file = open(self.pdf_path + file, 'rb')
+                for i, line in enumerate(__file):
+                    if i % 10000 == 0:
+                        logger.getLogger().info("read {0} reviews".format(i))
+                        # do some pre-processing and return list of words for
+                        # each review text
+                    yield gensim.utils.simple_preprocess(line)
+
+            logger.getLogger().info("reading txt data...this may take a while")
+
+        except ValueError as error:
+            logger.getLogger().error("Noise filter", error)
+
+
+
+    def get_keywords(self):
+        return self.keywords
 
     def get_word_count(self):
         return self.word_count
