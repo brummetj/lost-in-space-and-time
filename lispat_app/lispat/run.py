@@ -13,7 +13,8 @@ Options:
   --train       Submit documents to be used for training data
 
 """
-import docopt, sys
+import sys
+import docopt
 from lispat.base.manager import CommandManager
 from lispat.utils.logger import Logger
 
