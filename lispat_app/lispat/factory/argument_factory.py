@@ -33,7 +33,8 @@ class ArgumentFactory:
         if not os.path.exists(directory_storage):
             os.makedirs(directory_storage)
 
-        # Simple check to see if we have these dirs in the storage path already best for first time users
+        # Simple check to see if we have these dirs in the storage path already
+        # best for first time users
         # need a better way to make the local storage system
         if len(os.listdir(directory_storage)) == 0:
             os.makedirs(self.pdfminer_dir)
@@ -87,7 +88,8 @@ class ArgumentFactory:
 
                     logger.getLogger().debug("Writing " + file)
                     # open file is a static function.
-                    text_file = self.open_file(submitted, file, self.pdfminer_dir)
+                    text_file = self.open_file(submitted, file,
+                                               self.pdfminer_dir)
 
                     text_file.write(text)
 
@@ -173,7 +175,6 @@ class ArgumentFactory:
         except RuntimeError as error:
             logger.getLogger().error(error)
             sys.exit(1)
-
 
     def open_file(self, submitted, file, dir):
         if submitted is True:

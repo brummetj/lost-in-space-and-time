@@ -1,14 +1,14 @@
 import os
 import nltk
-from lispat.utils.logger import Logger
-from lispat.factory.filtered_factory import FilteredFactory
-from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
-from nltk.collocations import BigramAssocMeasures, BigramCollocationFinder
-import string
-import operator
 import spacy
 import string
+import operator
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from lispat.utils.logger import Logger
+from lispat.factory.filtered_factory import FilteredFactory
+from nltk.collocations import BigramAssocMeasures, BigramCollocationFinder
+
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -39,9 +39,9 @@ class Noise:
         else:
             self.pdf_path = "/usr/local/var/lispat/pdf_data/"
 
+        logger.getLogger().debug("Running a noise filter on directory: " +
+                                 self.pdf_path)
 
-
-        logger.getLogger().debug("Running a noise filter on directory: " + self.pdf_path)
         self.filtered_words = FilteredFactory()
 
     def get_doc(self):
@@ -49,7 +49,8 @@ class Noise:
         """
         :return: all data in the path to train.
         """
-        # Static path to which all doc .txt files will be stored. Could be changed in the future
+        # Static path to which all doc .txt files will be stored.
+        # Could be changed in the future
         txt_data = ""
         try:
             for file in os.listdir(self.pdf_path):
@@ -156,8 +157,6 @@ class Noise:
 
         except ValueError as error:
             logger.getLogger().error("Noise filter", error)
-
-
 
     def get_keywords(self):
         return self.keywords

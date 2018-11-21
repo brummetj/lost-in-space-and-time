@@ -76,7 +76,7 @@ class DocumentFactory:
         """
         Handles the file conversion.
 
-        Iterate through  pdfs and docx files calls ArgumentFactory Class
+        Iterate through pdfs and docx files calls ArgumentFactory Class
         functions to extract text.
         """
         try:
@@ -94,7 +94,8 @@ class DocumentFactory:
             if self.docs:
                 for(file, path) in self.docs:
                     doc_procs = mp.Process(target=args_.docx_handler, args=
-                                           (file, path, doc_queue, self.submitted))
+                                           (file, path, doc_queue,
+                                            self.submitted))
                     doc_procs.start()
                     doc_jobs.append(doc_procs)
 
