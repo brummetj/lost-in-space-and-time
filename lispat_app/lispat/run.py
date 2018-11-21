@@ -13,10 +13,9 @@ Options:
   --train       Submit documents to be used for training data
 
 """
-import sys
-import docopt
-import time
+import docopt, sys
 from lispat.base.manager import CommandManager
+from lispat.utils.logger import Logger
 
 import spacy
 

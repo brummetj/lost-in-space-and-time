@@ -42,12 +42,9 @@ class ArgumentFactory:
             os.makedirs(self.csv_dir)
             os.makedirs(self.submitted_dir)
 
-<<<<<<< HEAD
         if not os.path.exists(self.submitted_dir):
             os.makedirs(self.submitted_dir)
 
-=======
->>>>>>> 4209f4b30d58b51a045b734af1da1c8e988cdf85
     '''
     Function using pdfminer to extract text from pdfs and
     store them into an array of text files
