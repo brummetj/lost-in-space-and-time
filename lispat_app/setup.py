@@ -18,12 +18,12 @@ except ImportError:
 install_requires = [
     'chardet==3.0.4',
     'nltk',
-    'docx2txt==0.6',
     'pdfminer.six',
     'pygogo',
     'python-docx',
     'docopt',
-    'gensim'
+    'gensim',
+    'spacy'
 ]
 
 setup(

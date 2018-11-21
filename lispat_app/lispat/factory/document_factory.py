@@ -1,6 +1,11 @@
+"""
+DocumentFactory.
+
+This script recieves user defined path containing files that are to be
+converted into text files.
+"""
+
 import os
-import sys
-import traceback
 import multiprocessing as mp
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
@@ -10,12 +15,20 @@ logger = Logger("DocumentFactory")
 
 class DocumentFactory:
     """
-    This class should break up the dir path by file types
-    and return file types that can be aggregated together
-    into their own function that handles those certain file types
+    Handles file conversion, using the user defined path.
+
+    This class should break up the directory path by file types and
+    returns file types that can be aggregated together into their own function
+    that handles those certain file types.
     """
 
     def __init__(self, path):
+        """
+        Initialize Document Factory class.
+
+        Iterate through user path, storing pdfs and docx files into associated
+        directories.
+        """
 
         logger.getLogger().info("DocumentFactory Created")
 
@@ -24,6 +37,7 @@ class DocumentFactory:
         self.pdfs = []
         try:
             for file in os.listdir(path):
+
                 if file.endswith(".doc"):
                     logger.getLogger().debug("File Found - {} in {}"
                                              .format(file, path))
@@ -38,13 +52,17 @@ class DocumentFactory:
                     logger.getLogger().debug("File Found - {} in {}"
                                              .format(file, path))
                     self.pdfs.append((file, path))
-                else:
-                    raise FileNotFoundError
 
         except FileNotFoundError as error:
             logger.getLogger().error("No required file types Found - Exiting")
-        
+
     def convert_file(self):
+        """
+        Handles the file conversion.
+
+        Iterate through  pdfs and docx files calls ArgumentFactory Class
+        functions to extract text.
+        """
         try:
             args_ = ArgumentFactory()
 
@@ -72,14 +90,14 @@ class DocumentFactory:
                 for (file, path) in self.pdfs:
                     procs = mp.Process(target=args_.pdfminer_handler, args=
                                        (file, path, pdf_queue))
-                    procs.start()
-                    pdf_jobs.append(procs)
+                procs.start()
+                pdf_jobs.append(procs)
 
                 for proc in pdf_jobs:
                     pdf_data_txt.append(pdf_queue.get())
                     proc.join()
 
-            return doc_data_txt, pdf_data_txt
+                return doc_data_txt, pdf_data_txt
         except RuntimeError as error:
             logger.getLogger().error(error)
             exit(1)

@@ -23,7 +23,7 @@ class NoiseFilter:
         :param pdf: All data coming from pdf documents
         """
         self.word_array = None
-        self.word_count = None
+        self.word_count = []
         self.txt_data = None
         self.word = word
         self.pdf = pdf
@@ -73,6 +73,7 @@ class NoiseFilter:
             logger.getLogger().debug("Removing any crazy long words from parsing")
             words = [w for w in words if not len(w) > 40]
             self.word_array = words
+            return words
 
         except RuntimeError as error:
             logger.getLogger().error("Noise filter", error)
@@ -97,7 +98,8 @@ class NoiseFilter:
             keys = sorted(word_count.items(), key=operator.itemgetter(1), reverse=True)
             for i in keys[:20]:
                 print(i)
-            self.word_count = keys
+                self.word_count.append(i)
+            # self.word_count = keys
         except ValueError as error:
             logger.getLogger().error("Noise filter", error)
 
