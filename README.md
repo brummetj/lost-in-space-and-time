@@ -3,7 +3,7 @@ Senior Design NLP processing and comparisons on regulatory filing documents.
 
 ## How to Run
 
-###DOCKER
+### DOCKER
 
 Install docker from  https://www.docker.com/get-started
 
@@ -58,7 +58,7 @@ If your docker image is already built and you want to run it again please follow
 
 ---
 
-###LOCALLY
+### LOCALLY
 
 #### Requirements
 
