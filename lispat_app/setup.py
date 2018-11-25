@@ -16,17 +16,18 @@ except ImportError:
         return ret
 
 install_requires = [
-    'chardet==3.0.4',
     'nltk',
     'docx2txt==0.6',
     'pdfminer.six',
     'pygogo',
-    'matplotlib==2.1.0'
     'python-docx',
     'docopt',
     'gensim',
-    'cld2-cffi'
-    'spacy'
+    'spacy',
+    'chardet==3.0.4',
+    'textblob',
+    'matplotlib==2.1.0',
+    'sklearn'
 ]
 
 setup(
