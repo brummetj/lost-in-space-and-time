@@ -39,7 +39,7 @@ docker build . -t lispat
 
 now you can run the containerized application with to train data.
 
-`docker run -it --name lispat_container jbrummet/lispat --path=/path/to/file --train`
+`docker run -it --name lispat_container jbrummet/lispat:0.1.0 --path=/path/to/file --train`
 
 to run a file already in the container please use `./assets/pdfs/test/testfile.pdf or ./assets/pdfs/test/test/*`
 
@@ -67,7 +67,7 @@ If you want to create the container from the docker image run.
 
 `docker rm lispat_container`
 
-`docker run -it --name lispat_container jbrummet/lispat --path=/path/to/file  --train`
+`docker run -it --name lispat_container jbrummet/lispat:0.1.0 --path=/path/to/file  --train`
 
 Once you have the data trained you can now commit the image to a new name and mount a volume to it to the document you want to compare with. 
 
