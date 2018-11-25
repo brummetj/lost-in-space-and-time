@@ -19,7 +19,10 @@ It's easy to distribute, we have a public registry to pull the image from. To ge
 
 Once docker is install you can pull the image from the repo with
 
-`docker pull jbrummet/lispat -t lispat`
+```
+docker pull jbrummet/lispat:0.1.0
+```
+
 
 If you are wanting to build the image from the repo please do the following 
 
@@ -36,7 +39,7 @@ docker build . -t lispat
 
 now you can run the containerized application with to train data.
 
-`docker run -it -rm --name lispat_container lispat --path=/path/to/file --train`
+`docker run -it --name lispat_container jbrummet/lispat --path=/path/to/file --train`
 
 to run a file already in the container please use `./assets/pdfs/test/testfile.pdf or ./assets/pdfs/test/test/*`
 
@@ -64,7 +67,7 @@ If you want to create the container from the docker image run.
 
 `docker rm lispat_container`
 
-`docker run -it --name lispat_container  lispat --path=/path/to/file  --train`
+`docker run -it --name lispat_container jbrummet/lispat --path=/path/to/file  --train`
 
 Once you have the data trained you can now commit the image to a new name and mount a volume to it to the document you want to compare with. 
 
