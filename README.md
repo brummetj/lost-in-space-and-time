@@ -19,17 +19,24 @@ It's easy to distribute, we have a public registry to pull the image from. To ge
 
 Once docker is install you can pull the image from the repo with
 
-`docker pull jbrummet/lispat`
+`docker pull jbrummet/lispat -t lispat`
+
+If you are wanting to build the image from the repo please do the following 
+
+```
+git clone thisrepo
+
+cd lispat_app
+
+docker build . -t lispat
+
+```
 
 *note*: this does take a minute to build, please be patient. You would need to install all the dependencies on your OS anyways.
 
-now you can run the containerized application with
+now you can run the containerized application with to train data.
 
-`docker run -it -rm --name lispat_container -v path/to/file:path/to/file lispat --path=/path/to/file [--compare] [--train]`
-
-note: 
-* train and compare are required but not ran at the same time. 
-* each path/to/file should be the same path in the command.
+`docker run -it -rm --name lispat_container lispat --path=/path/to/file --train`
 
 to run a file already in the container please use `./assets/pdfs/test/testfile.pdf or ./assets/pdfs/test/test/*`
 
@@ -42,19 +49,38 @@ docker exec -it lispat_container /bin/bash
 > ls
  ```
 
-Feel free to keep the docker image, you can remove it by
-
-`docker rmi --force <docker_id>`
-
 where docker_id comes from `docker images`
 
-If your docker image is already built and you want to run it again please follow the following commands.
+If your docker image is already built and you want to modify and run the same container again please follow the following commands.
 
 `docker update --cpu-shares 512 -m 4G --memory-swap 5G lispat_container`
 
 `docker start lispat_container`
 
-`docker exec -it lispat_container lispat --path=./path/to/docs [--compare] [--train]`
+`docker exec -it lispat_container lispat --path=./path/to/docs  --train`
+
+
+If you want to create the container from the docker image run.
+
+`docker rm lispat_container`
+
+`docker run -it --name lispat_container  lispat --path=/path/to/file  --train`
+
+Once you have the data trained you can now commit the image to a new name and mount a volume to it to the document you want to compare with. 
+
+```
+docker ps -a
+docker commit <lispat_container_id> lispat_trained
+docker run -it -v local/path/to/file.pdf:local/path/to/file.pdf --name lispat_trained_container lispat_trained --path=local/path/to/file.pdf --compare
+```
+
+You will now see the container using the trained data that was saved from the previous data.
+If you plan on using documents in the *assets* folder, there is no need for a -v mount.  
+
+
+Feel free to keep the docker image, you can remove it by
+
+`docker rmi --force <docker_id>`
 
 ---
 
