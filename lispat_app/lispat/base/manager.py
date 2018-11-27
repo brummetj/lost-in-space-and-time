@@ -3,11 +3,10 @@ import sys
 from lispat.utils.logger import Logger
 from lispat.processing.predictive_model import Predict
 from lispat.processing.model_processing import NLPModel
+from lispat.processing.pre_processing import Preproccessing
 from lispat.factory.document_factory import DocumentFactory
 
-import spacy
-import pickle
-import shutil
+
 logger = Logger("CommandManager")
 
 

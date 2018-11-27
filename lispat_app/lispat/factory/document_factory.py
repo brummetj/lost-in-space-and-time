@@ -35,7 +35,6 @@ class DocumentFactory:
 
         self.args_ = ArgumentFactory()
 
-        print(self.path)
         try:
             if submitted is True:
                 self.submitted = True
@@ -44,35 +43,40 @@ class DocumentFactory:
             file = Path(path)
             if file.is_file():
                 if file.suffix == ".doc":
-                    logger.getLogger().debug("File Found - {} in {}"
-                                             .format(file, path))
-                    self.docs.append((str(file.absolute()), path))
+                    logger.getLogger().debug("File Found - {}"
+                                             .format(os.path.basename(path)))
+                    self.docs.append(path)
 
                 if file.suffix == ".docx":
-                    logger.getLogger().debug("File Found - {} in {}"
-                                             .format(file, path))
-                    self.docs.append((str(file.absolute()), path))
+                    file = os.path.basename(path)
+                    logger.getLogger().debug("File Found - {}"
+                                             .format(os.path.basename(path)))
+                    self.docs.append(path)
 
                 if file.suffix == '.pdf':
-                    logger.getLogger().debug("File Found - {} in {}"
-                                             .format(file, path))
-                    self.pdfs.append((str(file.absolute()), path))
+                    file = os.path.basename(path)
+                    logger.getLogger().debug("File Found - {}"
+                                             .format(os.path.basename(path)))
+                    self.pdfs.append(path)
 
             elif file.is_dir():
                 for file in os.listdir(path):
                     if file.endswith(".doc"):
-                        logger.getLogger().debug("File Found - {} in {}"
-                                                 .format(file, path))
+                        logger.getLogger().debug("File Found - {}"
+                                                 .format(
+                                                  os.path.basename(path)))
                         self.docs.append((file, path))
 
                     if file.endswith(".docx"):
-                        logger.getLogger().debug("File Found - {} in {}"
-                                                 .format(file, path))
+                        logger.getLogger().debug("File Found - {}"
+                                                 .format(
+                                                  os.path.basename(path)))
                         self.docs.append((file, path))
 
                     if file.endswith(".pdf"):
-                        logger.getLogger().debug("File Found - {} in {}"
-                                                 .format(file, path))
+                        logger.getLogger().debug("File Found - {}"
+                                                 .format(
+                                                  os.path.basename(path)))
                         self.pdfs.append((file, path))
 
         except FileNotFoundError as error:
@@ -87,30 +91,29 @@ class DocumentFactory:
         functions to extract text.
         """
         try:
-            self.args_ = ArgumentFactory()
 
             doc_data_txt = []
             pdf_data_txt = []
 
-            n = args_.file_count(self.docs)
+            n = self.args_.file_count(self.docs)
 
             if self.docs:
                 doc_data_txt = (
                     Parallel
                     (n_jobs=n, backend="multiprocessing", verbose=10)
                     (delayed
-                     (args_.docx_handler)(file, path, self.submitted)
-                        for(file, path) in self.docs))
+                     (self.args_.docx_handler)(path, self.submitted)
+                        for(path) in self.docs))
 
-            n = args_.file_count(self.pdfs)
+            n = self.args_.file_count(self.pdfs)
 
             if self.pdfs:
                 pdf_data_txt = (
                     Parallel
                     (n_jobs=n, backend="multiprocessing", verbose=10)
                     (delayed
-                     (args_.pdfminer_handler)(file, path, self.submitted)
-                        for(file, path) in self.pdfs))
+                     (self.args_.pdfminer_handler)(path, self.submitted)
+                        for(path) in self.pdfs))
 
             return doc_data_txt, pdf_data_txt
         except RuntimeError as error:

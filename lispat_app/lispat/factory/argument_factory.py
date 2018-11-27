@@ -51,7 +51,7 @@ class ArgumentFactory:
     Function using pdfminer to extract text from pdfs and
     store them into an array of text files
     '''
-    def pdfminer_handler(self, file, path, submitted):
+    def pdfminer_handler(self, path, submitted):
 
         logger.getLogger().info("Running PDFMiner")
 
@@ -63,42 +63,37 @@ class ArgumentFactory:
         interpreter = PDFPageInterpreter(manager, converter)
 
         try:
-            pdf = os.path.join(path, file)
+            file = os.path.basename(path)
             pdf_saved = self.pdfminer_dir + file
-
             pdf_saved = os.path.splitext(pdf_saved)[0] + '.txt'
 
             if os.path.exists(pdf_saved):
                 logger.getLogger().debug("Already Exits: " + file)
-                self.txt.append((pdf_saved, self.pdfminer_dir))
+                self.txt.append(pdf_saved)
                 return self.txt
 
-            logger.getLogger().debug("Opening File: {}".format(pdf))
+            logger.getLogger().debug("Opening File: {}".format(file))
 
             try:
-                with open(pdf, 'rb') as infile:
+                with open(path, 'rb') as infile:
                     logger.getLogger().debug("Opening File Successful")
 
                     for page in PDFPage.get_pages(infile, page_nums):
                         interpreter.process_page(page)
 
                     text = output.getvalue()
-                    file = os.path.splitext(file)[0]
 
-                    logger.getLogger().debug("Writing " + file)
+                    logger.getLogger().debug("Writing " + pdf_saved)
                     # open file is a static function.
-                    text_file = self.open_file(submitted, file,
-                                               self.pdfminer_dir)
+                    text_file = self.open_file(submitted, pdf_saved)
 
                     text_file.write(text)
 
                     infile.close()
-
                     converter.close()
                     output.close
                     text_file.close()
-                    file = file + '.txt'
-                    self.txt.append((file, self.pdfminer_dir))
+
                     return self.txt
             except ImportError as error:
                 logger.getLogger().error(error)
@@ -111,33 +106,29 @@ class ArgumentFactory:
     Function using docx library to extract text from word docs and
     store them into an array of text files
     '''
-    def docx_handler(self, file, path, submitted):
+    def docx_handler(self, path, submitted):
         logger.getLogger().info("running docx")
         doc_text = []
         try:
-
-            doc_file = os.path.join(path, file)
+            file = os.path.basename(path)
             doc_saved = self.docx_dir + file
             doc_saved = os.path.splitext(doc_saved)[0] + '.txt'
 
             if os.path.exists(doc_saved):
                 logger.getLogger().debug("Already Exits: " + file)
-                self.txt.append((doc_saved, self.docx_dir))
+                self.txt.append(doc_saved)
                 return self.txt
 
-            doc = docx.Document(doc_file)
+            doc = docx.Document(path)
 
             for para in doc.paragraphs:
                 doc_text.append(para.text)
 
             doc_text = '\n'.join(doc_text)
 
-            file = os.path.splitext(file)[0]
-            text_file = self.open_file(submitted, file, self.docx_dir)
+            text_file = self.open_file(submitted, doc_saved)
             text_file.write(doc_text)
 
-            file = file + '.txt'
-            self.txt.append((file, self.docx_dir))
             return self.txt
         except RuntimeError as error:
             logger.getLogger().error(error)
@@ -174,15 +165,17 @@ class ArgumentFactory:
     """
     Creates/Opens text files with input file name
     """
-    def open_file(self, submitted, file, dir):
+    def open_file(self, submitted, file):
         if submitted is True:
-            txt_filename = self.submitted_dir + file + ".txt"
+            file = os.path.basename(path)
+            txt_filename = self.submitted_dir + file
+            txt_filename = os.path.splitext(txt_filename)[0] + '.txt'
         else:
-            txt_filename = dir + file + ".txt"
+            txt_filename = file
 
         logger.getLogger().debug("File opened for writing - {}"
                                  .format(txt_filename))
-        self.txt.append((txt_filename, dir))
+        self.txt.append(txt_filename)
         return open(txt_filename, "w")
 
     """
@@ -190,6 +183,6 @@ class ArgumentFactory:
     """
     def file_count(self, files):
         count = 0
-        for(file, path) in files:
+        for file in files:
             count += 1
         return count
