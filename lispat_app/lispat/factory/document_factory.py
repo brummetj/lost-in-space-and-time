@@ -24,6 +24,9 @@ class DocumentFactory:
         self.pdfs = []
         self.submitted = False
 
+        self.args_ = ArgumentFactory()
+
+
         print(self.path)
         try:
             if submitted is True:
@@ -67,7 +70,7 @@ class DocumentFactory:
 
     def convert_file(self):
         try:
-            args_ = ArgumentFactory()
+            self.args_ = ArgumentFactory()
 
             doc_queue = mp.Queue()
             pdf_queue = mp.Queue()
@@ -80,7 +83,7 @@ class DocumentFactory:
 
             if self.docs:
                 for(file, path) in self.docs:
-                    doc_procs = mp.Process(target=args_.docx_handler, args=
+                    doc_procs = mp.Process(target=self.args_.docx_handler, args=
                                            (file, path, doc_queue, self.submitted))
                     doc_procs.start()
                     doc_jobs.append(doc_procs)
@@ -91,7 +94,7 @@ class DocumentFactory:
 
             if self.pdfs:
                 for (file, path) in self.pdfs:
-                    procs = mp.Process(target=args_.pdfminer_handler, args=
+                    procs = mp.Process(target=self.args_.pdfminer_handler, args=
                                        (file, path, pdf_queue, self.submitted))
                     procs.start()
                     pdf_jobs.append(procs)

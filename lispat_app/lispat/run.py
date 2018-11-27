@@ -1,50 +1,39 @@
 """Lost in Space and Time
 
 Usage:
-    lispat --path=<content-path>  [--train] [--compare]
+    lispat --path=<content-path>  [--train] [--compare] [--array] [--df]
     lispat [-h | --help]
     lispat --version
 
 Options:
   -h --help     Show this screen.
   --version     Show version.
-  --input       A simple word input
   --compare     Submit a Document to be compared
   --train       Submit documents to be used for training data
+  --array       processing data as an array
+  --df          processing data as a dataframe
 
 """
-import docopt, sys
+import docopt, sys, nltk
 from lispat.base.manager import CommandManager
 from lispat.utils.logger import Logger
 
 import spacy
 
 logger = Logger("Main")
-
-#
-# def space():
-#     nlp = spacy.load('en')
-#     doc = nlp("The big grey dog ate all of the chocolate, but fortunately he wasn't sick!")
-#     doc.text.split()
-#     print(doc)
-#     d = [token.orth_ for token in doc if not token.is_punct | token.is_space]
-#     print(d)
-
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 def main():
 
     try:
-        # logging = Logger("Main")
         args = docopt.docopt(__doc__)
         manager = CommandManager()
         if args['--path']:
             user_path = args['--path']
             manager.create_path(user_path)
-
-            if args['--train']:
-                manager.run('train')
-            if args['--compare']:
-                manager.run('compare')
+            manager.run(args)
 
     except KeyboardInterrupt:
         logger.getLogger().error("Keyboard interrupt. Exiting")

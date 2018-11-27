@@ -31,6 +31,8 @@ class ArgumentFactory:
         self.csv_dir = directory_storage + "csv_data/"
         self.submitted_dir = directory_storage + "submission/"
 
+        self.csv_path = ""
+
         if not os.path.exists(directory_storage):
             os.makedirs(directory_storage)
 
@@ -46,12 +48,11 @@ class ArgumentFactory:
         if not os.path.exists(self.submitted_dir):
             os.makedirs(self.submitted_dir)
 
-    '''
-    Function using pdfminer to extract text from pdfs and
-    store them into an array of text files
-    '''
     def pdfminer_handler(self, file, path, queue, submitted):
-
+        '''
+        Function using pdfminer to extract text from pdfs and
+        store them into an array of text files
+        '''
         logger.getLogger().info("Running PDFMiner")
 
         page_nums = set()
@@ -105,11 +106,12 @@ class ArgumentFactory:
             logger.getLogger().error(error)
             sys.exit(1)
 
-    '''
-    Function using docx library to extract text from word docs and
-    store them into an array of text files
-    '''
+
     def docx_handler(self, file, path, queue, submitted):
+        '''
+        Function using docx library to extract text from word docs and
+        store them into an array of text files
+        '''
         logger.getLogger().info("running docx")
         doc_text = []
         try:
@@ -140,41 +142,33 @@ class ArgumentFactory:
             logger.getLogger().error(error)
             sys.exit(1)
 
-    '''
-    Function using tabula library to extract text from word docs and
-    store them into an array of csv files
-    '''
-    def csv_handler(self):
-        logger.getLogger().info("csv_handler")
+
+    def csv_handler(self, txt):
+        """
+        Function using tabula library to extract text from word docs and
+        store them into an array of csv files
+
+        TODO: This class needs to be more modular for different arrays and csv files.
+        """
+        logger.getLogger().info("Creating a CSV")
 
         try:
-            for file in os.listdir(self.pdfminer_dir):
+            csv_filename = self.csv_dir + "test.csv"
+            logger.getLogger().debug("Opening File for csv: " + csv_filename)
+            csv__ = open(csv_filename, 'w+')
+            self.csv_path = csv_filename
+            with open(csv_filename, 'a+', newline='') as outputFile:
+                logger.getLogger().debug("csv file opened: " + csv_filename)
 
-                text_file = self.pdfminer_dir + "/" + file
+                writer = csv.writer(outputFile, dialect='excel')
+                logger.getLogger().debug("csv created: " + csv_filename)
+                writer.writerows(txt)
 
-                file = os.path.splitext(file)[0]
-                csv_filename = self.csv_dir + "/" + file + ".csv"
-
-                with open(text_file, 'r', newline='') as inputFile:
-                    logger.getLogger().debug("Text file opened: " + text_file)
-
-                    reader = csv.reader(inputFile, delimiter=".")
-                    logger.getLogger().debug("render created")
-
-                    with open(csv_filename, 'w', newline='') as outputFile:
-                        logger.getLogger().debug("csv file opened")
-
-                        writer = csv.writer(outputFile)
-                        logger.getLogger().debug("writer created")
-                        for row in reader:
-                            writer.writerow(row)
-
-                inputFile.close()
                 outputFile.close()
+                return True
         except RuntimeError as error:
             logger.getLogger().error(error)
             sys.exit(1)
-
 
     def open_file(self, submitted, file, dir):
         if submitted is True:
