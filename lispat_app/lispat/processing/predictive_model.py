@@ -20,7 +20,9 @@ class Predict:
         np.random.seed(42)
         tf.set_random_seed(42)
 
-        file = r"/usr/local/var/lispat/pdf_data/A.6_NIST 800-53 Security and Privacy Controls for Federal Information Systems and Organizations.txt"
+        file = (r"/usr/local/var/lispat/pdf_data/A.6_NIST 800-53 Security and "
+                "Privacy Controls for Federal Information Systems and "
+                "Organizations.txt")
 
         self.data = open(file).read().lower()
 
@@ -95,7 +97,7 @@ class Predict:
         return heapq.nlargest(top_n, range(len(preds)), preds.take)
 
     def predict_completion(self, text):
-        #self.model = load_model(self.model_file_name)
+        # self.model = load_model(self.model_file_name)
         original_text = text
         generated = text
         completion = ''

@@ -58,7 +58,8 @@ model.add(LSTM(50))
 model.add(Dense(vocab_size, activation='softmax'))
 print(model.summary())
 # compile network
-model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.compile(loss='categorical_crossentropy', optimizer='adam',
+              metrics=['accuracy'])
 # fit network
 model.fit(X, y, epochs=500, verbose=2)
 # evaluate

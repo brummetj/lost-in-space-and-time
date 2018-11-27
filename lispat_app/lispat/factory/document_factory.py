@@ -7,10 +7,11 @@ converted into text files.
 
 import os
 import sys
+from pathlib import Path
 from joblib import Parallel, delayed
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
-from pathlib import Path
+
 logger = Logger("DocumentFactory")
 
 
@@ -31,6 +32,8 @@ class DocumentFactory:
         self.docs = []
         self.pdfs = []
         self.submitted = False
+
+        self.args_ = ArgumentFactory()
 
         print(self.path)
         try:
@@ -84,7 +87,7 @@ class DocumentFactory:
         functions to extract text.
         """
         try:
-            args_ = ArgumentFactory()
+            self.args_ = ArgumentFactory()
 
             doc_data_txt = []
             pdf_data_txt = []

@@ -2,8 +2,6 @@ import os
 import sys
 from lispat.utils.logger import Logger
 from lispat.factory.document_factory import DocumentFactory
-from lispat.processing.noise_filter import Noise
-from lispat.processing.model import NLPModel
 from lispat.processing.predictive_model import Predict
 import spacy
 import pickle
@@ -24,6 +22,8 @@ class CommandManager:
         self.path = None
         self.db = None
         self.noise_filter = None
+        self.doc_worker = None
+        self.model = NLPModel()
 
     def create_path(self, path):
         """
@@ -69,7 +69,7 @@ class CommandManager:
             logger.getLogger().error(error)
             exit(1)
 
-    def run(self, model):
+    def run(self, args):
         """
         Main run function to handle learning
         :return: Exit code
@@ -78,84 +78,39 @@ class CommandManager:
         logger.getLogger().info("Command Manager - Run")
         try:
 
-            logger.getLogger().debug("Running a " + model)
+            if args['--compare']:
+                self.doc_worker = DocumentFactory(self.path, True)
+            if args['--train']:
+                self.doc_worker = DocumentFactory(self.path, False)
 
-            if model is 'compare':
-                doc_worker = DocumentFactory(self.path, True)
-            else:
-                doc_worker = DocumentFactory(self.path, False)
+            docs = self.doc_worker.convert_file()
+            self.filter = Preproccessing(docs[0], docs[1])
+            self.filter.get_doc(args)
 
-            logger.getLogger().info("Converting files")
-            __args = doc_worker.convert_file()
+            if args['--array']:
+                self.filter.filter_nlp()
+                self.filter.word_count()
+                self.keys = self.filter.get_word_count()
 
-            logger.getLogger().info("Applying a filter to the files")
-            self.noise_filter = Noise(__args[0], __args[1], model)
-            self.noise_filter.get_doc()
+            if args['--df']:
+                nlp_array_unfiltered = (self.model.
+                                        build_sents(self.filter.nlp.sents))
+                print(nlp_array_unfiltered[:5])
+                csv_success = (self.doc_worker.args_.
+                               csv_handler(nlp_array_unfiltered))
+                if csv_success:
+                    self.model.data_frame(self.doc_worker.args_.csv_path)
 
-            self.noise_filter.word_reduce()
-
-            logger.getLogger().info("Reducing the filter to a word count")
-            self.noise_filter.word_map()
-
-            # a dict of most commonly used words, figured it could be smart
-            # to have this as a global value in this class
-            self.keys = self.noise_filter.get_word_count()
-
-            self.run_args(model)
+            # TODO: figure out how we can make it so we don't need to
+            # check this again...
+            if args['--compare']:
+                self.model.compare_doc_similarity(self.path)
+            if args['--train']:
+                self.model.save_trained(self.filter.word_array)
 
         except RuntimeError as error:
             logger.getLogger().error(error)
             exit(1)
-
-    def run_args(self, model):
-
-        if model is 'train':
-            logger.getLogger().info("Saving object to disk")
-            if os.path.isdir("/usr/local/var/lispat/objects"):
-                obj_file = open("/usr/local/var/lispat/objects/doc.obj", 'wb')
-            else:
-                os.makedirs("/usr/local/var/lispat/objects/")
-                obj_file = open("/usr/local/var/lispat/objects/doc.obj", 'wb')
-
-            obj = self.noise_filter.word_array
-            pickle.dump(obj, obj_file)
-            logger.getLogger().debug("Object successfully saved")
-
-        if model is 'compare':
-
-            path = "/usr/local/var/lispat/pdf_data/"
-            txt_data = ""
-            try:
-                for file in os.listdir(path):
-                    __file = open(path + file, 'rt')
-                    __text = __file.read()
-                    txt_data += __text
-            except RuntimeError as error:
-                logger.getLogger().error("Word filter - ", error)
-            #
-            # logger.getLogger().info("Getting object from disk")
-            # obj_file = open("/usr/local/var/lispat/objects/doc.obj", 'rb')
-
-            head, tail = os.path.split(self.path)
-            file = os.path.splitext(tail)[0]
-            submitted = open("/usr/local/var/lispat/submission/" + file +
-                             ".txt", 'rt')
-
-            # obj = pickle.load(obj_file)
-            # txt = " ".join(obj)
-            txt2 = submitted.read()
-
-            len(txt_data)
-            len(txt2)
-
-            nlp = spacy.load("en")
-            doc1 = nlp(txt_data)
-            doc2 = nlp(txt2)
-
-            similarity = doc2.similarity(doc1)
-            logger.getLogger().debug("Document Similarity is " +
-                                     str(similarity))
-            shutil.rmtree("/usr/local/var/lispat/submission")
 
     def predict(self):
         line = input("Enter a sentence: ")
