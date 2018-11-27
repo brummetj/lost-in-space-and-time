@@ -22,17 +22,13 @@ install_requires = [
     'python-docx',
     'docopt',
     'gensim',
-<<<<<<< HEAD
     'cld2-cffi',
-    'spacy',
     'joblib'
-=======
     'spacy',
     'chardet==3.0.4',
     'textblob',
     'matplotlib==2.1.0',
     'sklearn'
->>>>>>> 8efd795fb0f36f5134bbb554b66a1b251d2205bd
 ]
 
 setup(

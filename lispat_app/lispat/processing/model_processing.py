@@ -27,11 +27,16 @@ class NLPModel:
             logger.getLogger().info("Running information on text dataframe.")
             # A word count on each sentence. not sure if helpful...
             train = pd.read_csv(path, names=["ID", "sentence"])
-            train['word_count'] = (train['sentence'].apply(lambda x:
-                                   len(str(x).split(" "))))
-            train['filtered'] = (train['sentence'].apply(lambda x:
-                                 self.filter.tokenize(x)))
-            print(train.head())
+            train['word_count'] = (train['sentence'].apply
+                                   (lambda x: len(str(x).split(" "))))
+            train['filtered'] = (train['sentence'].apply
+                                 (lambda x: self.filter.tokenize(x)))
+            train['desired_terms'] = (train['filtered'].apply(lambda x:
+                                      self.filter.get_desired_phrase(x)))
+
+            train_desired_terms = train.dropna(subset=['desired_terms'])
+
+            print(train_desired_terms['desired_terms'])
 
             # Getting a ngram of size 6... just with the second row...
             logger.getLogger().debug("Showing the ngram for the 30th"

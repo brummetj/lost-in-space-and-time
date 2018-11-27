@@ -3,6 +3,7 @@ import string
 from lispat.utils.logger import Logger
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from lispat.base.constants import DESIRED_TERMS, DESIRED_PHRASE
 
 logger = Logger("Filter Factory")
 
@@ -64,4 +65,12 @@ class FilteredFactory:
     def stemmer(self, val):
         port = nltk.PorterStemmer()
         words = [port.stem(i) for i in val]
+        return words
+
+    def get_desired_terms(self, val):
+        words = [w for w in val if w in DESIRED_TERMS]
+        return words
+
+    def get_desired_phrase(self, val):
+        words = [w for w in val if w in DESIRED_PHRASE]
         return words
