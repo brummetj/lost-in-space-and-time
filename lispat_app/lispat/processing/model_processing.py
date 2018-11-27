@@ -1,5 +1,6 @@
 from lispat.utils.logger import Logger
 import spacy , os , pandas as pd, sys, pickle, shutil
+import numpy as np
 from textblob import TextBlob
 from lispat.factory.filtered_factory import FilteredFactory
 logger = Logger("Modeling")
@@ -20,14 +21,36 @@ class NLPModel:
             print(path)
             logger.getLogger().info("Running information on text dataframe.")
             # A word count on each sentence. not sure if helpful...
+
             train = pd.read_csv(path, names=["ID", "sentence"])
             train['word_count'] = train['sentence'].apply(lambda x: len(str(x).split(" ")))
             train['filtered'] = train['sentence'].apply(lambda x: self.filter.tokenize(x))
-            train['desired_terms'] = train['filtered'].apply(lambda x: self.filter.get_desired_phrase(x))
 
-            train_desired_terms = train.dropna(subset=['desired_terms'])
+            train['desired_phrase'] = train['filtered'].apply(lambda x: self.filter.get_desired_phrase(x))
+            train['desired_phrase'] = train['desired_phrase'].apply(lambda x: self.filter.punctuation(x))
+            train['desired_phrase'] = train['desired_phrase'].apply(lambda x: self.filter.stemmer(x))
+            train_pe = train[train['desired_phrase'].map(lambda x: len(x)) > 0]
 
-            print(train_desired_terms['desired_terms'])
+            train['desired_term'] = train['filtered'].apply(lambda x: self.filter.get_desired_terms(x))
+            train_te = train[train['desired_term'].map(lambda x: len(x)) > 0]
+
+            # train.drop(columns=['ID'])
+            # train.reset_index(drop=True)
+            # train.set_index(np.arange(len(train.index)))
+            # train.reindex()
+
+            frames = [train_pe, train_te]
+            df = pd.concat(frames)
+            df.drop('ID', axis=1, inplace=True)
+
+            # df = df.apply(lambda x: " ".join([str(i) for i in x]))
+            df.reset_index(drop=True)
+            df.reindex()
+            print(df)
+
+            headers = ["desired_term", "Desired_phrase", "sentences", "word_count"]
+
+            df.to_csv('/usr/local/var/lispat/csv_data/output.csv', encoding='utf-8', columns=headers)
 
             # Getting a ngram of size 6... just with the second row...
             logger.getLogger().debug("Showing the ngram for the 30th row in the DF")
@@ -118,3 +141,16 @@ class NLPModel:
         for i, sent in enumerate(sentences):
             nlp_array.append((i, sent))
         return nlp_array
+
+    def print_full(self, x):
+        pd.set_option('display.max_rows', len(x))
+        pd.set_option('display.max_columns', None)
+        pd.set_option('display.width', 2000)
+        pd.set_option('display.float_format', '{:20,.2f}'.format)
+        pd.set_option('display.max_colwidth', -1)
+        print(x)
+        pd.reset_option('display.max_rows')
+        pd.reset_option('display.max_columns')
+        pd.reset_option('display.width')
+        pd.reset_option('display.float_format')
+        pd.reset_option('display.max_colwidth')

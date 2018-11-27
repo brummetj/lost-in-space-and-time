@@ -66,9 +66,13 @@ class FilteredFactory:
         return words
 
     def get_desired_terms(self, val):
-        words = [w for w in val if w in DESIRED_TERMS]
-        return words
+        for w in val:
+            if w in DESIRED_TERMS:
+                return val
+        return []
 
     def get_desired_phrase(self, val):
-        words = [w for w in val if w in DESIRED_PHRASE]
-        return words
+        for w in val:
+            if w in DESIRED_PHRASE:
+                return val
+        return []

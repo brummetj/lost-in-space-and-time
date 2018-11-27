@@ -104,6 +104,7 @@ class DocumentFactory:
                     proc.join()
 
             return doc_data_txt, pdf_data_txt
+
         except RuntimeError as error:
             logger.getLogger().error(error)
             exit(1)
