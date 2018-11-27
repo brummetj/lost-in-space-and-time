@@ -1,13 +1,7 @@
-import gensim
 from lispat.utils.logger import Logger
-import spacy
-import os
-import pandas as pd
-import sys
-import pickle
-import shutil
+import spacy , os , pandas as pd, sys, pickle, shutil
 from textblob import TextBlob
-from sklearn.feature_extraction.text import TfidfVectorizer
+from lispat.factory.filtered_factory import FilteredFactory
 logger = Logger("Modeling")
 
 class NLPModel:
@@ -15,6 +9,7 @@ class NLPModel:
 
       self.sent_list = None
       self.nlp = spacy.load('en_core_web_sm')
+      self.filter = FilteredFactory()
 
     def data_frame(self, path):
         '''
@@ -27,10 +22,10 @@ class NLPModel:
             # A word count on each sentence. not sure if helpful...
             train = pd.read_csv(path, names=["ID", "sentence"])
             train['word_count'] = train['sentence'].apply(lambda x: len(str(x).split(" ")))
-            print(train[['sentence', 'word_count', 'ID']].head())
+            train['filtered'] = train['sentence'].apply(lambda x: self.filter.tokenize(x))
+            print(train.head())
 
             # Getting a ngram of size 6... just with the second row...
-
             logger.getLogger().debug("Showing the ngram for the 30th row in the DF")
             for w in TextBlob(train['sentence'][30]).ngrams(6):
                 print(w)
