@@ -68,8 +68,12 @@ class Preproccessing:
 
         # split words into tokens.
         try:
+<<<<<<< HEAD
             logger.getLogger().debug("Running a noise filter on directory: "
                                      + self.pdf_path)
+=======
+            logger.getLogger().debug("Running preprocessing on directory: " + self.pdf_path)
+>>>>>>> 3515dee9157e64032cf8bd80d75516f1c412bdd5
 
             tokens = self.filter.tokenize(self.txt_data)
             stripped = self.filter.translate(tokens)

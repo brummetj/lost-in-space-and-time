@@ -1,24 +1,25 @@
-import gensim
-from lispat.utils.logger import Logger
-import spacy
 import os
-import pandas as pd
 import sys
+import spacy
 import pickle
 import shutil
+import pandas as pd
 from textblob import TextBlob
-from sklearn.feature_extraction.text import TfidfVectorizer
+from lispat.utils.logger import Logger
+from lispat.factory.filtered_factory import FilteredFactory
 logger = Logger("Modeling")
+
 
 class NLPModel:
     def __init__(self):
-
-      self.sent_list = None
-      self.nlp = spacy.load('en_core_web_sm')
+        self.sent_list = None
+        self.nlp = spacy.load('en_core_web_sm')
+        self.filter = FilteredFactory()
 
     def data_frame(self, path):
         '''
-        This function takes the test.csv file and turns it into a usable dataframe.
+        This function takes the test.csv file and turns it into a
+        usable dataframe.
         :return:
         '''
         try:
@@ -26,18 +27,22 @@ class NLPModel:
             logger.getLogger().info("Running information on text dataframe.")
             # A word count on each sentence. not sure if helpful...
             train = pd.read_csv(path, names=["ID", "sentence"])
-            train['word_count'] = train['sentence'].apply(lambda x: len(str(x).split(" ")))
-            print(train[['sentence', 'word_count', 'ID']].head())
+            train['word_count'] = (train['sentence'].apply(lambda x:
+                                   len(str(x).split(" "))))
+            train['filtered'] = (train['sentence'].apply(lambda x:
+                                 self.filter.tokenize(x)))
+            print(train.head())
 
             # Getting a ngram of size 6... just with the second row...
-
-            logger.getLogger().debug("Showing the ngram for the 30th row in the DF")
+            logger.getLogger().debug("Showing the ngram for the 30th"
+                                     "row in the DF")
             for w in TextBlob(train['sentence'][30]).ngrams(6):
                 print(w)
 
             # For spelling
             # train['sentence'][2].apply(lambda x: str(TextBlob(x).correct()))
-            # tf1 = (train['sentence'][1:3]).apply(lambda x: pd.value_counts(x.split(" "))).sum(axis=0).reset_index()
+            # tf1 = (train['sentence'][1:3]).apply(lambda x: pd.value_counts
+            #       (x.split(" "))).sum(axis=0).reset_index()
             # tf1.columns = ['words', 'tf']
 
         except RuntimeError:
@@ -46,7 +51,8 @@ class NLPModel:
 
     def save_trained(self, word_array):
         '''
-        :param word_array: an array of words that will be saved as a object for now..
+        :param word_array: an array of words that will be saved
+         as a object for now..
         :return: None
         '''
         try:
@@ -66,13 +72,13 @@ class NLPModel:
             logger.getLogger().debug("Run time error saving the object")
             sys.exit(1)
 
-
     def compare_doc_similarity(self, path):
         '''
         :param path: path to submission file.
         :return: None
 
-        TODO: Clean this up and make the comparison give better feedback. Use Gensim instead of spaCy..
+        TODO: Clean this up and make the comparison give better feedback.
+        Use Gensim instead of spaCy..
         '''
         try:
             logger.getLogger().info("Comparing document similarity")
@@ -92,7 +98,8 @@ class NLPModel:
 
             head, tail = os.path.split(path)
             file = os.path.splitext(tail)[0]
-            submitted = open("/usr/local/var/lispat/submission/" + file + ".txt", 'rt')
+            submitted = open("/usr/local/var/lispat/submission/" + file +
+                             ".txt", 'rt')
 
             # obj = pickle.load(obj_file)
             # txt = " ".join(obj)
@@ -105,11 +112,13 @@ class NLPModel:
             doc2 = self.nlp(txt2)
 
             similarity = doc2.similarity(doc1)
-            logger.getLogger().debug("Document Similarity is " + str(similarity))
+            logger.getLogger().debug("Document Similarity is " +
+                                     str(similarity))
             shutil.rmtree("/usr/local/var/lispat/submission")
 
         except RuntimeError as error:
-            logger.getLogger().error("Error with comparing the two documents with spaCy")
+            logger.getLogger().error("Error with comparing the two"
+                                     "documents with spaCy")
             shutil.rmtree("/usr/local/var/lispat/submission")
             sys.exit(1)
 
