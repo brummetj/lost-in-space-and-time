@@ -2,6 +2,7 @@ import os
 import nltk
 import spacy
 import string
+import gensim
 import operator
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -9,9 +10,6 @@ from lispat.utils.logger import Logger
 from lispat.factory.filtered_factory import FilteredFactory
 from nltk.collocations import BigramAssocMeasures, BigramCollocationFinder
 
-
-nltk.download('punkt')
-nltk.download('stopwords')
 
 logger = Logger("Noise Filter")
 
@@ -93,7 +91,7 @@ class Noise:
             words = [w for w in words if not any(c.isdigit() for c in w)]
             logger.getLogger().debug(words[:100])
 
-            logger.getLogger().debug("Removing any crazy long words from parsing")
+            logger.getLogger().debug("Removing any long words from parsing")
             words = [w for w in words if not len(w) > 50]
 
             wnl = nltk.WordNetLemmatizer()
@@ -126,7 +124,8 @@ class Noise:
                     word_count[word] += 1
 
             logger.getLogger().debug("Word Count")
-            keys = sorted(word_count.items(), key=operator.itemgetter(1), reverse=True)
+            keys = sorted(word_count.items(), key=operator.itemgetter(1),
+                          reverse=True)
             for i in keys[:self.max_word_count]:
                 print(i)
                 keywordList.append(i[0])

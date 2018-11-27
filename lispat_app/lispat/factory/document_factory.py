@@ -6,7 +6,8 @@ converted into text files.
 """
 
 import os
-import multiprocessing as mp
+import sys
+from joblib import Parallel, delayed
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
 from pathlib import Path
@@ -44,6 +45,11 @@ class DocumentFactory:
                                              .format(file, path))
                     self.docs.append((str(file.absolute()), path))
 
+                if file.suffix == ".docx":
+                    logger.getLogger().debug("File Found - {} in {}"
+                                             .format(file, path))
+                    self.docs.append((str(file.absolute()), path))
+
                 if file.suffix == '.pdf':
                     logger.getLogger().debug("File Found - {} in {}"
                                              .format(file, path))
@@ -65,8 +71,6 @@ class DocumentFactory:
                         logger.getLogger().debug("File Found - {} in {}"
                                                  .format(file, path))
                         self.pdfs.append((file, path))
-                    else:
-                        raise FileNotFoundError
 
         except FileNotFoundError as error:
             logger.getLogger().error("No required file types Found - Exiting")
@@ -82,37 +86,28 @@ class DocumentFactory:
         try:
             args_ = ArgumentFactory()
 
-            doc_queue = mp.Queue()
-            pdf_queue = mp.Queue()
-
-            doc_jobs = []
-            pdf_jobs = []
-
             doc_data_txt = []
             pdf_data_txt = []
 
-            if self.docs:
-                for(file, path) in self.docs:
-                    doc_procs = mp.Process(target=args_.docx_handler, args=
-                                           (file, path, doc_queue,
-                                            self.submitted))
-                    doc_procs.start()
-                    doc_jobs.append(doc_procs)
+            n = args_.file_count(self.docs)
 
-                for doc_proc in doc_jobs:
-                    doc_data_txt.append(doc_queue.get())
-                    doc_proc.join()
+            if self.docs:
+                doc_data_txt = (
+                    Parallel
+                    (n_jobs=n, backend="multiprocessing", verbose=10)
+                    (delayed
+                     (args_.docx_handler)(file, path, self.submitted)
+                        for(file, path) in self.docs))
+
+            n = args_.file_count(self.pdfs)
 
             if self.pdfs:
-                for (file, path) in self.pdfs:
-                    procs = mp.Process(target=args_.pdfminer_handler, args=
-                                       (file, path, pdf_queue, self.submitted))
-                    procs.start()
-                    pdf_jobs.append(procs)
-
-                for proc in pdf_jobs:
-                    pdf_data_txt.append(pdf_queue.get())
-                    proc.join()
+                pdf_data_txt = (
+                    Parallel
+                    (n_jobs=n, backend="multiprocessing", verbose=10)
+                    (delayed
+                     (args_.pdfminer_handler)(file, path, self.submitted)
+                        for(file, path) in self.pdfs))
 
             return doc_data_txt, pdf_data_txt
         except RuntimeError as error:

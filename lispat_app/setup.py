@@ -24,8 +24,9 @@ install_requires = [
     'python-docx',
     'docopt',
     'gensim',
-    'cld2-cffi'
-    'spacy'
+    'cld2-cffi',
+    'spacy',
+    'joblib'
 ]
 
 setup(

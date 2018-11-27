@@ -25,7 +25,6 @@ class ArgumentFactory:
         self.txt = []
         directory_storage = "/usr/local/var/lispat/"
         self.pdfminer_dir = directory_storage + "pdf_data/"
-        self.doc2txt_dir = directory_storage + "doc_data/"
         self.docx_dir = directory_storage + "docx_data/"
         self.csv_dir = directory_storage + "csv_data/"
         self.submitted_dir = directory_storage + "submission/"
@@ -50,7 +49,7 @@ class ArgumentFactory:
     Function using pdfminer to extract text from pdfs and
     store them into an array of text files
     '''
-    def pdfminer_handler(self, file, path, queue, submitted):
+    def pdfminer_handler(self, file, path, submitted):
 
         logger.getLogger().info("Running PDFMiner")
 
@@ -70,8 +69,7 @@ class ArgumentFactory:
             if os.path.exists(pdf_saved):
                 logger.getLogger().debug("Already Exits: " + file)
                 self.txt.append((pdf_saved, self.pdfminer_dir))
-                queue.put(self.txt)
-                return None
+                return self.txt
 
             logger.getLogger().debug("Opening File: {}".format(pdf))
 
@@ -83,8 +81,7 @@ class ArgumentFactory:
                         interpreter.process_page(page)
 
                     text = output.getvalue()
-                    head, tail = os.path.split(path)
-                    file = os.path.splitext(tail)[0]
+                    file = os.path.splitext(file)[0]
 
                     logger.getLogger().debug("Writing " + file)
                     # open file is a static function.
@@ -98,7 +95,9 @@ class ArgumentFactory:
                     converter.close()
                     output.close
                     text_file.close()
-                    queue.put(self.txt)
+                    file = file + '.txt'
+                    self.txt.append((file, self.pdfminer_dir))
+                    return self.txt
             except ImportError as error:
                 logger.getLogger().error(error)
                 sys.exit(1)
@@ -110,7 +109,7 @@ class ArgumentFactory:
     Function using docx library to extract text from word docs and
     store them into an array of text files
     '''
-    def docx_handler(self, file, path, queue, submitted):
+    def docx_handler(self, file, path, submitted):
         logger.getLogger().info("running docx")
         doc_text = []
         try:
@@ -122,8 +121,7 @@ class ArgumentFactory:
             if os.path.exists(doc_saved):
                 logger.getLogger().debug("Already Exits: " + file)
                 self.txt.append((doc_saved, self.docx_dir))
-                queue.put(self.txt)
-                return None
+                return self.txt
 
             doc = docx.Document(doc_file)
 
@@ -136,7 +134,9 @@ class ArgumentFactory:
             text_file = self.open_file(submitted, file, self.docx_dir)
             text_file.write(doc_text)
 
-            queue.put(self.txt)
+            file = file + '.txt'
+            self.txt.append((file, self.docx_dir))
+            return self.txt
         except RuntimeError as error:
             logger.getLogger().error(error)
             sys.exit(1)
@@ -176,6 +176,9 @@ class ArgumentFactory:
             logger.getLogger().error(error)
             sys.exit(1)
 
+    """
+    Creates/Opens text files with input file name
+    """
     def open_file(self, submitted, file, dir):
         if submitted is True:
             txt_filename = self.submitted_dir + file + ".txt"
@@ -186,3 +189,12 @@ class ArgumentFactory:
                                  .format(txt_filename))
         self.txt.append((txt_filename, dir))
         return open(txt_filename, "w")
+
+    """
+    Gets the file count from a list of files
+    """
+    def file_count(self, files):
+        count = 0
+        for(file, path) in files:
+            count += 1
+        return count

@@ -4,6 +4,7 @@ from lispat.utils.logger import Logger
 from lispat.factory.document_factory import DocumentFactory
 from lispat.processing.noise_filter import Noise
 from lispat.processing.model import NLPModel
+from lispat.processing.predictive_model import Predict
 import spacy
 import pickle
 import shutil
@@ -47,6 +48,27 @@ class CommandManager:
             logger.getLogger().error("Directory does not exist")
             sys.exit(1)
 
+    def convert(self):
+        """
+        Convert function to handle file conversion
+        :return: Exit code
+        """
+        # Initialize with our docs.
+        logger.getLogger().info("Command Manager - Convert")
+        try:
+
+            doc_worker = DocumentFactory(self.path, False)
+
+            logger.getLogger().info("Converting files")
+
+            __args = doc_worker.convert_file()
+
+            logger.getLogger().info("Files stored in /usr/local/var/lispat/")
+
+        except RuntimeError as error:
+            logger.getLogger().error(error)
+            exit(1)
+
     def run(self, model):
         """
         Main run function to handle learning
@@ -74,7 +96,7 @@ class CommandManager:
 
             logger.getLogger().info("Reducing the filter to a word count")
             self.noise_filter.word_map()
-            
+
             # a dict of most commonly used words, figured it could be smart
             # to have this as a global value in this class
             self.keys = self.noise_filter.get_word_count()
@@ -116,7 +138,8 @@ class CommandManager:
 
             head, tail = os.path.split(self.path)
             file = os.path.splitext(tail)[0]
-            submitted = open("/usr/local/var/lispat/submission/" + file + ".txt" , 'rt')
+            submitted = open("/usr/local/var/lispat/submission/" + file +
+                             ".txt", 'rt')
 
             # obj = pickle.load(obj_file)
             # txt = " ".join(obj)
@@ -129,6 +152,12 @@ class CommandManager:
             doc1 = nlp(txt_data)
             doc2 = nlp(txt2)
 
-            similarity =  doc2.similarity(doc1)
-            logger.getLogger().debug("Document Similarity is " + str(similarity))
+            similarity = doc2.similarity(doc1)
+            logger.getLogger().debug("Document Similarity is " +
+                                     str(similarity))
             shutil.rmtree("/usr/local/var/lispat/submission")
+
+    def predict(self):
+        line = input("Enter a sentence: ")
+        predictor = Predict()
+        predictor.output(line)
