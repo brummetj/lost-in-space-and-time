@@ -43,41 +43,36 @@ class DocumentFactory:
             file = Path(path)
             if file.is_file():
                 if file.suffix == ".doc":
-                    logger.getLogger().debug("File Found - {}"
-                                             .format(os.path.basename(path)))
-                    self.docs.append(path)
+                    logger.getLogger().debug("File Found - {}".format(file))
+                    self.docs.append(path + "/" + file)
 
                 if file.suffix == ".docx":
                     file = os.path.basename(path)
-                    logger.getLogger().debug("File Found - {}"
-                                             .format(os.path.basename(path)))
-                    self.docs.append(path)
+                    logger.getLogger().debug("File Found - {}".format(file))
+                    self.docs.append(path + "/" + file)
 
                 if file.suffix == '.pdf':
                     file = os.path.basename(path)
-                    logger.getLogger().debug("File Found - {}"
-                                             .format(os.path.basename(path)))
-                    self.pdfs.append(path)
+                    logger.getLogger().debug("File Found - {}".format(file))
+                    self.pdfs.append(path + "/" + file)
 
             elif file.is_dir():
                 for file in os.listdir(path):
                     if file.endswith(".doc"):
                         logger.getLogger().debug("File Found - {}"
-                                                 .format(
-                                                  os.path.basename(path)))
-                        self.docs.append((file, path))
+                                                 .format(file))
+                        self.docs.append(path + "/" + file)
 
                     if file.endswith(".docx"):
                         logger.getLogger().debug("File Found - {}"
-                                                 .format(
-                                                  os.path.basename(path)))
-                        self.docs.append((file, path))
+                                                 .format(file))
+                        self.docs.append(path + "/" + file)
 
                     if file.endswith(".pdf"):
+                        print(path)
                         logger.getLogger().debug("File Found - {}"
-                                                 .format(
-                                                  os.path.basename(path)))
-                        self.pdfs.append((file, path))
+                                                 .format(file))
+                        self.pdfs.append(path + "/" + file)
 
         except FileNotFoundError as error:
             logger.getLogger().error("No required file types Found - Exiting")
@@ -103,7 +98,7 @@ class DocumentFactory:
                     (n_jobs=n, backend="multiprocessing", verbose=10)
                     (delayed
                      (self.args_.docx_handler)(path, self.submitted)
-                        for(path) in self.docs))
+                        for path in self.docs))
 
             n = self.args_.file_count(self.pdfs)
 
@@ -113,9 +108,10 @@ class DocumentFactory:
                     (n_jobs=n, backend="multiprocessing", verbose=10)
                     (delayed
                      (self.args_.pdfminer_handler)(path, self.submitted)
-                        for(path) in self.pdfs))
+                        for path in self.pdfs))
 
             return doc_data_txt, pdf_data_txt
+
         except RuntimeError as error:
             logger.getLogger().error(error)
             exit(1)

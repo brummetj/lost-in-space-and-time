@@ -165,13 +165,13 @@ class ArgumentFactory:
     """
     Creates/Opens text files with input file name
     """
-    def open_file(self, submitted, file):
+    def open_file(self, submitted, path):
         if submitted is True:
             file = os.path.basename(path)
             txt_filename = self.submitted_dir + file
             txt_filename = os.path.splitext(txt_filename)[0] + '.txt'
         else:
-            txt_filename = file
+            txt_filename = path
 
         logger.getLogger().debug("File opened for writing - {}"
                                  .format(txt_filename))

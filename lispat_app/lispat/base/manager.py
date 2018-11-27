@@ -84,9 +84,10 @@ class CommandManager:
             if args['--train']:
                 self.doc_worker = DocumentFactory(self.path, False)
 
-            docs = self.doc_worker.convert_file()
-            self.filter = Preproccessing(docs[0], docs[1])
-            self.filter.get_doc(args)
+            if args['--compare'] or args['--train']:
+                docs = self.doc_worker.convert_file()
+                self.filter = Preproccessing(docs[0], docs[1])
+                self.filter.get_doc(args)
 
             if args['--array']:
                 self.filter.filter_nlp()
@@ -102,6 +103,10 @@ class CommandManager:
                 if csv_success:
                     self.model.data_frame(self.doc_worker.args_.csv_path)
 
+            if args['--convert']:
+                self.doc_worker = DocumentFactory(self.path, False)
+                docs = self.doc_worker.convert_file()
+
             # TODO: figure out how we can make it so we don't need to
             # check this again...
             if args['--compare']:
@@ -112,8 +117,3 @@ class CommandManager:
         except RuntimeError as error:
             logger.getLogger().error(error)
             exit(1)
-
-    def predict(self):
-        line = input("Enter a sentence: ")
-        predictor = Predict()
-        predictor.output(line)

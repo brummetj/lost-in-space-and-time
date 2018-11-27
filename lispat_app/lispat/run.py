@@ -2,12 +2,14 @@
 
 Usage:
     lispat --path=<content-path>  [--train] [--compare] [--array] [--df]
+                                  [--convert]
     lispat [-h | --help]
     lispat --version
 
 Options:
   -h --help     Show this screen.
   --version     Show version.
+  --convert     Submit Documents to be converted
   --compare     Submit a Document to be compared
   --train       Submit documents to be used for training data
   --array       processing data as an array

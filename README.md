@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Lost in Space and Time
 ## When Plagiarism is a Good Thing
 
@@ -9,10 +8,6 @@ processes the documents information, performs similarity checks, and builds
 a learning model for text classification and prediction all in order to capture
 the original information, in a manner that preserves and increases its value,
 accessibility and usefulness.
-=======
-# lost-in-space-and-time
-Senior Design NLP processing and comparisons on regulatory filing documents. 
->>>>>>> 8efd795fb0f36f5134bbb554b66a1b251d2205bd
 
 ## How to Run
 
@@ -23,10 +18,10 @@ Install docker from  https://www.docker.com/get-started
 
 Why docker ?
 
-* Easy, deployable, manageable, lightweight, and portable. 
+* Easy, deployable, manageable, lightweight, and portable.
 
 
-Docker ensures that any one can pull the image for Lispat and run it on any OS that has docker supported. 
+Docker ensures that any one can pull the image for Lispat and run it on any OS that has docker supported.
 
 It's easy to distribute, we have a public registry to pull the image from. To get the latest code docker image pull from `jbrummet/lispat`
 
@@ -37,7 +32,7 @@ docker pull jbrummet/lispat:0.1.0
 ```
 
 
-If you are wanting to build the image from the repo please do the following 
+If you are wanting to build the image from the repo please do the following
 
 ```
 git clone thisrepo
@@ -56,11 +51,11 @@ now you can run the containerized application with to train data.
 
 to run a file already in the container please use `./assets/pdfs/test/testfile.pdf or ./assets/pdfs/test/test/*`
 
-to get names of test files to run 
+to get names of test files to run
 ```
 docker start lispat_container
 docker exec -it lispat_container /bin/bash
-> ls 
+> ls
 > cd lispat/assets/pdfs
 > ls
  ```
@@ -82,7 +77,7 @@ If you want to create the container from the docker image run.
 
 `docker run -it --name lispat_container jbrummet/lispat:0.1.0 --path=/path/to/file  --train`
 
-Once you have the data trained you can now commit the image to a new name and mount a volume to it to the document you want to compare with. 
+Once you have the data trained you can now commit the image to a new name and mount a volume to it to the document you want to compare with.
 
 ```
 docker ps -a
@@ -159,13 +154,6 @@ documents:
 
 `lispat --path=path/todocs --compare`
 * upload a submitted document to compare with documents that are already passed by the FDA
-<<<<<<< HEAD
-=======
 
-
-Dependencies and package issues are possible with the requirements of the application. 
-Should use the docker container above all else for easier application use. 
-
-
-
->>>>>>> 8efd795fb0f36f5134bbb554b66a1b251d2205bd
+Dependencies and package issues are possible with the requirements of the application.
+Should use the docker container above all else for easier application use.
