@@ -44,17 +44,17 @@ class DocumentFactory:
             if file.is_file():
                 if file.suffix == ".doc":
                     logger.getLogger().debug("File Found - {}".format(file))
-                    self.docs.append(path + "/" + file)
+                    self.docs.append(path)
 
                 if file.suffix == ".docx":
                     file = os.path.basename(path)
                     logger.getLogger().debug("File Found - {}".format(file))
-                    self.docs.append(path + "/" + file)
+                    self.docs.append(path)
 
                 if file.suffix == '.pdf':
                     file = os.path.basename(path)
                     logger.getLogger().debug("File Found - {}".format(file))
-                    self.pdfs.append(path + "/" + file)
+                    self.pdfs.append(path)
 
             elif file.is_dir():
                 for file in os.listdir(path):
