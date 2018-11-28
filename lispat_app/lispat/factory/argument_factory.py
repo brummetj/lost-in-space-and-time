@@ -1,8 +1,9 @@
 import os
+import sys
 import csv
 import docx
-import sys
 from io import StringIO
+from pathlib import Path
 from lispat.utils.logger import Logger
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
@@ -158,6 +159,33 @@ class ArgumentFactory:
 
                 outputFile.close()
                 return True
+        except RuntimeError as error:
+            logger.getLogger().error(error)
+            sys.exit(1)
+
+    def st_csv_handler(self, sub_path, std_path):
+
+        logger.getLogger().info("Creating a CSV for scattertext")
+
+        sub_file = Path(sub_path)
+        std_file = Path(std_path)
+
+        try:
+            if sub_file.suffix == ".txt" and std_file.suffix == ".txt":
+                _sub_file = open(sub_path, 'rt')
+                _sub_text = _sub_file.read()
+                _std_file = open(std_path, 'rt')
+                _std_text = _std_file.read()
+
+                csv_filename = self.csv_dir + "st.csv"
+
+                with open(csv_filename, 'w') as out_file:
+                    myFields = ['Document', 'Text']
+                    writer = csv.DictWriter(out_file, fieldnames=myFields)
+                    writer.writeheader()
+                    writer.writerow({'Document': sub_file, 'Text': _sub_text})
+                    writer.writerow({'Document': std_file, 'Text': _std_text})
+
         except RuntimeError as error:
             logger.getLogger().error(error)
             sys.exit(1)

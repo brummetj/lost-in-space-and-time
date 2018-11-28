@@ -46,7 +46,6 @@ class Preproccessing:
             path_csv = "/usr/local/var/lispat/csv_data/"
 
         try:
-            txt_data = ""
             for file in os.listdir(path):
                 __file = open(path + file, 'rt')
                 __text = __file.read()

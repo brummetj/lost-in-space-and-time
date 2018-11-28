@@ -18,7 +18,6 @@ Options:
 """
 
 import sys
-import nltk
 import docopt
 from lispat.utils.logger import Logger
 from lispat.base.manager import CommandManager
