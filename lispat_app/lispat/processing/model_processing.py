@@ -3,11 +3,13 @@ import sys
 import spacy
 import pickle
 import shutil
-import pandas as pd
 import numpy as np
+import pandas as pd
+import scattertext as st
 from textblob import TextBlob
 from lispat.utils.logger import Logger
 from lispat.factory.filtered_factory import FilteredFactory
+
 logger = Logger("Modeling")
 
 
