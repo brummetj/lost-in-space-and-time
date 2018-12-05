@@ -4,6 +4,7 @@ import traceback
 import multiprocessing as mp
 from lispat.utils.logger import Logger
 from lispat.factory.argument_factory import ArgumentFactory
+from lispat.utils.colors import bcolors
 from pathlib import Path
 logger = Logger("DocumentFactory")
 
@@ -15,50 +16,46 @@ class DocumentFactory:
     into their own function that handles those certain file types
     """
 
-    def __init__(self, path, submitted):
+    def __init__(self, path, submitted, standard):
 
         logger.getLogger().info("DocumentFactory Created")
 
         self.path = path
         self.docs = []
         self.pdfs = []
-        self.submitted = False
+        self.submitted = submitted
+        self.standard = standard
 
         self.args_ = ArgumentFactory()
 
-
-        print(self.path)
         try:
-            if submitted is True:
-                self.submitted = True
-                logger.getLogger().debug("Submission is True")
-
             file = Path(path)
             if file.is_file():
+                head, tail = os.path.split(file)
                 if file.suffix == ".doc":
-                    logger.getLogger().debug("File Found - {} in {}"
-                                             .format(file, path))
+                    logger.getLogger().debug(bcolors.OKGREEN + "File Found: " + bcolors.ENDC  + " {} in {}"
+                                             .format(tail, path))
                     self.docs.append((str(file.absolute()), path))
 
                 if file.suffix == '.pdf':
-                    logger.getLogger().debug("File Found - {} in {}"
-                                             .format(file, path))
+                    logger.getLogger().debug(bcolors.OKGREEN + "File Found: " + bcolors.ENDC  + " {} in {}"
+                                             .format(tail, path))
                     self.pdfs.append((str(file.absolute()), path))
 
             elif file.is_dir():
                 for file in os.listdir(path):
                     if file.endswith(".doc"):
-                        logger.getLogger().debug("File Found - {} in {}"
+                        logger.getLogger().debug(bcolors.OKGREEN + "File Found: " + bcolors.ENDC  + " {} in {}"
                                                  .format(file, path))
                         self.docs.append((file, path))
 
                     if file.endswith(".docx"):
-                        logger.getLogger().debug("File Found - {} in {}"
+                        logger.getLogger().debug(bcolors.OKGREEN + "File Found" + bcolors.ENDC  + " {} in {}"
                                                  .format(file, path))
                         self.docs.append((file, path))
 
                     if file.endswith(".pdf"):
-                        logger.getLogger().debug("File Found - {} in {}"
+                        logger.getLogger().debug(bcolors.OKGREEN + "File Found: " + bcolors.ENDC  + " {} in {}"
                                                  .format(file, path))
                         self.pdfs.append((file, path))
                     else:
@@ -84,7 +81,7 @@ class DocumentFactory:
             if self.docs:
                 for(file, path) in self.docs:
                     doc_procs = mp.Process(target=self.args_.docx_handler, args=
-                                           (file, path, doc_queue, self.submitted))
+                                           (file, path, doc_queue, self.submitted, self.standard))
                     doc_procs.start()
                     doc_jobs.append(doc_procs)
 
@@ -95,7 +92,7 @@ class DocumentFactory:
             if self.pdfs:
                 for (file, path) in self.pdfs:
                     procs = mp.Process(target=self.args_.pdfminer_handler, args=
-                                       (file, path, pdf_queue, self.submitted))
+                                       (file, path, pdf_queue, self.submitted, self.standard))
                     procs.start()
                     pdf_jobs.append(procs)
 
