@@ -29,6 +29,7 @@ install_requires = [
     'textblob',
     'matplotlib==2.1.0',
     'sklearn'
+    'scattertext'
 ]
 
 setup(

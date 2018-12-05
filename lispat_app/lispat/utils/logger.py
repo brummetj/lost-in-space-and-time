@@ -2,12 +2,12 @@ import logging
 import sys
 import os
 from logging.handlers import TimedRotatingFileHandler
-
+from lispat.utils.colors import bcolors
 
 class Logger:
     def __init__(self, logger_name):
         self.FORMATTER = logging.Formatter(
-            "%(asctime)s - %(filename)s:%(lineno)s - %(threadName)s — %(levelname)s — %(message)s", "%Y-%m-%d %H:%M:%S")
+            "%(asctime)s - %(filename)s:%(lineno)s - %(threadName)s — " + bcolors.BOLD + "%(levelname)s" + bcolors.ENDC + " — %(message)s", "%Y-%m-%d %H:%M:%S")
 
         self.LOG_FILE = "lispat_app.log"
         self.logger = logging.getLogger(logger_name)

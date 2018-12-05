@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 from joblib import Parallel, delayed
 from lispat.utils.logger import Logger
+from lispat.utils.colors import bcolors
 from lispat.factory.argument_factory import ArgumentFactory
 
 logger = Logger("DocumentFactory")
@@ -24,54 +25,58 @@ class DocumentFactory:
     that handles those certain file types.
     """
 
-    def __init__(self, path, submitted):
+    def __init__(self, path, submitted, standard):
 
         logger.getLogger().info("DocumentFactory Created")
 
-        self.path = path
         self.docs = []
         self.pdfs = []
-        self.submitted = False
+        self.path = path
+        self.standard = standard
+        self.submitted = submitted
 
         self.args_ = ArgumentFactory()
 
         try:
-            if submitted is True:
-                self.submitted = True
-                logger.getLogger().debug("Submission is True")
-
             file = Path(path)
             if file.is_file():
+                head, tail = os.path.split(file)
                 if file.suffix == ".doc":
-                    logger.getLogger().debug("File Found - {}".format(file))
+                    logger.getLogger().debug(bcolors.OKGREEN + "File Found: "
+                                             + bcolors.ENDC + " {}"
+                                             .format(os.path.basename(path)))
                     self.docs.append(path)
 
                 if file.suffix == ".docx":
-                    file = os.path.basename(path)
-                    logger.getLogger().debug("File Found - {}".format(file))
+                    logger.getLogger().debug(bcolors.OKGREEN + "File Found: "
+                                             + bcolors.ENDC + " {}"
+                                             .format(os.path.basename(path)))
                     self.docs.append(path)
 
                 if file.suffix == '.pdf':
-                    file = os.path.basename(path)
-                    logger.getLogger().debug("File Found - {}".format(file))
+                    logger.getLogger().debug(bcolors.OKGREEN + "File Found: "
+                                             + bcolors.ENDC + " {}"
+                                             .format(os.path.basename(path)))
                     self.pdfs.append(path)
 
             elif file.is_dir():
                 for file in os.listdir(path):
                     if file.endswith(".doc"):
-                        logger.getLogger().debug("File Found - {}"
-                                                 .format(file))
+                        logger.getLogger().debug(bcolors.OKGREEN +
+                                                 "File Found: " + bcolors.ENDC
+                                                 + " {} ".format(file))
                         self.docs.append(path + "/" + file)
 
                     if file.endswith(".docx"):
-                        logger.getLogger().debug("File Found - {}"
-                                                 .format(file))
+                        logger.getLogger().debug(bcolors.OKGREEN +
+                                                 "File Found: " + bcolors.ENDC
+                                                 + " {}".format(file))
                         self.docs.append(path + "/" + file)
 
                     if file.endswith(".pdf"):
-                        print(path)
-                        logger.getLogger().debug("File Found - {}"
-                                                 .format(file))
+                        logger.getLogger().debug(bcolors.OKGREEN +
+                                                 "File Found: " + bcolors.ENDC
+                                                 + " {}".format(file))
                         self.pdfs.append(path + "/" + file)
 
         except FileNotFoundError as error:
@@ -97,7 +102,8 @@ class DocumentFactory:
                     Parallel
                     (n_jobs=n, backend="multiprocessing", verbose=10)
                     (delayed
-                     (self.args_.docx_handler)(path, self.submitted)
+                     (self.args_.docx_handler)
+                     (path, self.submitted, self.standard)
                         for path in self.docs))
 
             n = self.args_.file_count(self.pdfs)
@@ -107,7 +113,8 @@ class DocumentFactory:
                     Parallel
                     (n_jobs=n, backend="multiprocessing", verbose=10)
                     (delayed
-                     (self.args_.pdfminer_handler)(path, self.submitted)
+                     (self.args_.pdfminer_handler)
+                     (path, self.submitted, self.standard)
                         for path in self.pdfs))
 
             return doc_data_txt, pdf_data_txt

@@ -5,6 +5,7 @@ import docx
 from io import StringIO
 from pathlib import Path
 from lispat.utils.logger import Logger
+from lispat.utils.colors import bcolors
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from pdfminer.converter import TextConverter
@@ -15,19 +16,22 @@ logger = Logger("ArgumentFactory")
 
 
 class ArgumentFactory:
-    '''
+    """
     This class handles the arguments and converts them to txt files.
-    '''
+    """
 
     def __init__(self):
 
         logger.getLogger().info("Argument factory init")
 
         self.txt = []
+
         directory_storage = "/usr/local/var/lispat/"
-        self.pdfminer_dir = directory_storage + "pdf_data/"
-        self.docx_dir = directory_storage + "docx_data/"
+
         self.csv_dir = directory_storage + "csv_data/"
+        self.docx_dir = directory_storage + "docx_data/"
+        self.pdfminer_dir = directory_storage + "pdf_data/"
+        self.standard_dir = directory_storage + "standard/"
         self.submitted_dir = directory_storage + "submission/"
 
         self.csv_path = ""
@@ -39,21 +43,23 @@ class ArgumentFactory:
         # best for first time users
         # need a better way to make the local storage system
         if len(os.listdir(directory_storage)) == 0:
-            os.makedirs(self.pdfminer_dir)
-            os.makedirs(self.doc2txt_dir)
-            os.makedirs(self.docx_dir)
             os.makedirs(self.csv_dir)
+            os.makedirs(self.docx_dir)
+            os.makedirs(self.pdfminer_dir)
+            os.makedirs(self.standard_dir)
             os.makedirs(self.submitted_dir)
 
         if not os.path.exists(self.submitted_dir):
             os.makedirs(self.submitted_dir)
 
-    '''
-    Function using pdfminer to extract text from pdfs and
-    store them into an array of text files
-    '''
-    def pdfminer_handler(self, path, submitted):
+        if not os.path.exists(self.standard_dir):
+            os.makedirs(self.standard_dir)
 
+    def pdfminer_handler(self, path, submitted, standard):
+        """
+        Function using pdfminer to extract text from pdfs and
+        store them into an array of text files
+        """
         logger.getLogger().info("Running PDFMiner")
 
         page_nums = set()
@@ -69,7 +75,8 @@ class ArgumentFactory:
             pdf_saved = os.path.splitext(pdf_saved)[0] + '.txt'
 
             if os.path.exists(pdf_saved):
-                logger.getLogger().debug("Already Exits: " + file)
+                logger.getLogger().debug(bcolors.OKBLUE + "Already Exits: "
+                                         + bcolors.ENDC + file)
                 self.txt.append(pdf_saved)
                 return self.txt
 
@@ -86,7 +93,7 @@ class ArgumentFactory:
 
                     logger.getLogger().debug("Writing " + pdf_saved)
                     # open file is a static function.
-                    text_file = self.open_file(submitted, pdf_saved)
+                    text_file = self.open_file(submitted, standard, pdf_saved)
 
                     text_file.write(text)
 
@@ -103,11 +110,11 @@ class ArgumentFactory:
             logger.getLogger().error(error)
             sys.exit(1)
 
-    '''
-    Function using docx library to extract text from word docs and
-    store them into an array of text files
-    '''
-    def docx_handler(self, path, submitted):
+    def docx_handler(self, path, submitted, standard):
+        """
+        Function using docx library to extract text from word docs and
+        store them into an array of text files
+        """
         logger.getLogger().info("running docx")
         doc_text = []
         try:
@@ -127,7 +134,8 @@ class ArgumentFactory:
 
             doc_text = '\n'.join(doc_text)
 
-            text_file = self.open_file(submitted, doc_saved)
+            file = os.path.splitext(file)[0]
+            text_file = self.open_file(submitted, standard, doc_saved)
             text_file.write(doc_text)
 
             return self.txt
@@ -146,7 +154,7 @@ class ArgumentFactory:
         logger.getLogger().info("Creating a CSV")
 
         try:
-            csv_filename = self.csv_dir + "test.csv"
+            csv_filename = self.csv_dir + "data-" + random.randrange(0, 100) + ".csv"
             logger.getLogger().debug("Opening File for csv: " + csv_filename)
             csv__ = open(csv_filename, 'w+')
             self.csv_path = csv_filename
@@ -158,7 +166,7 @@ class ArgumentFactory:
                 writer.writerows(txt)
 
                 outputFile.close()
-                return True
+                return True, csv_filename
         except RuntimeError as error:
             logger.getLogger().error(error)
             sys.exit(1)
@@ -190,13 +198,16 @@ class ArgumentFactory:
             logger.getLogger().error(error)
             sys.exit(1)
 
-    """
-    Creates/Opens text files with input file name
-    """
-    def open_file(self, submitted, path):
+    def open_file(self, submitted, standard, path):
+        """
+        Creates/Opens text files with input file name.
+        """
+        file = os.path.basename(path)
         if submitted is True:
-            file = os.path.basename(path)
             txt_filename = self.submitted_dir + file
+            txt_filename = os.path.splitext(txt_filename)[0] + '.txt'
+        elif standard is True:
+            txt_filename = self.standard_dir + file
             txt_filename = os.path.splitext(txt_filename)[0] + '.txt'
         else:
             txt_filename = path
@@ -206,10 +217,10 @@ class ArgumentFactory:
         self.txt.append(txt_filename)
         return open(txt_filename, "w")
 
-    """
-    Gets the file count from a list of files
-    """
     def file_count(self, files):
+        """
+        Gets the file count from a list of files
+        """
         count = 0
         for file in files:
             count += 1
