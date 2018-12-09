@@ -11,10 +11,10 @@ class Visualization:
         pass
 
     def standard(self, dataframe):
-        corpus = st.CorpusFromPandas(dataframe, category_col='Document',
+        corpus = st.CorpusFromPandas(dataframe, category_col='Document Type',
                                      text_col='Text', nlp=nlp).build()
 
-        html = st.produce_scattertext_explorer(corpus, category='Submission',
+        html = st.produce_scattertext_explorer(corpus, category='submission',
                                                category_name='Submission',
                                                not_category_name='Standard',
                                                width_in_pixels=1000)

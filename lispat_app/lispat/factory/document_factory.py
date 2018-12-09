@@ -40,7 +40,6 @@ class DocumentFactory:
         try:
             file = Path(path)
             if file.is_file():
-                head, tail = os.path.split(file)
                 if file.suffix == ".doc":
                     logger.getLogger().debug(bcolors.OKGREEN + "File Found: "
                                              + bcolors.ENDC + " {}"

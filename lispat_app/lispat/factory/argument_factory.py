@@ -175,19 +175,21 @@ class ArgumentFactory:
 
         logger.getLogger().info("Creating a CSV with headers")
 
-        std_path = ''.join([str(item) for sublist in std_path
-                            for item in std_path])
-        sub_path = ''.join([str(item) for sublist in sub_path
-                            for item in sub_path])
+        std_path = ''.join(str(item) for sublist in std_path
+                           for item in sublist)
+        sub_path = ''.join(str(item) for sublist in sub_path
+                           for item in sublist)
 
-        std_file = Path(std_path)
-        sub_file = Path(sub_path)
+        std_file = os.path.basename(std_path)
+        sub_file = os.path.basename(sub_path)
 
         std_name = os.path.splitext(std_file)[0]
         sub_name = os.path.splitext(sub_file)[0]
+        std_name = "(" + std_name[:10] + ")"
+        sub_name = "(" + sub_name[:10] + ")"
 
         try:
-            csv_filename = self.csv_dir + sub_name + "_VS_" + std_name + ".csv"
+            csv_filename = self.csv_dir + sub_name + "VS" + std_name + ".csv"
 
             logger.getLogger().debug("Opening File for csv: " + csv_filename)
 
@@ -195,9 +197,9 @@ class ArgumentFactory:
                 myFields = ['Document Type', 'Document', 'Text']
                 writer = csv.DictWriter(outputfile, fieldnames=myFields)
                 writer.writeheader()
-                writer.writerow({'Document Type': 'Standard',
+                writer.writerow({'Document Type': 'standard',
                                 'Document': std_name, 'Text': std_data})
-                writer.writerow({'Document Type': 'Submission',
+                writer.writerow({'Document Type': 'submission',
                                 'Document': sub_name, 'Text': sub_data})
 
                 return csv_filename

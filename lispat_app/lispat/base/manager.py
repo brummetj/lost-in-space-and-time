@@ -166,7 +166,7 @@ class CommandManager:
 
             elif(doc_sub_converted[1]):
                 sub_path = doc_sub_converted[1]
-                
+
             csv = args_.csv_with_headers(std_path, sub_path,
                                          std_data, sub_data)
 
