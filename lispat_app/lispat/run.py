@@ -1,7 +1,7 @@
 """Lost in Space and Time.
 
 Usage:
-    lispat analytics --path=<content-path>  [--train] [--compare] [--array] [--df] [-A]
+    lispat analytics --path=<content-path>  [--train] [--compare] [--array] [--df] [--sp] [-A]
     lispat compare --standard=<content-path> --submission=<content-path> [--clean]
     lispat clean [--all]
     lispat [-h | --help]
@@ -20,6 +20,7 @@ Options:
     --train                      Submit documents to be used for training data
     --array                      Processing data as an array
     --df                         Processing data as a dataframe
+    --sp                         Get semantic properties
     -A                           Get all processed txt data.
     --path=<content-path>        Process data from a single path. multiple docs or single docs
 
@@ -67,6 +68,9 @@ def main():
         if args['compare'] and args['--standard'] and args['--submission']:
             std_path = args['--standard']
             sub_path = args['--submission']
+
+            manager.create_path(std_path, sub_path)
+
             manager.run_sub_vs_std(args)
 
         if args['clean']:

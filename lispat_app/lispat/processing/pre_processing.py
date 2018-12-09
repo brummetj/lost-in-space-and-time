@@ -1,5 +1,7 @@
 import os
+import re
 import sys
+import nltk
 import spacy
 import gensim
 import operator
@@ -84,6 +86,22 @@ class Preproccessing:
             text = open(self.pdf[0][0], 'rt')
             self.txt_data = text.read()
 
+    def ret_doc(self):
+        """
+        Gets the parsed text data, from either a pdf or docx
+        :return: a doc of text data.
+        """
+
+        if self.word:
+            text = open(self.word[0][0], 'rt')
+            self.txt_data = text.read()
+
+        if self.pdf:
+            text = open(self.pdf[0][0], 'rt')
+            self.txt_data = text.read()
+
+        return self.txt_data
+
     def filter_nlp(self):
 
         """
@@ -127,6 +145,16 @@ class Preproccessing:
 
         except RuntimeError as error:
             logger.getLogger().error("Noise filter", error)
+
+    def get_sentences(self):
+        tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
+        raw_sentences = tokenizer.tokenize(self.txt_data)
+        return raw_sentences
+
+    def get_sent_tokens(self, raw):
+            clean = re.sub("[^a-zA-Z]", " ", raw)
+            words = clean.split()
+            return words
 
     def word_count(self):
 

@@ -6,6 +6,10 @@ import shutil
 import numpy as np
 import pandas as pd
 import scattertext as st
+import gensim.models.word2vec as w2v
+import matplotlib.pyplot as plt
+import sklearn.manifold
+import multiprocessing
 from textblob import TextBlob
 from lispat.utils.logger import Logger
 from lispat.factory.filtered_factory import FilteredFactory
@@ -163,6 +167,77 @@ class NLPModel:
         for i, sent in enumerate(sentences):
             nlp_array.append((i, sent))
         return nlp_array
+
+    def semantic_properties_model(self, data):
+
+        token_count = len(data)
+
+        # 3 main tasks that vectors help with
+        # DISTANCE, SIMILARITY, RANKING
+
+        # Dimensionality of the resulting word vectors.
+        # more dimensions, more computationally expensive to train
+        # but also more accurate
+        # more dimensions = more generalized
+        num_features = 1000
+        # Minimum word count threshold.
+        min_word_count = 3
+
+        # Number of threads to run in parallel.
+        # more workers, faster we train
+        num_workers = multiprocessing.cpu_count()
+
+        # Context window length.
+        context_size = 7
+
+        # Downsample setting for frequent words.
+        # 0 - 1e-5 is good for this
+        downsampling = 1e-5
+
+    #    Seed for the RNG, to make the results reproducible.
+        # random number generator
+        # deterministic, good for debugging
+        seed = 1
+
+        doc2vec = w2v.Word2Vec(
+            sg=1,
+            seed=seed,
+            workers=num_workers,
+            size=num_features,
+            min_count=min_word_count,
+            window=context_size,
+            sample=downsampling
+        )
+
+        doc2vec.build_vocab(data)
+        print("Word2Vec vocabulary length:", len(doc2vec.wv.vocab))
+        doc2vec.train(data, epochs=doc2vec.iter, total_words=token_count)
+        if not os.path.exists("trained"):
+            os.makedirs("trained")
+        doc2vec.save(os.path.join("trained", "doc2vec.w2v"))
+
+        doc2vec = w2v.Word2Vec.load(os.path.join("trained", "doc2vec.w2v"))
+
+        tsne = sklearn.manifold.TSNE(n_components=2, random_state=0)
+        all_word_vectors_matrix = doc2vec.wv.syn0
+        all_word_vectors_matrix_2d = tsne.fit_transform(all_word_vectors_matrix)
+
+        points = pd.DataFrame(
+            [
+                (word, coords[0], coords[1])
+                for word, coords in [
+                    (word, all_word_vectors_matrix_2d[doc2vec.wv.vocab[word].index])
+                    for word in doc2vec.wv.vocab
+                    ]
+            ],
+            columns=["word", "x", "y"]
+        )
+
+        print(points.head(10))
+
+        points.plot.scatter("x", "y", s=10, figsize=(20, 12))
+
+        print(doc2vec.most_similar("security"))
 
     def print_full(self, x):
         pd.set_option('display.max_rows', len(x))

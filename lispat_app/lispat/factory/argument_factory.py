@@ -171,28 +171,36 @@ class ArgumentFactory:
             logger.getLogger().error(error)
             sys.exit(1)
 
-    def st_csv_handler(self, sub_path, std_path):
+    def csv_with_headers(self, std_path, sub_path, std_data, sub_data):
 
-        logger.getLogger().info("Creating a CSV for scattertext")
+        logger.getLogger().info("Creating a CSV with headers")
 
-        sub_file = Path(sub_path)
+        std_path = ''.join([str(item) for sublist in std_path
+                            for item in std_path])
+        sub_path = ''.join([str(item) for sublist in sub_path
+                            for item in sub_path])
+
         std_file = Path(std_path)
+        sub_file = Path(sub_path)
+
+        std_name = os.path.splitext(std_file)[0]
+        sub_name = os.path.splitext(sub_file)[0]
 
         try:
-            if sub_file.suffix == ".txt" and std_file.suffix == ".txt":
-                _sub_file = open(sub_path, 'rt')
-                _sub_text = _sub_file.read()
-                _std_file = open(std_path, 'rt')
-                _std_text = _std_file.read()
+            csv_filename = self.csv_dir + sub_name + "_VS_" + std_name + ".csv"
 
-                csv_filename = self.csv_dir + "st.csv"
+            logger.getLogger().debug("Opening File for csv: " + csv_filename)
 
-                with open(csv_filename, 'w') as out_file:
-                    myFields = ['Document', 'Text']
-                    writer = csv.DictWriter(out_file, fieldnames=myFields)
-                    writer.writeheader()
-                    writer.writerow({'Document': sub_file, 'Text': _sub_text})
-                    writer.writerow({'Document': std_file, 'Text': _std_text})
+            with open(csv_filename, 'w') as outputfile:
+                myFields = ['Document Type', 'Document', 'Text']
+                writer = csv.DictWriter(outputfile, fieldnames=myFields)
+                writer.writeheader()
+                writer.writerow({'Document Type': 'Standard',
+                                'Document': std_name, 'Text': std_data})
+                writer.writerow({'Document Type': 'Submission',
+                                'Document': sub_name, 'Text': sub_data})
+
+                return csv_filename
 
         except RuntimeError as error:
             logger.getLogger().error(error)

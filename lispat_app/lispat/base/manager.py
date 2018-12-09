@@ -1,14 +1,17 @@
 import os
 import sys
-import spacy
 import pickle
 import shutil
+import pandas as pd
 from lispat.utils.logger import Logger
 from lispat.utils.colors import bcolors
+from lispat.processing.model_processing import NLPModel
 from lispat.factory.document_factory import DocumentFactory
+from lispat.factory.argument_factory import ArgumentFactory
 from lispat.processing.pre_processing import Preproccessing
 from lispat.processing.visual_processing import Visualization
-from lispat.processing.model_processing import NLPModel
+
+
 
 logger = Logger("CommandManager")
 
@@ -80,6 +83,7 @@ class CommandManager:
 
             docs = doc_worker.convert_file()
             filter = Preproccessing(docs[0], docs[1])
+
             if args['-A']:
                 filter.get_docs_dir(args)
             else:
@@ -96,6 +100,17 @@ class CommandManager:
                 csv_success = self.doc_worker.args_.csv_handler(nlp_array_unfiltered)
                 if csv_success:
                     self.model.data_frame(self.doc_worker.args_.csv_path)
+
+            if args['--sp']:
+                sentences = []
+                raw_sentences = filter.get_sentences()
+                for raw_sentence in raw_sentences:
+                    if len(raw_sentence) > 0:
+                        sentences.append(filter.get_sent_tokens(raw_sentence))
+
+                self.model.semantic_properties_model(sentences)
+
+
 
             # TODO: figure out how we can make it so we don't need to check this again...
 
@@ -117,9 +132,14 @@ class CommandManager:
         """
 
         logger.getLogger().info("Command Manager - Run Submission vs Standard")
+
         try:
+            args_ = ArgumentFactory()
+            vis = Visualization()
+
+
             doc_std = DocumentFactory(self.path, False, True)
-            doc_sub = DocumentFactory(self.path, True, False)
+            doc_sub = DocumentFactory(self.sub_path, True, False)
 
             doc_std_converted = doc_std.convert_file()
             doc_sub_converted = doc_sub.convert_file()
@@ -129,9 +149,32 @@ class CommandManager:
             filter_sub = Preproccessing(doc_sub_converted[0],
                                         doc_sub_converted[1])
 
+            std_data = filter_std.ret_doc()
+            sub_data = filter_sub.ret_doc()
+
             if args['--clean']:
                 filter_std.filter_nlp()
                 filter_sub.filter_nlp()
+
+            if(doc_std_converted[0]):
+                std_path = doc_std_converted[0]
+            elif(doc_std_converted[1]):
+                std_path = doc_std_converted[1]
+
+            if(doc_sub_converted[0]):
+                sub_path = doc_sub_converted[0]
+
+            elif(doc_sub_converted[1]):
+                sub_path = doc_sub_converted[1]
+                
+            csv = args_.csv_with_headers(std_path, sub_path,
+                                         std_data, sub_data)
+
+            dataframe = pd.read_csv(csv, names=["Document Type",
+                                    "Document", "Text"])
+
+            vis.standard(dataframe)
+
 
         except RuntimeError as error:
             logger.getLogger().error("Error with run_sub_vs_std please "
