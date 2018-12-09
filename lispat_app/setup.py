@@ -30,6 +30,7 @@ install_requires = [
     'matplotlib==2.1.0',
     'sklearn'
     'scattertext'
+    'empath'
 ]
 
 setup(

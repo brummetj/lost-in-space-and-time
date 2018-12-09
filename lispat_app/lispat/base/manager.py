@@ -173,7 +173,15 @@ class CommandManager:
             dataframe = pd.read_csv(csv, names=["Document Type",
                                     "Document", "Text"])
 
-            vis.standard(dataframe)
+            if args['--empath']:
+                vis.empath(dataframe)
+            if args['--gitc']:
+                vis.gitc(dataframe)
+            if args['--character']:
+                vis.chrctrstc(dataframe)
+            else:
+                vis.standard(dataframe)
+
 
 
         except RuntimeError as error:
