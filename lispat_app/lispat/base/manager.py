@@ -1,5 +1,6 @@
 import os
 import sys
+import spacy
 import pickle
 import shutil
 import pandas as pd
@@ -11,7 +12,7 @@ from lispat.factory.argument_factory import ArgumentFactory
 from lispat.processing.pre_processing import Preproccessing
 from lispat.processing.visual_processing import Visualization
 
-
+nlp = spacy.load('en')
 
 logger = Logger("CommandManager")
 
@@ -137,7 +138,6 @@ class CommandManager:
 
         try:
             args_ = ArgumentFactory()
-            vis = Visualization()
 
             doc_std = DocumentFactory(self.path, False, True)
             doc_sub = DocumentFactory(self.sub_path, True, False)
@@ -150,12 +150,20 @@ class CommandManager:
             filter_sub = Preproccessing(doc_sub_converted[0],
                                         doc_sub_converted[1])
 
-            std_data = filter_std.ret_doc()
-            sub_data = filter_sub.ret_doc()
-
             if args['--clean']:
                 filter_std.filter_nlp()
                 filter_sub.filter_nlp()
+
+            std_data = filter_std.ret_doc()
+            sub_data = filter_sub.ret_doc()
+
+            std_size = len(std_data)
+            sub_size = len(sub_data)
+
+            if(std_size > sub_size):
+                nlp.max_length = std_size + 1
+            else:
+                nlp.max_length = sub_size + 1
 
             std_path = ""
             sub_path = ""
@@ -176,13 +184,15 @@ class CommandManager:
             dataframe = pd.read_csv(csv, names=["Document Type",
                                     "Document", "Text"])
 
+            vis = Visualization(nlp)
+
             if args['--empath']:
                 vis.empath(dataframe)
-            if args['--gitc']:
+            elif args['--gitc']:
                 vis.gitc(dataframe)
-            if args['--character']:
+            elif args['--character']:
                 vis.chrctrstc(dataframe)
-            if args['--nn']:
+            elif args['--nn']:
 
                 sentences_sub = []
                 raw_sentences_sub = filter_sub.get_sentences()
@@ -202,7 +212,8 @@ class CommandManager:
                 points_std = self.model.semantic_properties_model(sentences_std)
                 vis.nearest(points1=points_std, points2=points_sub, file1=file1, file2=file2)
 
-            if not args['--empath'] and not args['--gitc'] and not args['--character'] and not args['--nn']:
+            #if not args['--empath'] and not args['--gitc'] and not args['--character'] and not args['--nn']:
+            else:
                 vis.standard(dataframe)
 
         except RuntimeError as error:

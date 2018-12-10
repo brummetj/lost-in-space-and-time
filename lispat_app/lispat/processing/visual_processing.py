@@ -10,13 +10,15 @@ import mpld3
 from mpld3 import plugins, utils
 from lispat.base.constants import css
 
-nlp = spacy.load('en')
 logger = Logger("Visuals")
 
 
 class Visualization:
 
-    def __init__(self):
+    def __init__(self, nlp):
+
+        self.nlp = nlp
+
         now = datetime.datetime.now()
         self.date = str(now.year) + "-" + str(now.month) + "-" + \
                str(now.day)
@@ -38,7 +40,7 @@ class Visualization:
 
     def standard(self, dataframe):
         corpus = st.CorpusFromPandas(dataframe, category_col='Document Type',
-                                     text_col='Text', nlp=nlp).build()
+                                     text_col='Text', nlp=self.nlp).build()
 
         html = st.produce_scattertext_explorer(corpus, category='submission',
                                                category_name='Submission',
@@ -187,8 +189,8 @@ class Visualization:
                 plugins.connect(fig, tooltip2)
                 mpld3.show()
 
-        except Exception:
-            logger.getLogger().error(Exception)
+        except Exception as e:
+            logger.getLogger().error(e)
             return
 
         # print(doc2vec.most_similar("security"))

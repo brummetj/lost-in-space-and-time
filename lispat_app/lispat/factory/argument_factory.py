@@ -33,6 +33,7 @@ class ArgumentFactory:
         self.pdfminer_dir = directory_storage + "pdf_data/"
         self.standard_dir = directory_storage + "standard/"
         self.submitted_dir = directory_storage + "submission/"
+        self.visuals_dir = directory_storage + "visuals/"
 
         self.csv_path = ""
 
@@ -48,6 +49,7 @@ class ArgumentFactory:
             os.makedirs(self.pdfminer_dir)
             os.makedirs(self.standard_dir)
             os.makedirs(self.submitted_dir)
+            os.makedirs(self.visuals_dir)
 
         if not os.path.exists(self.submitted_dir):
             os.makedirs(self.submitted_dir)
