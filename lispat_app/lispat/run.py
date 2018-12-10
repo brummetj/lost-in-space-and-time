@@ -3,6 +3,7 @@
 Usage:
     lispat analytics --path=<content-path>  [--train] [--compare] [--array] [--df] [--sp] [-A]
     lispat compare --standard=<content-path> --submission=<content-path> [--clean] [--empath] [--gitc] [--character] [--nn]
+    lispat compare input --standard=<content-path> --text=<text> --nn
     lispat clean [--all]
     lispat [-h | --help]
     lispat --version
@@ -72,6 +73,12 @@ def main():
             manager.create_path(std_path, sub_path)
 
             manager.run_sub_vs_std(args)
+        if args['compare'] and args['input'] and args['--standard']:
+            print(args['--text'])
+            std_path = args['--standard']
+            print(std_path)
+            manager.create_path(std_path)
+            manager.run_sub_vs_txt(args)
 
         if args['clean']:
             manager.clean(args)

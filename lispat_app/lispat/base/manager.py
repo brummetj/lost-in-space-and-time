@@ -221,7 +221,37 @@ class CommandManager:
                                      "check stack trace")
             exit(1)
 
-    def clean(self, args):
+    def run_sub_vs_txt(self, args):
+        args_ = ArgumentFactory()
+        vis = Visualization(nlp)
+        doc_std = DocumentFactory(self.path, False, True)
+        doc_std_converted = doc_std.convert_file()
+        filter_std = Preproccessing(doc_std_converted[0],
+                                    doc_std_converted[1])
+        std_data = filter_std.ret_doc()
+        if args['--clean']:
+            filter_std.filter_nlp()
+
+        std_path = ""
+        if doc_std_converted[0]:
+            std_path = doc_std_converted[0]
+        elif doc_std_converted[1]:
+            std_path = doc_std_converted[1]
+
+        sentences_sub = []
+        raw_sentences_sub = filter_std.get_sentences()
+        for raw_sentence in raw_sentences_sub:
+            if len(raw_sentence) > 0:
+                sentences_sub.append(filter_std.get_sent_tokens(raw_sentence))
+
+        input_txt = filter_std.get_sent_tokens(str(args['--text']))
+        file1 = os.path.basename(self.path)
+        points_input, points_std = self.model.semantic_properties_model(sentences_sub, user_input=input_txt)
+        vis.nearest(points1=points_std, points2=points_input, file1=file1, file2="User Input")
+
+
+    @staticmethod
+    def clean(args):
         """
         :param args: Arguments for which dirs to delete
         :return: Deleted dirs for file system storage

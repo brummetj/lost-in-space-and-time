@@ -52,16 +52,10 @@ class NLPModel:
                                      self.filter.get_desired_terms(x)))
             train_te = train[train['desired_term'].map(lambda x: len(x)) > 0]
 
-            # train.drop(columns=['ID'])
-            # train.reset_index(drop=True)
-            # train.set_index(np.arange(len(train.index)))
-            # train.reindex()
-
             frames = [train_pe, train_te]
             df = pd.concat(frames)
             df.drop('ID', axis=1, inplace=True)
 
-            # df = df.apply(lambda x: " ".join([str(i) for i in x]))
             df.reset_index(drop=True)
             df.reindex()
             print(df)
@@ -72,17 +66,10 @@ class NLPModel:
             df.to_csv('/usr/local/var/lispat/csv_data/output.csv',
                       encoding='utf-8', columns=headers)
 
-            # Getting a ngram of size 6... just with the second row...
             logger.getLogger().debug("Showing the ngram for the 30th"
                                      "row in the DF")
             for w in TextBlob(train['sentence'][30]).ngrams(6):
                 print(w)
-
-            # For spelling
-            # train['sentence'][2].apply(lambda x: str(TextBlob(x).correct()))
-            # tf1 = (train['sentence'][1:3]).apply(lambda x: pd.value_counts
-            #       (x.split(" "))).sum(axis=0).reset_index()
-            # tf1.columns = ['words', 'tf']
 
         except RuntimeError:
             logger.getLogger().debug("Error with Dataframe calculation")
@@ -168,14 +155,17 @@ class NLPModel:
             nlp_array.append((i, sent))
         return nlp_array
 
-    def semantic_properties_model(self, data):
+    def semantic_properties_model(self, data, user_input=None):
+        logger.getLogger().info("Building model, this may take a second...")
 
-        logger.getLogger().info("")
+        input_txt = False
+        if user_input is not None:
+            input_txt = True
+
         token_count = len(data)
-
         # Hyper Parameter. Static for now.
         num_features = 1000
-        min_word_count = 3
+        min_word_count = 1
         num_workers = multiprocessing.cpu_count()
         context_size = 7
         downsampling = 1e-5
@@ -192,14 +182,13 @@ class NLPModel:
         )
 
         doc2vec.build_vocab(data)
-        print("Word2Vec vocabulary length:", len(doc2vec.wv.vocab))
+        logger.getLogger().debug("Word2Vec vocabulary length: " + str(len(doc2vec.wv.vocab)))
         doc2vec.train(data, epochs=doc2vec.iter, total_words=token_count)
         if not os.path.exists("trained"):
             os.makedirs("trained")
         doc2vec.save(os.path.join("trained", "doc2vec.w2v"))
 
         doc2vec = w2v.Word2Vec.load(os.path.join("trained", "doc2vec.w2v"))
-
         tsne = sklearn.manifold.TSNE(n_components=2, random_state=0)
         all_word_vectors_matrix = doc2vec.wv.syn0
         all_word_vectors_matrix_2d = tsne.fit_transform(all_word_vectors_matrix)
@@ -215,7 +204,35 @@ class NLPModel:
             columns=["word", "x", "y"]
         )
 
-        similar = []
+        sim = []
+        print(user_input)
+        if input_txt is True:
+            """
+            This algorithm takes in a use input of txt. 
+            It will lower and append the most similar values from the algorithm,
+            to a list. From there we need to convert the values from the dataframe
+            into a hash table to be able to quickly access values and return 
+            rows needed that hold the same coordinates as the value 
+            """
+            for i in user_input:
+                try:
+                    sim.append(doc2vec.most_similar(str(i).lower()))
+                except Exception:
+                    print("Word not found - " + i + " - Moving onto the next")
+                    continue
+            ret = []
+            f = {}
+            for i, row in points.iterrows():
+                f[row[0]] = (row[0], row[1], row[2])
+            df = pd.DataFrame(columns=['word', 'x', 'y'])
+            for row in sim:
+                for i in row:
+                    ret.append(f[i[0]])
+
+            for i, row in enumerate(ret):
+                df.loc[i] = [v for v in row]
+
+            return df, points
 
         return points
 
@@ -232,7 +249,6 @@ class NLPModel:
         pd.reset_option('display.float_format')
         pd.reset_option('display.max_colwidth')
 
-
 class ClickInfo(plugins.PluginBase):
 
     JAVASCRIPT = """
@@ -248,7 +264,6 @@ class ClickInfo(plugins.PluginBase):
         var obj = mpld3.get_element(this.props.id);
         obj.elements().on("mouseover",
                           function(d, i){alert("clicked on points[" + i + "]");});    
-
     }
     """
 

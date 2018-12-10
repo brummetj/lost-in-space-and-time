@@ -152,7 +152,7 @@ class Preproccessing:
         return raw_sentences
 
     def get_sent_tokens(self, raw):
-            clean = re.sub("[^a-zA-Z]", " ", raw)
+            clean = re.sub("[^a-zA-Z]", " ", raw).lower()
             words = clean.split()
             return words
 
