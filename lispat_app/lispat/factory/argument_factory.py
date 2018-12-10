@@ -148,6 +148,7 @@ class ArgumentFactory:
         Function using tabula library to extract text from word docs and
         store them into an array of csv files
 
+
         TODO: This class needs to be more modular for different arrays
         and csv files.
         """

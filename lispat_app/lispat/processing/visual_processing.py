@@ -187,8 +187,8 @@ class Visualization:
                 plugins.connect(fig, tooltip2)
                 mpld3.show()
 
-        except Exception:
-            logger.getLogger().error(Exception)
+        except Exception as e:
+            logger.getLogger().error(e)
             return
 
         # print(doc2vec.most_similar("security"))

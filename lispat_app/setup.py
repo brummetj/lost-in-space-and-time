@@ -31,6 +31,7 @@ install_requires = [
     'sklearn'
     'scattertext'
     'empath',
+    'mpdl3'
     'git+https://github.com/javadba/mpld3@display_fix'
 ]
 
