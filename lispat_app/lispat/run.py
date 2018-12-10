@@ -2,7 +2,7 @@
 
 Usage:
     lispat analytics --path=<content-path>  [--train] [--compare] [--array] [--df] [--sp] [-A]
-    lispat compare --standard=<content-path> --submission=<content-path> [--clean] [--empath] [--gitc] [--character]
+    lispat compare --standard=<content-path> --submission=<content-path> [--clean] [--empath] [--gitc] [--character] [--nn]
     lispat clean [--all]
     lispat [-h | --help]
     lispat --version

@@ -102,14 +102,16 @@ class CommandManager:
                     self.model.data_frame(self.doc_worker.args_.csv_path)
 
             if args['--sp']:
+                vis = Visualization()
                 sentences = []
                 raw_sentences = filter.get_sentences()
                 for raw_sentence in raw_sentences:
                     if len(raw_sentence) > 0:
                         sentences.append(filter.get_sent_tokens(raw_sentence))
 
-                self.model.semantic_properties_model(sentences)
-
+                file = os.path.basename(self.path)
+                points = self.model.semantic_properties_model(sentences)
+                vis.nearest(points1=points, file1=file)
 
 
             # TODO: figure out how we can make it so we don't need to check this again...
@@ -137,7 +139,6 @@ class CommandManager:
             args_ = ArgumentFactory()
             vis = Visualization()
 
-
             doc_std = DocumentFactory(self.path, False, True)
             doc_sub = DocumentFactory(self.sub_path, True, False)
 
@@ -156,15 +157,17 @@ class CommandManager:
                 filter_std.filter_nlp()
                 filter_sub.filter_nlp()
 
-            if(doc_std_converted[0]):
+            std_path = ""
+            sub_path = ""
+            if doc_std_converted[0]:
                 std_path = doc_std_converted[0]
-            elif(doc_std_converted[1]):
+            elif doc_std_converted[1]:
                 std_path = doc_std_converted[1]
 
-            if(doc_sub_converted[0]):
+            if doc_sub_converted[0]:
                 sub_path = doc_sub_converted[0]
 
-            elif(doc_sub_converted[1]):
+            elif doc_sub_converted[1]:
                 sub_path = doc_sub_converted[1]
 
             csv = args_.csv_with_headers(std_path, sub_path,
@@ -179,10 +182,28 @@ class CommandManager:
                 vis.gitc(dataframe)
             if args['--character']:
                 vis.chrctrstc(dataframe)
-            else:
+            if args['--nn']:
+
+                sentences_sub = []
+                raw_sentences_sub = filter_sub.get_sentences()
+                for raw_sentence in raw_sentences_sub:
+                    if len(raw_sentence) > 0:
+                        sentences_sub.append(filter_sub.get_sent_tokens(raw_sentence))
+
+                sentences_std = []
+                raw_sentences_std = filter_std.get_sentences()
+                for raw_sentence in raw_sentences_std:
+                    if len(raw_sentence) > 0:
+                        sentences_std.append(filter_std.get_sent_tokens(raw_sentence))
+
+                file1 = os.path.basename(self.path)
+                file2 = os.path.basename(self.sub_path)
+                points_sub = self.model.semantic_properties_model(sentences_sub)
+                points_std = self.model.semantic_properties_model(sentences_std)
+                vis.nearest(points1=points_std, points2=points_sub, file1=file1, file2=file2)
+
+            if not args['--empath'] and not args['--gitc'] and not args['--character'] and not args['--nn']:
                 vis.standard(dataframe)
-
-
 
         except RuntimeError as error:
             logger.getLogger().error("Error with run_sub_vs_std please "

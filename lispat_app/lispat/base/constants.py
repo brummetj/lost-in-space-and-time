@@ -38,3 +38,41 @@ DESIRED_PHRASE = [
     "need",
     "has"
 ]
+
+css = """
+table
+{
+  border-collapse: collapse;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+"""
+
+JAVASCRIPT = """
+mpld3.register_plugin("clickinfo", ClickInfo);
+ClickInfo.prototype = Object.create(mpld3.Plugin.prototype);
+ClickInfo.prototype.constructor = ClickInfo;
+ClickInfo.prototype.requiredProps = ["id"];
+function ClickInfo(fig, props){
+    mpld3.Plugin.call(this, fig, props);
+};
+
+ClickInfo.prototype.draw = function(){
+    var obj = mpld3.get_element(this.props.id);
+    obj.elements().on("mousedown",
+                      function(d, i){alert("clicked on points[" + i + "]");});
+}
+"""

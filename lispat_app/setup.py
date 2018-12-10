@@ -30,7 +30,8 @@ install_requires = [
     'matplotlib==2.1.0',
     'sklearn'
     'scattertext'
-    'empath'
+    'empath',
+    'git+https://github.com/javadba/mpld3@display_fix'
 ]
 
 setup(

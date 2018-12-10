@@ -3,16 +3,16 @@ import sys
 import spacy
 import pickle
 import shutil
-import numpy as np
 import pandas as pd
-import scattertext as st
 import gensim.models.word2vec as w2v
-import matplotlib.pyplot as plt
 import sklearn.manifold
 import multiprocessing
 from textblob import TextBlob
 from lispat.utils.logger import Logger
 from lispat.factory.filtered_factory import FilteredFactory
+from lispat.base.constants import DESIRED_TERMS
+import mpld3
+from mpld3 import plugins, utils
 
 logger = Logger("Modeling")
 
@@ -170,33 +170,15 @@ class NLPModel:
 
     def semantic_properties_model(self, data):
 
+        logger.getLogger().info("")
         token_count = len(data)
 
-        # 3 main tasks that vectors help with
-        # DISTANCE, SIMILARITY, RANKING
-
-        # Dimensionality of the resulting word vectors.
-        # more dimensions, more computationally expensive to train
-        # but also more accurate
-        # more dimensions = more generalized
+        # Hyper Parameter. Static for now.
         num_features = 1000
-        # Minimum word count threshold.
         min_word_count = 3
-
-        # Number of threads to run in parallel.
-        # more workers, faster we train
         num_workers = multiprocessing.cpu_count()
-
-        # Context window length.
         context_size = 7
-
-        # Downsample setting for frequent words.
-        # 0 - 1e-5 is good for this
         downsampling = 1e-5
-
-    #    Seed for the RNG, to make the results reproducible.
-        # random number generator
-        # deterministic, good for debugging
         seed = 1
 
         doc2vec = w2v.Word2Vec(
@@ -233,11 +215,9 @@ class NLPModel:
             columns=["word", "x", "y"]
         )
 
-        print(points.head(10))
+        similar = []
 
-        points.plot.scatter("x", "y", s=10, figsize=(20, 12))
-
-        print(doc2vec.most_similar("security"))
+        return points
 
     def print_full(self, x):
         pd.set_option('display.max_rows', len(x))
@@ -251,3 +231,27 @@ class NLPModel:
         pd.reset_option('display.width')
         pd.reset_option('display.float_format')
         pd.reset_option('display.max_colwidth')
+
+
+class ClickInfo(plugins.PluginBase):
+
+    JAVASCRIPT = """
+    mpld3.register_plugin("clickinfo", ClickInfo);
+    ClickInfo.prototype = Object.create(mpld3.Plugin.prototype);
+    ClickInfo.prototype.constructor = ClickInfo;
+    ClickInfo.prototype.requiredProps = ["id"];
+    function ClickInfo(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+    
+    ClickInfo.prototype.draw = function(){
+        var obj = mpld3.get_element(this.props.id);
+        obj.elements().on("mouseover",
+                          function(d, i){alert("clicked on points[" + i + "]");});    
+
+    }
+    """
+
+    def __init__(self, points):
+        self.dict_ = {"type": "clickinfo",
+                      "id": utils.get_id(points)}
