@@ -178,13 +178,16 @@ class CommandManager:
             elif doc_sub_converted[1]:
                 sub_path = doc_sub_converted[1]
 
-            csv = args_.csv_with_headers(std_path, sub_path,
+            std_name = args_.filename_from_list(std_path)
+            sub_name = args_.filename_from_list(sub_path)
+
+            csv = args_.csv_with_headers(std_name, sub_name,
                                          std_data, sub_data)
 
             dataframe = pd.read_csv(csv, names=["Document Type",
                                     "Document", "Text"])
 
-            vis = Visualization(nlp)
+            vis = Visualization(nlp, std_name, sub_name)
 
             if args['--empath']:
                 vis.empath(dataframe)
@@ -212,7 +215,6 @@ class CommandManager:
                 points_std = self.model.semantic_properties_model(sentences_std)
                 vis.nearest(points1=points_std, points2=points_sub, file1=file1, file2=file2)
 
-            #if not args['--empath'] and not args['--gitc'] and not args['--character'] and not args['--nn']:
             else:
                 vis.standard(dataframe)
 

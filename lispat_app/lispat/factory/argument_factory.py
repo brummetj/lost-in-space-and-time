@@ -2,6 +2,8 @@ import os
 import sys
 import csv
 import docx
+import time
+import datetime
 from io import StringIO
 from pathlib import Path
 from lispat.utils.logger import Logger
@@ -174,25 +176,15 @@ class ArgumentFactory:
             logger.getLogger().error(error)
             sys.exit(1)
 
-    def csv_with_headers(self, std_path, sub_path, std_data, sub_data):
+    def csv_with_headers(self, std_name, sub_name, std_data, sub_data):
 
         logger.getLogger().info("Creating a CSV with headers")
 
-        std_path = ''.join(str(item) for sublist in std_path
-                           for item in sublist)
-        sub_path = ''.join(str(item) for sublist in sub_path
-                           for item in sublist)
-
-        std_file = os.path.basename(std_path)
-        sub_file = os.path.basename(sub_path)
-
-        std_name = os.path.splitext(std_file)[0]
-        sub_name = os.path.splitext(sub_file)[0]
-        std_name = "(" + std_name[:10] + ")"
-        sub_name = "(" + sub_name[:10] + ")"
+        t = time.time()
+        ts = datetime.datetime.fromtimestamp(t).strftime('%Y-%m-%d %H:%M:%S')
 
         try:
-            csv_filename = self.csv_dir + sub_name + "VS" + std_name + ".csv"
+            csv_filename = self.csv_dir + ts + ".csv"
 
             logger.getLogger().debug("Opening File for csv: " + csv_filename)
 
@@ -238,3 +230,12 @@ class ArgumentFactory:
         for file in files:
             count += 1
         return count
+
+    def filename_from_list(self, path):
+        path = ''.join(str(item) for sublist in path for item in sublist)
+
+        file = os.path.basename(path)
+
+        file_name = os.path.splitext(file)[0]
+
+        return file_name

@@ -15,9 +15,11 @@ logger = Logger("Visuals")
 
 class Visualization:
 
-    def __init__(self, nlp):
+    def __init__(self, nlp, std_name=None, sub_name=None):
 
         self.nlp = nlp
+        self.std_name = std_name
+        self.sub_name = sub_name
 
         now = datetime.datetime.now()
         self.date = str(now.year) + "-" + str(now.month) + "-" + \
@@ -45,7 +47,8 @@ class Visualization:
         html = st.produce_scattertext_explorer(corpus, category='submission',
                                                category_name='Submission',
                                                not_category_name='Standard',
-                                               width_in_pixels=1000)
+                                               width_in_pixels=1000,
+                                               metadata=dataframe['Document'])
 
         logger.getLogger().info("Opening Standard Visual")
         open(self.std_file, 'wb').write(html.encode('utf-8'))
@@ -65,6 +68,7 @@ class Visualization:
                                                category_name='Submission',
                                                not_category_name='Standard',
                                                width_in_pixels=1000,
+                                               metadata=dataframe['Document'],
                                                use_non_text_features=True,
                                                use_full_doc=True,
                                                topic_model_term_lists=
@@ -92,6 +96,7 @@ class Visualization:
                                              term_scorer=st.LogOddsRatioUninformativeDirichletPrior(),
                                              grey_threshold=1.96,
                                              width_in_pixels=1000,
+                                             metadata=dataframe['Document'],
                                              topic_model_term_lists=general_inquirer_feature_builder.get_top_model_term_lists())
 
         logger.getLogger().info("Opening GITC-Visual")
@@ -102,13 +107,18 @@ class Visualization:
         corpus = (st.CorpusFromPandas(dataframe, category_col='Document Type',
                                       text_col='Text',
                                       nlp=st.whitespace_nlp_with_sentences)
-            .build().get_unigram_corpus().compact(
-            st.ClassPercentageCompactor(term_count=5, term_ranker=
-            st.OncePerDocFrequencyRanker)))
+                  .build()
+                  .get_unigram_corpus()
+                  .compact
+                  (st.ClassPercentageCompactor
+                  (term_count=2,
+                   term_ranker=st.OncePerDocFrequencyRanker)))
 
-        html = st.produce_characteristic_explorer(corpus, category='submission',
+        html = st.produce_characteristic_explorer(corpus,
+                                                  category='submission',
                                                   category_name='Submission',
-                                                  not_category_name='Standard', )
+                                                  not_category_name='Standard',
+                                                  metadata=dataframe['Document'])
 
         logger.getLogger().info("Opening Characteristic Visual")
         open(self.chr_file, 'wb').write(html.encode('utf-8'))
