@@ -12,6 +12,7 @@ from lispat.utils.logger import Logger
 from lispat.factory.filtered_factory import FilteredFactory
 from lispat.base.constants import DESIRED_TERMS
 import mpld3
+import webbrowser
 from mpld3 import plugins, utils
 
 logger = Logger("Modeling")
@@ -170,25 +171,27 @@ class NLPModel:
         context_size = 7
         downsampling = 1e-5
         seed = 1
+        doc2vec = None
+        if not os.path.exists("/usr/local/var/lispat/trained"):
+            os.makedirs("/usr/local/var/lispat/trained")
+        if os.path.isfile("/usr/local/var/lispat/trained/doc2vec.w2v"):
+            doc2vec = w2v.Word2Vec.load("/usr/local/var/lispat/trained/doc2vec.w2v")
+        else:
+            doc2vec = w2v.Word2Vec(
+                sg=1,
+                seed=seed,
+                workers=num_workers,
+                size=num_features,
+                min_count=min_word_count,
+                window=context_size,
+                sample=downsampling
+            )
 
-        doc2vec = w2v.Word2Vec(
-            sg=1,
-            seed=seed,
-            workers=num_workers,
-            size=num_features,
-            min_count=min_word_count,
-            window=context_size,
-            sample=downsampling
-        )
+            doc2vec.build_vocab(data)
+            logger.getLogger().debug("Word2Vec vocabulary length: " + str(len(doc2vec.wv.vocab)))
+            doc2vec.train(data, epochs=doc2vec.iter, total_words=token_count)
+            doc2vec.save('/usr/local/var/lispat/trained/doc2vec.w2v')
 
-        doc2vec.build_vocab(data)
-        logger.getLogger().debug("Word2Vec vocabulary length: " + str(len(doc2vec.wv.vocab)))
-        doc2vec.train(data, epochs=doc2vec.iter, total_words=token_count)
-        if not os.path.exists("trained"):
-            os.makedirs("trained")
-        doc2vec.save(os.path.join("trained", "doc2vec.w2v"))
-
-        doc2vec = w2v.Word2Vec.load(os.path.join("trained", "doc2vec.w2v"))
         tsne = sklearn.manifold.TSNE(n_components=2, random_state=0)
         all_word_vectors_matrix = doc2vec.wv.syn0
         all_word_vectors_matrix_2d = tsne.fit_transform(all_word_vectors_matrix)
@@ -205,7 +208,7 @@ class NLPModel:
         )
 
         sim = []
-        print(user_input)
+        sim_dic = {}
         if input_txt is True:
             """
             This algorithm takes in a use input of txt. 
@@ -217,9 +220,12 @@ class NLPModel:
             for i in user_input:
                 try:
                     sim.append(doc2vec.most_similar(str(i).lower()))
+                    sim_dic[i] = doc2vec.most_similar(str(i).lower())
                 except Exception:
                     print("Word not found - " + i + " - Moving onto the next")
                     continue
+
+            self.create_html_similarity(sim, user_input)
             ret = []
             f = {}
             for i, row in points.iterrows():
@@ -248,6 +254,42 @@ class NLPModel:
         pd.reset_option('display.width')
         pd.reset_option('display.float_format')
         pd.reset_option('display.max_colwidth')
+
+    def create_html_similarity(self, sim, user_input):
+        print(sim)
+        with open('/usr/local/var/lispat/similar.html', 'w') as file:
+            file.write('<html>')
+            file.write('<style>')
+            file.write('table {font-family: arial, '
+                       'sans-serif; border-collapse: '
+                       'collapse; width: 100%;}')
+            file.write('td, th {border: 1px solid '
+                       '#dddddd; text-align: '
+                       'left;padding: 8px;')
+            file.write('tr:nth-child(even) {background-color: #dddddd;}')
+            file.write('</style>')
+            file.write('<body>')
+            file.write('<h1>Most Similar Words between Standard and User Text Input </h1>')
+            file.write('<table>')
+            file.write('<tr>')
+            for i in user_input:
+                file.write('<th> %s </th>' % i)
+            file.write('</tr>')
+            file.write('<tr>')
+            for i in range(0, len(sim[0])):
+                file.write('<tr>')
+                for j in range(0, len(sim)):
+                    file.write('<td> %s </td>' % sim[j][i][0])
+                file.write('</tr>')
+
+            file.write('</tr>')
+            file.write('</body>')
+            file.write('</html>')
+        webbrowser.open("file:///usr/local/var/lispat/similar.html")
+
+
+
+
 
 class ClickInfo(plugins.PluginBase):
 
