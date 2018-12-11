@@ -22,22 +22,23 @@ install_requires = [
     'python-docx',
     'docopt',
     'gensim',
-    'cld2-cffi',
-    'joblib'
+    'joblib',
     'spacy',
     'chardet==3.0.4',
     'textblob',
     'matplotlib==2.1.0',
-    'sklearn'
-    'scattertext'
+    'sklearn',
+    'scattertext',
     'empath',
-    'mpdl3'
-    'git+https://github.com/javadba/mpld3@display_fix'
+    'mpld3',
+    'jinja2'
 ]
 
 setup(
     name='lispat',
     install_requires=install_requires,
+    version='1.0.0',
+    description='A natural language processing tool',
     author='Joshua Brummet, Zeke Moreland, Eric Holguin',
     entry_points={
         'console_scripts': [

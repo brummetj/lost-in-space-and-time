@@ -1,0 +1,4 @@
+site_name: Lispat
+theme: cinder
+nav:
+- Home: index.md
